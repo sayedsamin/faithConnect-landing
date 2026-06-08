@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import { StatsCards } from '#/routes/-components/stats-cards'
 
 export function HomePage() {
   return (
@@ -35,39 +36,7 @@ export function HomePage() {
                 </button>
               </div>
 
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-6 lg:gap-8">
-                <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
-                    2,450
-                  </div>
-                  <p className="text-sm sm:text-base text-gray-600">Members</p>
-                </div>
-                <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
-                    $18,900
-                  </div>
-                  <p className="text-sm sm:text-base text-gray-600">
-                    Monthly Giving
-                  </p>
-                </div>
-                <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
-                    24
-                  </div>
-                  <p className="text-sm sm:text-base text-gray-600">
-                    Upcoming Events
-                  </p>
-                </div>
-                <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-brand-dark mb-2">
-                    98%
-                  </div>
-                  <p className="text-sm sm:text-base text-gray-600">
-                    Engagement
-                  </p>
-                </div>
-              </div>
+              {/* Stats removed from here and placed below to span full hero width */}
             </div>
 
             {/* Right Image */}
@@ -92,6 +61,8 @@ export function HomePage() {
               />
             </div>
           </div>
+
+          <StatsCards />
         </div>
       </section>
     </div>
