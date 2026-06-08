@@ -6,7 +6,6 @@ import {
   useRouterState,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 import {
@@ -41,7 +40,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: '#011e3c',
       },
       {
-        title: 'Questura Academy',
+        title: 'FaithConnect',
       },
     ],
     links: [
@@ -84,18 +83,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         {isAuthRoute ? null : <SiteFooter />}
         <GoogleTagManagerPageView />
         <PostHogAnalytics />
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-            TanStackQueryDevtools,
-          ]}
-        />
         <Scripts />
       </body>
     </html>
