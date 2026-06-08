@@ -5,14 +5,8 @@ import { AuthNav } from './auth-nav'
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/#about' },
-  { label: 'Programs', href: '/#program-streams' },
-  { label: 'Summer Camp 2026', href: '/summer-program', highlighted: true },
   { label: 'Contact', href: '/contact' },
 ]
-
-const mobileDrawerItems = navItems.filter((item) => !item.highlighted)
-const mobileFeaturedItem = navItems.find((item) => item.highlighted)
 
 export function SiteHeader() {
   const pathname = useRouterState({
@@ -104,15 +98,6 @@ export function SiteHeader() {
           <AuthNav />
         </div>
 
-        {mobileFeaturedItem ? (
-          <a
-            href={mobileFeaturedItem.href}
-            className="absolute left-1/2 top-1/2 inline-flex min-h-10 max-w-[44vw] -translate-x-1/2 -translate-y-1/2 items-center justify-center truncate rounded-md border border-school-bus-yellow/60 bg-school-bus-yellow px-3 text-xs font-extrabold text-shadow-grey! no-underline shadow-[0_8px_18px_rgba(0,0,0,0.22)] transition-[background-color,color,transform] hover:bg-brand-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/25 md:hidden"
-          >
-            Summer Camp
-          </a>
-        ) : null}
-
         <button
           type="button"
           className="inline-flex min-h-11 min-w-11 shrink-0 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/10 text-brand-white transition-colors hover:bg-white/16 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/25 md:hidden"
@@ -138,7 +123,7 @@ export function SiteHeader() {
             className="absolute top-full right-0 left-0 mt-3 rounded-2xl border border-brand-gold/30 bg-brand-navy p-3 shadow-[0_22px_44px_rgba(12,20,32,0.34)] md:hidden"
           >
             <nav aria-label="Mobile primary" className="grid gap-2">
-              {mobileDrawerItems.map((item) => (
+              {navItems.map((item) => (
                 <HeaderLink
                   key={item.href}
                   item={item}
@@ -177,17 +162,12 @@ function HeaderLink({ isMobile, item, onClick, pathname }: HeaderLinkProps) {
         'relative inline-flex min-h-11 shrink-0 items-center rounded-md text-sm font-bold no-underline transition-[background-color,border-color,color,transform]',
         'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/25 motion-reduce:transition-none motion-reduce:hover:translate-y-0',
         isMobile ? 'w-full px-3' : 'min-h-8',
-        item.highlighted
-          ? 'border border-school-bus-yellow/60 bg-school-bus-yellow px-3 text-shadow-grey! shadow-[0_8px_18px_rgba(0,0,0,0.22)] hover:-translate-y-0.5 hover:bg-brand-white hover:text-shadow-grey!'
-          : "text-brand-white/78! hover:text-brand-white! aria-[aria-current='page']:text-brand-white!",
+        "text-brand-white/78! hover:text-brand-white! aria-[aria-current='page']:text-brand-white!",
       ].join(' ')}
       aria-current={isCurrent ? 'page' : undefined}
       onClick={onClick}
     >
       {item.label}
-      {isCurrent && !item.highlighted ? (
-        <span className="absolute -bottom-1 left-3 h-0.5 w-8 rounded-full bg-brand-gold" />
-      ) : null}
     </a>
   )
 }
