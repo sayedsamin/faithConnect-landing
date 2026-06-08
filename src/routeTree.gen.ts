@@ -10,15 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SummerProgramRouteImport } from './routes/summer-program'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as SigninRouteImport } from './routes/signin'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SummerProgramRegistrationCompleteRouteImport } from './routes/summer-program_.registration-complete'
-import { Route as SummerProgramRegisterRouteImport } from './routes/summer-program_.register'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as DashboardSupervisorRouteRouteImport } from './routes/dashboard/supervisor/route'
@@ -57,11 +54,6 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SummerProgramRoute = SummerProgramRouteImport.update({
-  id: '/summer-program',
-  path: '/summer-program',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
@@ -90,17 +82,6 @@ const ContactRoute = ContactRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SummerProgramRegistrationCompleteRoute =
-  SummerProgramRegistrationCompleteRouteImport.update({
-    id: '/summer-program_/registration-complete',
-    path: '/summer-program/registration-complete',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SummerProgramRegisterRoute = SummerProgramRegisterRouteImport.update({
-  id: '/summer-program_/register',
-  path: '/summer-program/register',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiHealthRoute = ApiHealthRouteImport.update({
@@ -292,7 +273,6 @@ export interface FileRoutesByFullPath {
   '/reset-password': typeof ResetPasswordRoute
   '/signin': typeof SigninRoute
   '/signup': typeof SignupRoute
-  '/summer-program': typeof SummerProgramRoute
   '/terms': typeof TermsRoute
   '/dashboard/admin': typeof DashboardAdminRouteRouteWithChildren
   '/dashboard/guardian': typeof DashboardGuardianRouteRouteWithChildren
@@ -301,8 +281,6 @@ export interface FileRoutesByFullPath {
   '/dashboard/supervisor': typeof DashboardSupervisorRouteRouteWithChildren
   '/api/contact': typeof ApiContactRoute
   '/api/health': typeof ApiHealthRoute
-  '/summer-program/register': typeof SummerProgramRegisterRoute
-  '/summer-program/registration-complete': typeof SummerProgramRegistrationCompleteRoute
   '/api/openapi/json': typeof ApiOpenapiJsonRoute
   '/api/zeffy/webhook': typeof ApiZeffyWebhookRoute
   '/dashboard/admin/registrations': typeof DashboardAdminRegistrationsRouteWithChildren
@@ -336,13 +314,10 @@ export interface FileRoutesByTo {
   '/reset-password': typeof ResetPasswordRoute
   '/signin': typeof SigninRoute
   '/signup': typeof SignupRoute
-  '/summer-program': typeof SummerProgramRoute
   '/terms': typeof TermsRoute
   '/dashboard/student': typeof DashboardStudentRouteRoute
   '/api/contact': typeof ApiContactRoute
   '/api/health': typeof ApiHealthRoute
-  '/summer-program/register': typeof SummerProgramRegisterRoute
-  '/summer-program/registration-complete': typeof SummerProgramRegistrationCompleteRoute
   '/api/openapi/json': typeof ApiOpenapiJsonRoute
   '/api/zeffy/webhook': typeof ApiZeffyWebhookRoute
   '/dashboard/admin/registrations': typeof DashboardAdminRegistrationsRouteWithChildren
@@ -377,7 +352,6 @@ export interface FileRoutesById {
   '/reset-password': typeof ResetPasswordRoute
   '/signin': typeof SigninRoute
   '/signup': typeof SignupRoute
-  '/summer-program': typeof SummerProgramRoute
   '/terms': typeof TermsRoute
   '/dashboard/admin': typeof DashboardAdminRouteRouteWithChildren
   '/dashboard/guardian': typeof DashboardGuardianRouteRouteWithChildren
@@ -386,8 +360,6 @@ export interface FileRoutesById {
   '/dashboard/supervisor': typeof DashboardSupervisorRouteRouteWithChildren
   '/api/contact': typeof ApiContactRoute
   '/api/health': typeof ApiHealthRoute
-  '/summer-program_/register': typeof SummerProgramRegisterRoute
-  '/summer-program_/registration-complete': typeof SummerProgramRegistrationCompleteRoute
   '/api/openapi/json': typeof ApiOpenapiJsonRoute
   '/api/zeffy/webhook': typeof ApiZeffyWebhookRoute
   '/dashboard/admin/registrations': typeof DashboardAdminRegistrationsRouteWithChildren
@@ -423,7 +395,6 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/signin'
     | '/signup'
-    | '/summer-program'
     | '/terms'
     | '/dashboard/admin'
     | '/dashboard/guardian'
@@ -432,8 +403,6 @@ export interface FileRouteTypes {
     | '/dashboard/supervisor'
     | '/api/contact'
     | '/api/health'
-    | '/summer-program/register'
-    | '/summer-program/registration-complete'
     | '/api/openapi/json'
     | '/api/zeffy/webhook'
     | '/dashboard/admin/registrations'
@@ -467,13 +436,10 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/signin'
     | '/signup'
-    | '/summer-program'
     | '/terms'
     | '/dashboard/student'
     | '/api/contact'
     | '/api/health'
-    | '/summer-program/register'
-    | '/summer-program/registration-complete'
     | '/api/openapi/json'
     | '/api/zeffy/webhook'
     | '/dashboard/admin/registrations'
@@ -507,7 +473,6 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/signin'
     | '/signup'
-    | '/summer-program'
     | '/terms'
     | '/dashboard/admin'
     | '/dashboard/guardian'
@@ -516,8 +481,6 @@ export interface FileRouteTypes {
     | '/dashboard/supervisor'
     | '/api/contact'
     | '/api/health'
-    | '/summer-program_/register'
-    | '/summer-program_/registration-complete'
     | '/api/openapi/json'
     | '/api/zeffy/webhook'
     | '/dashboard/admin/registrations'
@@ -552,7 +515,6 @@ export interface RootRouteChildren {
   ResetPasswordRoute: typeof ResetPasswordRoute
   SigninRoute: typeof SigninRoute
   SignupRoute: typeof SignupRoute
-  SummerProgramRoute: typeof SummerProgramRoute
   TermsRoute: typeof TermsRoute
   DashboardAdminRouteRoute: typeof DashboardAdminRouteRouteWithChildren
   DashboardGuardianRouteRoute: typeof DashboardGuardianRouteRouteWithChildren
@@ -561,8 +523,6 @@ export interface RootRouteChildren {
   DashboardSupervisorRouteRoute: typeof DashboardSupervisorRouteRouteWithChildren
   ApiContactRoute: typeof ApiContactRoute
   ApiHealthRoute: typeof ApiHealthRoute
-  SummerProgramRegisterRoute: typeof SummerProgramRegisterRoute
-  SummerProgramRegistrationCompleteRoute: typeof SummerProgramRegistrationCompleteRoute
   ApiOpenapiJsonRoute: typeof ApiOpenapiJsonRoute
   ApiZeffyWebhookRoute: typeof ApiZeffyWebhookRoute
 }
@@ -574,13 +534,6 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/summer-program': {
-      id: '/summer-program'
-      path: '/summer-program'
-      fullPath: '/summer-program'
-      preLoaderRoute: typeof SummerProgramRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/signup': {
@@ -623,20 +576,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/summer-program_/registration-complete': {
-      id: '/summer-program_/registration-complete'
-      path: '/summer-program/registration-complete'
-      fullPath: '/summer-program/registration-complete'
-      preLoaderRoute: typeof SummerProgramRegistrationCompleteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/summer-program_/register': {
-      id: '/summer-program_/register'
-      path: '/summer-program/register'
-      fullPath: '/summer-program/register'
-      preLoaderRoute: typeof SummerProgramRegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/health': {
@@ -994,7 +933,6 @@ const rootRouteChildren: RootRouteChildren = {
   ResetPasswordRoute: ResetPasswordRoute,
   SigninRoute: SigninRoute,
   SignupRoute: SignupRoute,
-  SummerProgramRoute: SummerProgramRoute,
   TermsRoute: TermsRoute,
   DashboardAdminRouteRoute: DashboardAdminRouteRouteWithChildren,
   DashboardGuardianRouteRoute: DashboardGuardianRouteRouteWithChildren,
@@ -1003,9 +941,6 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardSupervisorRouteRoute: DashboardSupervisorRouteRouteWithChildren,
   ApiContactRoute: ApiContactRoute,
   ApiHealthRoute: ApiHealthRoute,
-  SummerProgramRegisterRoute: SummerProgramRegisterRoute,
-  SummerProgramRegistrationCompleteRoute:
-    SummerProgramRegistrationCompleteRoute,
   ApiOpenapiJsonRoute: ApiOpenapiJsonRoute,
   ApiZeffyWebhookRoute: ApiZeffyWebhookRoute,
 }

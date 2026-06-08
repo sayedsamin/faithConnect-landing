@@ -1,12 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import { Mail, MapPin, Phone, Sparkles } from 'lucide-react'
 
-const footerLinks = [
-  { label: 'About', href: '/#about' },
-  { label: 'Programs', href: '/#program-streams' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Summer Program', href: '/summer-program' },
-]
+const footerLinks = [{ label: 'Contact', href: '/contact' }]
 
 export function SiteFooter() {
   const year = new Date().getFullYear()
