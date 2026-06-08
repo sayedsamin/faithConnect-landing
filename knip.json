@@ -1,0 +1,18 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "src/router.tsx",
+    "src/integrations/prisma/server.ts",
+    "scripts/database/count-auth-users.mjs",
+    "vite.config.ts",
+    "playwright.config.ts"
+  ],
+  "project": [
+    "src/**/*.{ts,tsx}",
+    "tests/**/*.{ts,tsx}",
+    "scripts/**/*.{js,mjs}"
+  ],
+  "ignore": ["src/routeTree.gen.ts"],
+  "ignoreDependencies": ["@prisma/client"],
+  "ignoreBinaries": ["eslint", "powershell"]
+}

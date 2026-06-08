@@ -1,0 +1,245 @@
+generator client {
+  provider   = "prisma-client"
+  output     = "../src/generated/prisma"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AppRole {
+  superadmin
+  admin
+  supervisor
+  camp_leader
+  guardian
+  student
+
+  @@map("app_role")
+}
+
+model Profile {
+  id                         String                      @id @db.Uuid
+  email                      String
+  role                       AppRole
+  fullName                   String?                     @map("full_name")
+  phone                      String?
+  createdAt                  DateTime                    @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt                  DateTime                    @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  participants               Participant[]               @relation("ParticipantGuardian")
+  summerProgramRegistrations SummerProgramRegistration[] @relation("SummerProgramRegistrationGuardian")
+  transactions               Transaction[]               @relation("TransactionGuardian")
+  createdPrograms            Program[]                   @relation("ProgramCreator")
+  supervisedPrograms         ProgramSupervisor[]         @relation("ProgramSupervisor")
+  assignedSupervisors        ProgramSupervisor[]         @relation("ProgramSupervisorAssigner")
+  createdTeams               Team[]                      @relation("TeamCreator")
+  ledTeams                   TeamLeader[]                @relation("TeamLeader")
+  assignedTeamLeaders        TeamLeader[]                @relation("TeamLeaderAssigner")
+  assignedParticipants       TeamParticipant[]           @relation("TeamParticipantAssigner")
+
+  @@map("profiles")
+}
+
+model Transaction {
+  id                  String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  zeffyPaymentId      String        @unique @map("zeffy_payment_id")
+  webhookEventId      String?       @map("webhook_event_id") @db.Uuid
+  guardianId          String?       @map("guardian_id") @db.Uuid
+  buyerEmail          String?       @map("buyer_email")
+  buyerPhone          String?       @map("buyer_phone")
+  amountCents         Int           @map("amount_cents")
+  eligibleAmountCents Int           @map("eligible_amount_cents")
+  currency            String
+  status              String
+  paymentType         String        @map("payment_type")
+  refundStatus        String        @map("refund_status")
+  campaignId          String?       @map("campaign_id")
+  campaignType        String?       @map("campaign_type")
+  campaignCategory    String?       @map("campaign_category")
+  campaignTitle       String?       @map("campaign_title")
+  receiptUrl          String?       @map("receipt_url")
+  paidAt              DateTime      @map("paid_at") @db.Timestamptz(6)
+  rawPayload          Json          @map("raw_payload") @db.JsonB
+  createdAt           DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt           DateTime      @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  guardian            Profile?      @relation("TransactionGuardian", fields: [guardianId], references: [id], onDelete: SetNull)
+  participants        Participant[]
+
+  @@index([guardianId, paidAt(sort: Desc)], map: "transactions_guardian_id_paid_at_idx")
+  @@index([paidAt(sort: Desc)], map: "transactions_paid_at_idx")
+  @@map("transactions")
+}
+
+model Participant {
+  id                          String                     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  transactionId               String?                    @map("transaction_id") @db.Uuid
+  guardianId                  String                     @map("guardian_id") @db.Uuid
+  summerProgramRegistrationId String?                    @map("summer_program_registration_id") @db.Uuid
+  zeffyPaymentId              String?                    @map("zeffy_payment_id")
+  zeffyItemId                 String?                    @unique @map("zeffy_item_id")
+  firstName                   String                     @map("first_name")
+  lastName                    String?                    @map("last_name")
+  age                         String?
+  gender                      String?
+  gradeLevel                  String?                    @map("grade_level")
+  amountCents                 Int?                       @map("amount_cents")
+  currency                    String?
+  rawItem                     Json                       @map("raw_item") @db.JsonB
+  createdAt                   DateTime                   @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt                   DateTime                   @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  transaction                 Transaction?               @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+  guardian                    Profile                    @relation("ParticipantGuardian", fields: [guardianId], references: [id], onDelete: Cascade)
+  summerProgramRegistration   SummerProgramRegistration? @relation(fields: [summerProgramRegistrationId], references: [id], onDelete: Cascade)
+  teams                       TeamParticipant[]
+
+  @@index([guardianId, createdAt(sort: Desc)], map: "participants_guardian_id_created_at_idx")
+  @@index([transactionId], map: "participants_transaction_id_idx")
+  @@index([summerProgramRegistrationId], map: "participants_summer_program_registration_id_idx")
+  @@map("participants")
+}
+
+model SummerProgramRegistration {
+  id                    String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  guardianId            String        @map("guardian_id") @db.Uuid
+  programCode           String        @map("program_code")
+  guardianName          String        @map("guardian_name")
+  guardianEmail         String        @map("guardian_email")
+  guardianPhone         String        @map("guardian_phone")
+  emergencyContactName  String?       @map("emergency_contact_name")
+  emergencyContactPhone String?       @map("emergency_contact_phone")
+  notes                 String?
+  participantData       Json          @map("participant_data") @db.JsonB
+  status                String        @default("awaiting_confirmation")
+  termsAcceptedAt       DateTime      @map("terms_accepted_at") @db.Timestamptz(6)
+  createdAt             DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt             DateTime      @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  guardian              Profile       @relation("SummerProgramRegistrationGuardian", fields: [guardianId], references: [id], onDelete: Cascade)
+  program               Program       @relation("ProgramSummerProgramRegistrations", fields: [programCode], references: [code], onDelete: Restrict)
+  participants          Participant[]
+
+  @@index([guardianId, createdAt(sort: Desc)], map: "summer_program_registrations_guardian_id_created_at_idx")
+  @@index([programCode, status], map: "summer_program_registrations_program_code_status_idx")
+  @@map("summer_program_registrations")
+}
+
+model ContactMessage {
+  id             String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name           String
+  email          String
+  phone          String
+  topic          String
+  message        String
+  ipAddress      String    @map("ip_address")
+  userAgent      String?   @map("user_agent")
+  browser        String?
+  device         String?
+  referer        String?
+  acceptLanguage String?   @map("accept_language")
+  metadata       Json      @default("{}") @db.JsonB
+  emailStatus    String    @default("pending") @map("email_status")
+  emailError     String?   @map("email_error")
+  emailedAt      DateTime? @map("emailed_at") @db.Timestamptz(6)
+  createdAt      DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt      DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@index([createdAt(sort: Desc)], map: "contact_messages_created_at_idx")
+  @@index([emailStatus, createdAt(sort: Desc)], map: "contact_messages_email_status_idx")
+  @@map("contact_messages")
+}
+
+model Program {
+  id                 String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name               String
+  description        String
+  code               String              @unique @map("code")
+  minimumAge         Int                 @map("minimum_age")
+  maximumAge         Int                 @map("maximum_age")
+  startDate          DateTime            @map("start_date") @db.Date
+  endDate            DateTime            @map("end_date") @db.Date
+  location           String
+  capacity           Int
+  registrationStatus String              @map("registration_status")
+  programStatus      String              @map("program_status")
+  createdBy          String              @map("created_by") @db.Uuid
+  createdAt          DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt          DateTime            @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  creator            Profile             @relation("ProgramCreator", fields: [createdBy], references: [id], onDelete: Restrict)
+  summerProgramRegistrations SummerProgramRegistration[] @relation("ProgramSummerProgramRegistrations")
+  supervisors        ProgramSupervisor[]
+  teams              Team[]
+
+  @@index([startDate], map: "programs_start_date_idx")
+  @@index([programStatus, registrationStatus], map: "programs_status_idx")
+  @@map("programs")
+}
+
+model ProgramSupervisor {
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  programId    String   @map("program_id") @db.Uuid
+  supervisorId String   @map("supervisor_id") @db.Uuid
+  assignedBy   String   @map("assigned_by") @db.Uuid
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  program      Program  @relation(fields: [programId], references: [id], onDelete: Cascade)
+  supervisor   Profile  @relation("ProgramSupervisor", fields: [supervisorId], references: [id], onDelete: Cascade)
+  assigner     Profile  @relation("ProgramSupervisorAssigner", fields: [assignedBy], references: [id], onDelete: Restrict)
+
+  @@unique([programId, supervisorId])
+  @@index([programId], map: "program_supervisors_program_id_idx")
+  @@index([supervisorId], map: "program_supervisors_supervisor_id_idx")
+  @@map("program_supervisors")
+}
+
+model Team {
+  id           String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  programId    String            @map("program_id") @db.Uuid
+  name         String
+  description  String?
+  capacity     Int?
+  createdBy    String            @map("created_by") @db.Uuid
+  createdAt    DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime          @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  program      Program           @relation(fields: [programId], references: [id], onDelete: Cascade)
+  creator      Profile           @relation("TeamCreator", fields: [createdBy], references: [id], onDelete: Restrict)
+  leaders      TeamLeader[]
+  participants TeamParticipant[]
+
+  @@unique([programId, name])
+  @@index([programId], map: "teams_program_id_idx")
+  @@map("teams")
+}
+
+model TeamLeader {
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  teamId       String   @map("team_id") @db.Uuid
+  campLeaderId String   @map("camp_leader_id") @db.Uuid
+  assignedBy   String   @map("assigned_by") @db.Uuid
+  roleLabel    String   @map("role_label")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  team         Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  campLeader   Profile  @relation("TeamLeader", fields: [campLeaderId], references: [id], onDelete: Cascade)
+  assigner     Profile  @relation("TeamLeaderAssigner", fields: [assignedBy], references: [id], onDelete: Restrict)
+
+  @@unique([teamId, campLeaderId])
+  @@index([teamId], map: "team_leaders_team_id_idx")
+  @@index([campLeaderId], map: "team_leaders_camp_leader_id_idx")
+  @@map("team_leaders")
+}
+
+model TeamParticipant {
+  id            String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  teamId        String      @map("team_id") @db.Uuid
+  participantId String      @map("participant_id") @db.Uuid
+  assignedBy    String      @map("assigned_by") @db.Uuid
+  status        String
+  createdAt     DateTime    @default(now()) @map("created_at") @db.Timestamptz(6)
+  team          Team        @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  participant   Participant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  assigner      Profile     @relation("TeamParticipantAssigner", fields: [assignedBy], references: [id], onDelete: Restrict)
+
+  @@unique([teamId, participantId])
+  @@index([teamId], map: "team_participants_team_id_idx")
+  @@index([participantId], map: "team_participants_participant_id_idx")
+  @@index([status], map: "team_participants_status_idx")
+  @@map("team_participants")
+}
