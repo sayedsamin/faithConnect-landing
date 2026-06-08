@@ -13,7 +13,7 @@ export function HomePage() {
         </div>
 
         <div className="mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center ">
             {/* Left Content */}
             <div className="flex flex-col justify-center">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark leading-tight mb-6">
@@ -39,7 +39,7 @@ export function HomePage() {
               {/* Stats removed from here and placed below to span full hero width */}
             </div>
 
-            {/* Right Image */}
+            {/* Right Image
             <div className="hidden lg:flex justify-center items-center">
               <div className="relative w-full max-w-md">
                 <img
@@ -48,10 +48,10 @@ export function HomePage() {
                   className="w-full h-auto"
                 />
               </div>
-            </div>
+            </div>*/}
           </div>
 
-          {/* Mobile Image - shown below on smaller screens */}
+          {/* Mobile Image - shown below on smaller screens}
           <div className="lg:hidden mt-12 flex justify-center">
             <div className="relative w-full max-w-md">
               <img
@@ -60,7 +60,7 @@ export function HomePage() {
                 className="w-full h-auto"
               />
             </div>
-          </div>
+          </div>*/}
 
           <StatsCards />
         </div>
