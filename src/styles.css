@@ -7,210 +7,181 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --brand-navy: #011e3c;
-  --brand-gold: #ba8628;
-  --brand-cream: #fff8ed;
-  --brand-sky: #d9e7f5;
-  --brand-coral: #d76652;
-  --shadow-grey: var(--brand-navy);
-  --forest-green: #246173;
-  --school-bus-yellow: var(--brand-gold);
-  --vivid-tangerine: var(--brand-coral);
-  --white: #ffffff;
+  --brand-blue: #0040cd;
+  --brand-white: #fefefe;
+  --brand-dark: #000e35;
+  --white: var(--brand-white);
   --gradient-top: linear-gradient(
     0deg,
-    var(--shadow-grey),
-    var(--forest-green),
-    var(--school-bus-yellow),
-    var(--vivid-tangerine),
-    var(--white)
+    var(--brand-dark),
+    var(--brand-blue),
+    var(--brand-white)
   );
   --gradient-right: linear-gradient(
     90deg,
-    var(--shadow-grey),
-    var(--forest-green),
-    var(--school-bus-yellow),
-    var(--vivid-tangerine),
-    var(--white)
+    var(--brand-dark),
+    var(--brand-blue),
+    var(--brand-white)
   );
   --gradient-bottom: linear-gradient(
     180deg,
-    var(--shadow-grey),
-    var(--forest-green),
-    var(--school-bus-yellow),
-    var(--vivid-tangerine),
-    var(--white)
+    var(--brand-dark),
+    var(--brand-blue),
+    var(--brand-white)
   );
   --gradient-left: linear-gradient(
     270deg,
-    var(--shadow-grey),
-    var(--forest-green),
-    var(--school-bus-yellow),
-    var(--vivid-tangerine),
-    var(--white)
+    var(--brand-dark),
+    var(--brand-blue),
+    var(--brand-white)
   );
   --gradient-top-right: linear-gradient(
     45deg,
-    var(--shadow-grey),
-    var(--forest-green),
-    var(--school-bus-yellow),
-    var(--vivid-tangerine),
-    var(--white)
+    var(--brand-dark),
+    var(--brand-blue),
+    var(--brand-white)
   );
   --gradient-bottom-right: linear-gradient(
     135deg,
-    var(--shadow-grey),
-    var(--forest-green),
-    var(--school-bus-yellow),
-    var(--vivid-tangerine),
-    var(--white)
+    var(--brand-dark),
+    var(--brand-blue),
+    var(--brand-white)
   );
   --gradient-top-left: linear-gradient(
     225deg,
-    var(--shadow-grey),
-    var(--forest-green),
-    var(--school-bus-yellow),
-    var(--vivid-tangerine),
-    var(--white)
+    var(--brand-dark),
+    var(--brand-blue),
+    var(--brand-white)
   );
   --gradient-bottom-left: linear-gradient(
     315deg,
-    var(--shadow-grey),
-    var(--forest-green),
-    var(--school-bus-yellow),
-    var(--vivid-tangerine),
-    var(--white)
+    var(--brand-dark),
+    var(--brand-blue),
+    var(--brand-white)
   );
   --gradient-radial: radial-gradient(
-    var(--shadow-grey),
-    var(--forest-green),
-    var(--school-bus-yellow),
-    var(--vivid-tangerine),
-    var(--white)
+    var(--brand-dark),
+    var(--brand-blue),
+    var(--brand-white)
   );
 
-  --sea-ink: var(--brand-navy);
-  --sea-ink-soft: color-mix(in oklab, var(--brand-navy) 68%, var(--white));
-  --lagoon: color-mix(in oklab, var(--brand-navy) 72%, var(--brand-gold));
-  --lagoon-deep: var(--brand-navy);
-  --palm: var(--forest-green);
-  --sand: color-mix(in oklab, var(--brand-cream) 88%, var(--brand-gold) 12%);
-  --foam: color-mix(in oklab, var(--brand-sky) 34%, var(--white));
+  --sea-ink: var(--brand-dark);
+  --sea-ink-soft: color-mix(
+    in oklab,
+    var(--brand-dark) 70%,
+    var(--brand-white)
+  );
+  --lagoon: var(--brand-blue);
+  --lagoon-deep: var(--brand-blue);
+  --sand: color-mix(in oklab, var(--brand-white) 94%, var(--brand-blue));
+  --foam: color-mix(in oklab, var(--brand-white) 90%, var(--brand-blue));
   --surface: color-mix(in oklab, var(--white) 78%, transparent);
   --surface-strong: color-mix(in oklab, var(--white) 92%, transparent);
-  --line: color-mix(in oklab, var(--brand-navy) 16%, transparent);
+  --line: color-mix(in oklab, var(--brand-dark) 16%, transparent);
   --inset-glint: color-mix(in oklab, var(--white) 84%, transparent);
-  --kicker: color-mix(in oklab, var(--brand-gold) 88%, var(--brand-navy));
-  --bg-base: color-mix(in oklab, var(--brand-cream) 88%, var(--brand-sky) 12%);
-  --header-bg: color-mix(in oklab, var(--brand-navy) 92%, transparent);
+  --kicker: var(--brand-blue);
+  --bg-base: color-mix(in oklab, var(--brand-white) 92%, var(--brand-blue));
+  --header-bg: color-mix(in oklab, var(--brand-dark) 92%, transparent);
   --chip-bg: color-mix(in oklab, var(--white) 82%, transparent);
-  --chip-line: color-mix(in oklab, var(--brand-gold) 34%, transparent);
-  --link-bg-hover: color-mix(in oklab, var(--brand-sky) 42%, var(--white));
-  --hero-a: color-mix(in oklab, var(--brand-gold) 30%, transparent);
-  --hero-b: color-mix(in oklab, var(--brand-navy) 18%, transparent);
+  --chip-line: color-mix(in oklab, var(--brand-blue) 34%, transparent);
+  --link-bg-hover: color-mix(in oklab, var(--brand-blue) 10%, var(--white));
+  --hero-a: color-mix(in oklab, var(--brand-blue) 18%, transparent);
+  --hero-b: color-mix(in oklab, var(--brand-dark) 18%, transparent);
 
   --background: var(--white);
-  --foreground: var(--brand-navy);
-  --card: color-mix(in oklab, var(--white) 94%, var(--brand-cream));
-  --card-foreground: var(--brand-navy);
+  --foreground: var(--brand-dark);
+  --card: color-mix(in oklab, var(--white) 94%, var(--brand-blue));
+  --card-foreground: var(--brand-dark);
   --popover: var(--white);
-  --popover-foreground: var(--brand-navy);
-  --primary: var(--brand-navy);
+  --popover-foreground: var(--brand-dark);
+  --primary: var(--brand-blue);
   --primary-foreground: var(--white);
-  --secondary: color-mix(in oklab, var(--brand-gold) 22%, var(--brand-cream));
-  --secondary-foreground: var(--brand-navy);
-  --muted: color-mix(in oklab, var(--brand-sky) 42%, var(--white));
-  --muted-foreground: color-mix(in oklab, var(--brand-navy) 64%, var(--white));
-  --accent: var(--brand-gold);
+  --secondary: color-mix(in oklab, var(--brand-blue) 12%, var(--brand-white));
+  --secondary-foreground: var(--brand-dark);
+  --muted: color-mix(in oklab, var(--brand-blue) 8%, var(--white));
+  --muted-foreground: color-mix(in oklab, var(--brand-dark) 64%, var(--white));
+  --accent: var(--brand-blue);
   --accent-foreground: var(--white);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: color-mix(in oklab, var(--brand-navy) 14%, var(--white));
-  --input: color-mix(in oklab, var(--brand-navy) 12%, var(--white));
-  --ring: color-mix(in oklab, var(--brand-gold) 48%, var(--white));
-  --chart-1: var(--brand-navy);
-  --chart-2: var(--brand-gold);
-  --chart-3: var(--forest-green);
-  --chart-4: var(--brand-coral);
-  --chart-5: color-mix(in oklab, var(--brand-sky) 78%, var(--brand-navy));
+  --destructive: var(--brand-dark);
+  --destructive-foreground: var(--white);
+  --border: color-mix(in oklab, var(--brand-dark) 14%, var(--white));
+  --input: color-mix(in oklab, var(--brand-dark) 12%, var(--white));
+  --ring: color-mix(in oklab, var(--brand-blue) 48%, var(--white));
+  --chart-1: var(--brand-blue);
+  --chart-2: var(--brand-dark);
+  --chart-3: var(--brand-white);
+  --chart-4: color-mix(in oklab, var(--brand-blue) 55%, var(--brand-dark));
+  --chart-5: color-mix(in oklab, var(--brand-blue) 22%, var(--brand-white));
   --radius: 0.625rem;
-  --sidebar: var(--brand-navy);
+  --sidebar: var(--brand-dark);
   --sidebar-foreground: var(--white);
-  --sidebar-primary: var(--brand-gold);
+  --sidebar-primary: var(--brand-blue);
   --sidebar-primary-foreground: var(--white);
-  --sidebar-accent: var(--brand-gold);
+  --sidebar-accent: var(--brand-blue);
   --sidebar-accent-foreground: var(--white);
-  --sidebar-border: color-mix(in oklab, var(--white) 16%, var(--brand-navy));
-  --sidebar-ring: color-mix(in oklab, var(--brand-gold) 50%, var(--white));
+  --sidebar-border: color-mix(in oklab, var(--white) 16%, var(--brand-dark));
+  --sidebar-ring: color-mix(in oklab, var(--brand-blue) 50%, var(--white));
 }
 
 .dark {
-  --sea-ink: color-mix(in oklab, var(--white) 86%, var(--brand-gold));
-  --sea-ink-soft: color-mix(in oklab, var(--white) 66%, var(--brand-sky));
-  --lagoon: color-mix(in oklab, var(--brand-gold) 68%, var(--white));
-  --lagoon-deep: color-mix(in oklab, var(--brand-gold) 54%, var(--white));
-  --palm: color-mix(in oklab, var(--forest-green) 64%, var(--white));
-  --sand: color-mix(in oklab, var(--brand-navy) 94%, black);
-  --foam: color-mix(in oklab, var(--brand-navy) 88%, black);
-  --surface: color-mix(in oklab, var(--brand-navy) 80%, transparent);
-  --surface-strong: color-mix(in oklab, var(--brand-navy) 92%, transparent);
+  --sea-ink: var(--white);
+  --sea-ink-soft: color-mix(in oklab, var(--white) 66%, var(--brand-blue));
+  --lagoon: color-mix(in oklab, var(--brand-blue) 72%, var(--white));
+  --lagoon-deep: color-mix(in oklab, var(--brand-blue) 62%, var(--white));
+  --sand: color-mix(in oklab, var(--brand-dark) 94%, var(--brand-white));
+  --foam: color-mix(in oklab, var(--brand-dark) 88%, var(--brand-white));
+  --surface: color-mix(in oklab, var(--brand-dark) 80%, transparent);
+  --surface-strong: color-mix(in oklab, var(--brand-dark) 92%, transparent);
   --line: color-mix(in oklab, var(--white) 22%, transparent);
   --inset-glint: color-mix(in oklab, var(--white) 18%, transparent);
-  --kicker: color-mix(in oklab, var(--brand-gold) 78%, var(--white));
-  --bg-base: color-mix(in oklab, var(--brand-navy) 94%, black);
-  --header-bg: color-mix(in oklab, var(--brand-navy) 86%, transparent);
-  --chip-bg: color-mix(in oklab, var(--brand-navy) 88%, transparent);
-  --chip-line: color-mix(in oklab, var(--brand-gold) 28%, transparent);
-  --link-bg-hover: color-mix(in oklab, var(--brand-navy) 74%, transparent);
-  --hero-a: color-mix(in oklab, var(--brand-gold) 22%, transparent);
-  --hero-b: color-mix(in oklab, var(--brand-sky) 14%, transparent);
+  --kicker: color-mix(in oklab, var(--brand-blue) 72%, var(--white));
+  --bg-base: color-mix(in oklab, var(--brand-dark) 94%, var(--brand-white));
+  --header-bg: color-mix(in oklab, var(--brand-dark) 86%, transparent);
+  --chip-bg: color-mix(in oklab, var(--brand-dark) 88%, transparent);
+  --chip-line: color-mix(in oklab, var(--brand-blue) 28%, transparent);
+  --link-bg-hover: color-mix(in oklab, var(--brand-dark) 74%, transparent);
+  --hero-a: color-mix(in oklab, var(--brand-blue) 22%, transparent);
+  --hero-b: color-mix(in oklab, var(--white) 14%, transparent);
 
-  --background: var(--brand-navy);
+  --background: var(--brand-dark);
   --foreground: var(--white);
-  --card: color-mix(in oklab, var(--brand-navy) 90%, black);
+  --card: color-mix(in oklab, var(--brand-dark) 90%, var(--brand-white));
   --card-foreground: var(--white);
-  --popover: color-mix(in oklab, var(--brand-navy) 90%, black);
+  --popover: color-mix(in oklab, var(--brand-dark) 90%, var(--brand-white));
   --popover-foreground: var(--white);
-  --primary: var(--brand-gold);
-  --primary-foreground: var(--brand-navy);
-  --secondary: color-mix(in oklab, var(--brand-sky) 16%, var(--brand-navy));
+  --primary: var(--brand-blue);
+  --primary-foreground: var(--white);
+  --secondary: color-mix(in oklab, var(--brand-blue) 16%, var(--brand-dark));
   --secondary-foreground: var(--white);
-  --muted: color-mix(in oklab, var(--brand-navy) 72%, black);
-  --muted-foreground: color-mix(in oklab, var(--white) 68%, var(--brand-sky));
-  --accent: var(--brand-gold);
+  --muted: color-mix(in oklab, var(--brand-dark) 72%, var(--brand-white));
+  --muted-foreground: color-mix(in oklab, var(--white) 68%, var(--brand-blue));
+  --accent: var(--brand-blue);
   --accent-foreground: var(--white);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: color-mix(in oklab, var(--white) 18%, var(--brand-navy));
-  --input: color-mix(in oklab, var(--white) 16%, var(--brand-navy));
-  --ring: color-mix(in oklab, var(--brand-gold) 54%, var(--white));
-  --chart-1: var(--brand-gold);
-  --chart-2: var(--brand-sky);
-  --chart-3: var(--forest-green);
-  --chart-4: var(--brand-coral);
-  --chart-5: color-mix(in oklab, var(--brand-gold) 62%, var(--white));
-  --sidebar: color-mix(in oklab, var(--brand-navy) 88%, black);
+  --destructive: var(--brand-blue);
+  --destructive-foreground: var(--white);
+  --border: color-mix(in oklab, var(--white) 18%, var(--brand-dark));
+  --input: color-mix(in oklab, var(--white) 16%, var(--brand-dark));
+  --ring: color-mix(in oklab, var(--brand-blue) 54%, var(--white));
+  --chart-1: var(--brand-blue);
+  --chart-2: var(--brand-white);
+  --chart-3: color-mix(in oklab, var(--brand-blue) 60%, var(--white));
+  --chart-4: color-mix(in oklab, var(--brand-blue) 42%, var(--brand-dark));
+  --chart-5: color-mix(in oklab, var(--brand-white) 62%, var(--brand-blue));
+  --sidebar: color-mix(in oklab, var(--brand-dark) 88%, var(--brand-white));
   --sidebar-foreground: var(--white);
-  --sidebar-primary: var(--brand-gold);
-  --sidebar-primary-foreground: var(--brand-navy);
-  --sidebar-accent: var(--brand-gold);
+  --sidebar-primary: var(--brand-blue);
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: var(--brand-blue);
   --sidebar-accent-foreground: var(--white);
-  --sidebar-border: color-mix(in oklab, var(--white) 14%, var(--brand-navy));
-  --sidebar-ring: color-mix(in oklab, var(--brand-gold) 50%, var(--white));
+  --sidebar-border: color-mix(in oklab, var(--white) 14%, var(--brand-dark));
+  --sidebar-ring: color-mix(in oklab, var(--brand-blue) 50%, var(--white));
 }
 
 @theme inline {
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
-  --color-brand-navy: var(--brand-navy);
-  --color-brand-gold: var(--brand-gold);
-  --color-brand-cream: var(--brand-cream);
-  --color-brand-sky: var(--brand-sky);
-  --color-brand-coral: var(--brand-coral);
-  --color-shadow-grey: var(--shadow-grey);
-  --color-forest-green: var(--forest-green);
-  --color-school-bus-yellow: var(--school-bus-yellow);
-  --color-vivid-tangerine: var(--vivid-tangerine);
-  --color-brand-white: var(--white);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-white: var(--brand-white);
+  --color-brand-dark: var(--brand-dark);
   --background-image-gradient-top: var(--gradient-top);
   --background-image-gradient-right: var(--gradient-right);
   --background-image-gradient-bottom: var(--gradient-bottom);
@@ -274,12 +245,12 @@ body {
     radial-gradient(1050px 620px at 112% -12%, var(--hero-b), transparent 62%),
     radial-gradient(
       720px 380px at 50% 115%,
-      color-mix(in oklab, var(--brand-gold) 11%, transparent),
+      color-mix(in oklab, var(--brand-blue) 11%, transparent),
       transparent 68%
     ),
     linear-gradient(
       180deg,
-      color-mix(in oklab, var(--sand) 68%, white) 0%,
+      color-mix(in oklab, var(--sand) 68%, var(--white)) 0%,
       var(--foam) 44%,
       var(--bg-base) 100%
     );
@@ -303,12 +274,12 @@ body::before {
     ),
     radial-gradient(
       circle at 78% 26%,
-      color-mix(in oklab, var(--brand-sky) 34%, transparent),
+      color-mix(in oklab, var(--brand-blue) 12%, transparent),
       transparent 42%
     ),
     radial-gradient(
       circle at 42% 82%,
-      color-mix(in oklab, var(--brand-gold) 14%, transparent),
+      color-mix(in oklab, var(--brand-dark) 10%, transparent),
       transparent 36%
     );
 }
@@ -321,8 +292,15 @@ body::after {
   z-index: -1;
   opacity: 0.14;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    linear-gradient(
+      color-mix(in oklab, var(--brand-white) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--brand-white) 6%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 28px 28px;
   mask-image: radial-gradient(circle at 50% 30%, black, transparent 78%);
 }
@@ -331,7 +309,7 @@ a {
   color: var(--lagoon-deep);
   text-decoration-color: color-mix(
     in oklab,
-    var(--brand-gold) 52%,
+    var(--brand-blue) 52%,
     transparent
   );
   text-decoration-thickness: 1px;
@@ -339,13 +317,13 @@ a {
 }
 
 a:hover {
-  color: color-mix(in oklab, var(--brand-gold) 78%, var(--brand-navy));
+  color: color-mix(in oklab, var(--brand-blue) 78%, var(--brand-dark));
 }
 
 code {
   font-size: 0.9em;
   border: 1px solid var(--line);
-  background: color-mix(in oklab, var(--surface-strong) 82%, white 18%);
+  background: color-mix(in oklab, var(--surface-strong) 82%, var(--white) 18%);
   border-radius: 7px;
   padding: 2px 7px;
 }
@@ -366,8 +344,8 @@ section[id] {
 .prose pre {
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: color-mix(in oklab, var(--brand-navy) 94%, black);
-  color: color-mix(in oklab, var(--white) 88%, var(--brand-sky));
+  background: color-mix(in oklab, var(--brand-dark) 94%, var(--brand-white));
+  color: color-mix(in oklab, var(--white) 88%, var(--brand-blue));
 }
 
 .page-wrap {
@@ -384,21 +362,21 @@ section[id] {
   background: linear-gradient(165deg, var(--surface-strong), var(--surface));
   box-shadow:
     0 1px 0 var(--inset-glint) inset,
-    0 22px 44px color-mix(in oklab, var(--brand-navy) 13%, transparent),
-    0 6px 18px color-mix(in oklab, var(--brand-gold) 10%, transparent);
+    0 22px 44px color-mix(in oklab, var(--brand-dark) 13%, transparent),
+    0 6px 18px color-mix(in oklab, var(--brand-blue) 10%, transparent);
   backdrop-filter: blur(4px);
 }
 
 .feature-card {
   background: linear-gradient(
     165deg,
-    color-mix(in oklab, var(--surface-strong) 93%, white 7%),
+    color-mix(in oklab, var(--surface-strong) 93%, var(--white) 7%),
     var(--surface)
   );
   box-shadow:
     0 1px 0 var(--inset-glint) inset,
-    0 18px 34px color-mix(in oklab, var(--brand-navy) 12%, transparent),
-    0 4px 14px color-mix(in oklab, var(--brand-gold) 8%, transparent);
+    0 18px 34px color-mix(in oklab, var(--brand-dark) 12%, transparent),
+    0 4px 14px color-mix(in oklab, var(--brand-blue) 8%, transparent);
 }
 
 .feature-card:hover {
@@ -439,7 +417,7 @@ a {
   height: 2px;
   transform: scaleX(0);
   transform-origin: left;
-  background: linear-gradient(90deg, var(--brand-gold), var(--brand-sky));
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-white));
   transition: transform 170ms ease;
 }
 
@@ -507,13 +485,13 @@ a {
 .site-footer {
   background: linear-gradient(
     155deg,
-    color-mix(in oklab, var(--brand-navy) 98%, black),
-    color-mix(in oklab, var(--forest-green) 28%, var(--brand-navy)) 62%,
-    color-mix(in oklab, var(--brand-navy) 88%, var(--brand-gold))
+    color-mix(in oklab, var(--brand-dark) 98%, var(--brand-white)),
+    color-mix(in oklab, var(--brand-blue) 28%, var(--brand-dark)) 62%,
+    color-mix(in oklab, var(--brand-dark) 88%, var(--brand-blue))
   );
   box-shadow:
-    0 -1px 0 color-mix(in oklab, var(--brand-gold) 22%, transparent),
-    0 -24px 48px color-mix(in oklab, var(--brand-navy) 12%, transparent);
+    0 -1px 0 color-mix(in oklab, var(--brand-blue) 22%, transparent),
+    0 -24px 48px color-mix(in oklab, var(--brand-dark) 12%, transparent);
 }
 
 @layer base {
