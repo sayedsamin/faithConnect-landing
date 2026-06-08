@@ -12,10 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiHealthRouteImport } from './routes/api/health'
-import { Route as ApiContactRouteImport } from './routes/api/contact'
-import { Route as ApiZeffyWebhookRouteImport } from './routes/api/zeffy/webhook'
-import { Route as ApiOpenapiJsonRouteImport } from './routes/api/openapi.json'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -32,93 +28,35 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiHealthRoute = ApiHealthRouteImport.update({
-  id: '/api/health',
-  path: '/api/health',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiContactRoute = ApiContactRouteImport.update({
-  id: '/api/contact',
-  path: '/api/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiZeffyWebhookRoute = ApiZeffyWebhookRouteImport.update({
-  id: '/api/zeffy/webhook',
-  path: '/api/zeffy/webhook',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiOpenapiJsonRoute = ApiOpenapiJsonRouteImport.update({
-  id: '/api/openapi/json',
-  path: '/api/openapi/json',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/terms': typeof TermsRoute
-  '/api/contact': typeof ApiContactRoute
-  '/api/health': typeof ApiHealthRoute
-  '/api/openapi/json': typeof ApiOpenapiJsonRoute
-  '/api/zeffy/webhook': typeof ApiZeffyWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/terms': typeof TermsRoute
-  '/api/contact': typeof ApiContactRoute
-  '/api/health': typeof ApiHealthRoute
-  '/api/openapi/json': typeof ApiOpenapiJsonRoute
-  '/api/zeffy/webhook': typeof ApiZeffyWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/terms': typeof TermsRoute
-  '/api/contact': typeof ApiContactRoute
-  '/api/health': typeof ApiHealthRoute
-  '/api/openapi/json': typeof ApiOpenapiJsonRoute
-  '/api/zeffy/webhook': typeof ApiZeffyWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/contact'
-    | '/terms'
-    | '/api/contact'
-    | '/api/health'
-    | '/api/openapi/json'
-    | '/api/zeffy/webhook'
+  fullPaths: '/' | '/contact' | '/terms'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/contact'
-    | '/terms'
-    | '/api/contact'
-    | '/api/health'
-    | '/api/openapi/json'
-    | '/api/zeffy/webhook'
-  id:
-    | '__root__'
-    | '/'
-    | '/contact'
-    | '/terms'
-    | '/api/contact'
-    | '/api/health'
-    | '/api/openapi/json'
-    | '/api/zeffy/webhook'
+  to: '/' | '/contact' | '/terms'
+  id: '__root__' | '/' | '/contact' | '/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   TermsRoute: typeof TermsRoute
-  ApiContactRoute: typeof ApiContactRoute
-  ApiHealthRoute: typeof ApiHealthRoute
-  ApiOpenapiJsonRoute: typeof ApiOpenapiJsonRoute
-  ApiZeffyWebhookRoute: typeof ApiZeffyWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -144,34 +82,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/health': {
-      id: '/api/health'
-      path: '/api/health'
-      fullPath: '/api/health'
-      preLoaderRoute: typeof ApiHealthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/contact': {
-      id: '/api/contact'
-      path: '/api/contact'
-      fullPath: '/api/contact'
-      preLoaderRoute: typeof ApiContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/zeffy/webhook': {
-      id: '/api/zeffy/webhook'
-      path: '/api/zeffy/webhook'
-      fullPath: '/api/zeffy/webhook'
-      preLoaderRoute: typeof ApiZeffyWebhookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/openapi/json': {
-      id: '/api/openapi/json'
-      path: '/api/openapi/json'
-      fullPath: '/api/openapi/json'
-      preLoaderRoute: typeof ApiOpenapiJsonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -179,10 +89,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   TermsRoute: TermsRoute,
-  ApiContactRoute: ApiContactRoute,
-  ApiHealthRoute: ApiHealthRoute,
-  ApiOpenapiJsonRoute: ApiOpenapiJsonRoute,
-  ApiZeffyWebhookRoute: ApiZeffyWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

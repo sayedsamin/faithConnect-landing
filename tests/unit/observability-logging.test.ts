@@ -84,7 +84,7 @@ describe('observability logging', () => {
 
   test('logs request failure events with normalized error details', () => {
     const context = createRequestContext({
-      path: '/api/zeffy/webhook',
+      path: '/api/contact',
       method: 'POST',
     })
 
@@ -92,7 +92,7 @@ describe('observability logging', () => {
 
     logRequest({
       context,
-      action: 'api.zeffy.webhook.invalid_payload',
+      action: 'api.contact.invalid_payload',
       status: 400,
       durationMs: 15,
       metadata: {
