@@ -10,10 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SignupRouteImport } from './routes/signup'
-import { Route as SigninRouteImport } from './routes/signin'
-import { Route as ResetPasswordRouteImport } from './routes/reset-password'
-import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
@@ -52,26 +48,6 @@ import { Route as DashboardAdminRegistrationsSummer2026ParticipantsRouteImport }
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SignupRoute = SignupRouteImport.update({
-  id: '/signup',
-  path: '/signup',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SigninRoute = SigninRouteImport.update({
-  id: '/signin',
-  path: '/signin',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResetPasswordRoute = ResetPasswordRouteImport.update({
-  id: '/reset-password',
-  path: '/reset-password',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
-  id: '/forgot-password',
-  path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -269,10 +245,6 @@ const DashboardAdminRegistrationsSummer2026ParticipantsRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/forgot-password': typeof ForgotPasswordRoute
-  '/reset-password': typeof ResetPasswordRoute
-  '/signin': typeof SigninRoute
-  '/signup': typeof SignupRoute
   '/terms': typeof TermsRoute
   '/dashboard/admin': typeof DashboardAdminRouteRouteWithChildren
   '/dashboard/guardian': typeof DashboardGuardianRouteRouteWithChildren
@@ -310,10 +282,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/forgot-password': typeof ForgotPasswordRoute
-  '/reset-password': typeof ResetPasswordRoute
-  '/signin': typeof SigninRoute
-  '/signup': typeof SignupRoute
   '/terms': typeof TermsRoute
   '/dashboard/student': typeof DashboardStudentRouteRoute
   '/api/contact': typeof ApiContactRoute
@@ -348,10 +316,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/forgot-password': typeof ForgotPasswordRoute
-  '/reset-password': typeof ResetPasswordRoute
-  '/signin': typeof SigninRoute
-  '/signup': typeof SignupRoute
   '/terms': typeof TermsRoute
   '/dashboard/admin': typeof DashboardAdminRouteRouteWithChildren
   '/dashboard/guardian': typeof DashboardGuardianRouteRouteWithChildren
@@ -391,10 +355,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
-    | '/forgot-password'
-    | '/reset-password'
-    | '/signin'
-    | '/signup'
     | '/terms'
     | '/dashboard/admin'
     | '/dashboard/guardian'
@@ -432,10 +392,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
-    | '/forgot-password'
-    | '/reset-password'
-    | '/signin'
-    | '/signup'
     | '/terms'
     | '/dashboard/student'
     | '/api/contact'
@@ -469,10 +425,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
-    | '/forgot-password'
-    | '/reset-password'
-    | '/signin'
-    | '/signup'
     | '/terms'
     | '/dashboard/admin'
     | '/dashboard/guardian'
@@ -511,10 +463,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  ForgotPasswordRoute: typeof ForgotPasswordRoute
-  ResetPasswordRoute: typeof ResetPasswordRoute
-  SigninRoute: typeof SigninRoute
-  SignupRoute: typeof SignupRoute
   TermsRoute: typeof TermsRoute
   DashboardAdminRouteRoute: typeof DashboardAdminRouteRouteWithChildren
   DashboardGuardianRouteRoute: typeof DashboardGuardianRouteRouteWithChildren
@@ -534,34 +482,6 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/signup': {
-      id: '/signup'
-      path: '/signup'
-      fullPath: '/signup'
-      preLoaderRoute: typeof SignupRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/signin': {
-      id: '/signin'
-      path: '/signin'
-      fullPath: '/signin'
-      preLoaderRoute: typeof SigninRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reset-password': {
-      id: '/reset-password'
-      path: '/reset-password'
-      fullPath: '/reset-password'
-      preLoaderRoute: typeof ResetPasswordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/forgot-password': {
-      id: '/forgot-password'
-      path: '/forgot-password'
-      fullPath: '/forgot-password'
-      preLoaderRoute: typeof ForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -929,10 +849,6 @@ const DashboardSupervisorRouteRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  ForgotPasswordRoute: ForgotPasswordRoute,
-  ResetPasswordRoute: ResetPasswordRoute,
-  SigninRoute: SigninRoute,
-  SignupRoute: SignupRoute,
   TermsRoute: TermsRoute,
   DashboardAdminRouteRoute: DashboardAdminRouteRouteWithChildren,
   DashboardGuardianRouteRoute: DashboardGuardianRouteRouteWithChildren,

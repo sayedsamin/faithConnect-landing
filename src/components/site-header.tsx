@@ -1,7 +1,6 @@
 import { Link, useRouterState } from '@tanstack/react-router'
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { AuthNav } from './auth-nav'
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -12,23 +11,7 @@ export function SiteHeader() {
   const pathname = useRouterState({
     select: (state) => state.location.pathname,
   })
-  const [hasScrolled, setHasScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const scrollThreshold = 24
-
-    function syncScrolledState() {
-      setHasScrolled(window.scrollY > scrollThreshold)
-    }
-
-    syncScrolledState()
-    window.addEventListener('scroll', syncScrolledState, { passive: true })
-
-    return () => {
-      window.removeEventListener('scroll', syncScrolledState)
-    }
-  }, [])
 
   useEffect(() => {
     setIsMenuOpen(false)
@@ -53,22 +36,8 @@ export function SiteHeader() {
   }, [isMenuOpen])
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
-      <div
-        className={[
-          'relative mx-auto flex w-full max-w-5xl items-center justify-between gap-3 border backdrop-blur-md',
-          'transition-[border-radius,box-shadow,background-color,border-color,padding,transform] duration-300 ease-out motion-reduce:transition-none',
-          hasScrolled
-            ? 'min-h-13 rounded-md px-4 py-1.5 shadow-[0_12px_26px_rgba(12,20,32,0.2)] sm:min-h-13 sm:px-5'
-            : 'min-h-14 rounded-[1.75rem] px-4 py-2 shadow-[0_18px_38px_rgba(12,20,32,0.28)] sm:min-h-14.5 sm:rounded-full sm:px-6',
-        ].join(' ')}
-        style={{
-          background:
-            'linear-gradient(135deg, color-mix(in oklab, var(--brand-navy) 96%, transparent), color-mix(in oklab, var(--brand-navy) 86%, var(--brand-gold)))',
-          borderColor:
-            'color-mix(in oklab, var(--brand-gold) 34%, transparent)',
-        }}
-      >
+    <header className="bg-white fixed w-full top-0 right-0 left-0 z-50 py-3 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex w-full max-w-5xl items-center justify-between gap-3">
         <Link
           to="/"
           aria-label="Questura home"
@@ -87,16 +56,12 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="hidden min-w-0 flex-1 items-center justify-center gap-x-4 md:flex"
+          className="hidden min-w-0 flex-1 items-center justify-end gap-x-4 md:flex"
         >
           {navItems.map((item) => (
             <HeaderLink key={item.href} item={item} pathname={pathname} />
           ))}
         </nav>
-
-        <div className="hidden shrink-0 md:block">
-          <AuthNav />
-        </div>
 
         <button
           type="button"
@@ -135,9 +100,6 @@ export function SiteHeader() {
                 />
               ))}
             </nav>
-            <div className="mt-3 border-t border-white/12 pt-3">
-              <AuthNav />
-            </div>
           </div>
         ) : null}
       </div>
@@ -162,7 +124,7 @@ function HeaderLink({ isMobile, item, onClick, pathname }: HeaderLinkProps) {
         'relative inline-flex min-h-11 shrink-0 items-center rounded-md text-sm font-bold no-underline transition-[background-color,border-color,color,transform]',
         'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/25 motion-reduce:transition-none motion-reduce:hover:translate-y-0',
         isMobile ? 'w-full px-3' : 'min-h-8',
-        "text-brand-white/78! hover:text-brand-white! aria-[aria-current='page']:text-brand-white!",
+        "text-slate-700! hover:text-slate-900! aria-[aria-current='page']:text-slate-900!",
       ].join(' ')}
       aria-current={isCurrent ? 'page' : undefined}
       onClick={onClick}
