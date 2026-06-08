@@ -14,36 +14,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
-import { Route as DashboardSupervisorRouteRouteImport } from './routes/dashboard/supervisor/route'
-import { Route as DashboardSuperadminRouteRouteImport } from './routes/dashboard/superadmin/route'
-import { Route as DashboardStudentRouteRouteImport } from './routes/dashboard/student/route'
-import { Route as DashboardGuardianRouteRouteImport } from './routes/dashboard/guardian/route'
-import { Route as DashboardAdminRouteRouteImport } from './routes/dashboard/admin/route'
-import { Route as DashboardSupervisorIndexRouteImport } from './routes/dashboard/supervisor/index'
-import { Route as DashboardSuperadminIndexRouteImport } from './routes/dashboard/superadmin/index'
-import { Route as DashboardGuardianIndexRouteImport } from './routes/dashboard/guardian/index'
-import { Route as DashboardAdminIndexRouteImport } from './routes/dashboard/admin/index'
-import { Route as DashboardSupervisorTeamsRouteImport } from './routes/dashboard/supervisor/teams'
-import { Route as DashboardSuperadminTransactionsRouteImport } from './routes/dashboard/superadmin/transactions'
-import { Route as DashboardSuperadminStaffRouteImport } from './routes/dashboard/superadmin/staff'
-import { Route as DashboardSuperadminRolesRouteImport } from './routes/dashboard/superadmin/roles'
-import { Route as DashboardSuperadminRegistrationsRouteImport } from './routes/dashboard/superadmin/registrations'
-import { Route as DashboardGuardianTransactionsRouteImport } from './routes/dashboard/guardian/transactions'
-import { Route as DashboardGuardianRegistrationsRouteImport } from './routes/dashboard/guardian/registrations'
-import { Route as DashboardAdminTransactionsRouteImport } from './routes/dashboard/admin/transactions'
-import { Route as DashboardAdminTeamsRouteImport } from './routes/dashboard/admin/teams'
-import { Route as DashboardAdminStaffRouteImport } from './routes/dashboard/admin/staff'
-import { Route as DashboardAdminRegistrationsRouteImport } from './routes/dashboard/admin/registrations'
 import { Route as ApiZeffyWebhookRouteImport } from './routes/api/zeffy/webhook'
 import { Route as ApiOpenapiJsonRouteImport } from './routes/api/openapi.json'
-import { Route as DashboardSuperadminProgramsIndexRouteImport } from './routes/dashboard/superadmin/programs.index'
-import { Route as DashboardAdminProgramsIndexRouteImport } from './routes/dashboard/admin/programs.index'
-import { Route as DashboardSuperadminProgramsNewRouteImport } from './routes/dashboard/superadmin/programs.new'
-import { Route as DashboardSuperadminProgramsProgramIdRouteImport } from './routes/dashboard/superadmin/programs.$programId'
-import { Route as DashboardAdminProgramsNewRouteImport } from './routes/dashboard/admin/programs.new'
-import { Route as DashboardAdminProgramsProgramIdRouteImport } from './routes/dashboard/admin/programs.$programId'
-import { Route as DashboardSuperadminProgramsProgramIdEditRouteImport } from './routes/dashboard/superadmin/programs.$programId.edit'
-import { Route as DashboardAdminRegistrationsSummer2026ParticipantsRouteImport } from './routes/dashboard/admin/registrations.summer2026.participants'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -70,119 +42,6 @@ const ApiContactRoute = ApiContactRouteImport.update({
   path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DashboardSupervisorRouteRoute =
-  DashboardSupervisorRouteRouteImport.update({
-    id: '/dashboard/supervisor',
-    path: '/dashboard/supervisor',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DashboardSuperadminRouteRoute =
-  DashboardSuperadminRouteRouteImport.update({
-    id: '/dashboard/superadmin',
-    path: '/dashboard/superadmin',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DashboardStudentRouteRoute = DashboardStudentRouteRouteImport.update({
-  id: '/dashboard/student',
-  path: '/dashboard/student',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardGuardianRouteRoute = DashboardGuardianRouteRouteImport.update({
-  id: '/dashboard/guardian',
-  path: '/dashboard/guardian',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardAdminRouteRoute = DashboardAdminRouteRouteImport.update({
-  id: '/dashboard/admin',
-  path: '/dashboard/admin',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardSupervisorIndexRoute =
-  DashboardSupervisorIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => DashboardSupervisorRouteRoute,
-  } as any)
-const DashboardSuperadminIndexRoute =
-  DashboardSuperadminIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => DashboardSuperadminRouteRoute,
-  } as any)
-const DashboardGuardianIndexRoute = DashboardGuardianIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => DashboardGuardianRouteRoute,
-} as any)
-const DashboardAdminIndexRoute = DashboardAdminIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => DashboardAdminRouteRoute,
-} as any)
-const DashboardSupervisorTeamsRoute =
-  DashboardSupervisorTeamsRouteImport.update({
-    id: '/teams',
-    path: '/teams',
-    getParentRoute: () => DashboardSupervisorRouteRoute,
-  } as any)
-const DashboardSuperadminTransactionsRoute =
-  DashboardSuperadminTransactionsRouteImport.update({
-    id: '/transactions',
-    path: '/transactions',
-    getParentRoute: () => DashboardSuperadminRouteRoute,
-  } as any)
-const DashboardSuperadminStaffRoute =
-  DashboardSuperadminStaffRouteImport.update({
-    id: '/staff',
-    path: '/staff',
-    getParentRoute: () => DashboardSuperadminRouteRoute,
-  } as any)
-const DashboardSuperadminRolesRoute =
-  DashboardSuperadminRolesRouteImport.update({
-    id: '/roles',
-    path: '/roles',
-    getParentRoute: () => DashboardSuperadminRouteRoute,
-  } as any)
-const DashboardSuperadminRegistrationsRoute =
-  DashboardSuperadminRegistrationsRouteImport.update({
-    id: '/registrations',
-    path: '/registrations',
-    getParentRoute: () => DashboardSuperadminRouteRoute,
-  } as any)
-const DashboardGuardianTransactionsRoute =
-  DashboardGuardianTransactionsRouteImport.update({
-    id: '/transactions',
-    path: '/transactions',
-    getParentRoute: () => DashboardGuardianRouteRoute,
-  } as any)
-const DashboardGuardianRegistrationsRoute =
-  DashboardGuardianRegistrationsRouteImport.update({
-    id: '/registrations',
-    path: '/registrations',
-    getParentRoute: () => DashboardGuardianRouteRoute,
-  } as any)
-const DashboardAdminTransactionsRoute =
-  DashboardAdminTransactionsRouteImport.update({
-    id: '/transactions',
-    path: '/transactions',
-    getParentRoute: () => DashboardAdminRouteRoute,
-  } as any)
-const DashboardAdminTeamsRoute = DashboardAdminTeamsRouteImport.update({
-  id: '/teams',
-  path: '/teams',
-  getParentRoute: () => DashboardAdminRouteRoute,
-} as any)
-const DashboardAdminStaffRoute = DashboardAdminStaffRouteImport.update({
-  id: '/staff',
-  path: '/staff',
-  getParentRoute: () => DashboardAdminRouteRoute,
-} as any)
-const DashboardAdminRegistrationsRoute =
-  DashboardAdminRegistrationsRouteImport.update({
-    id: '/registrations',
-    path: '/registrations',
-    getParentRoute: () => DashboardAdminRouteRoute,
-  } as any)
 const ApiZeffyWebhookRoute = ApiZeffyWebhookRouteImport.update({
   id: '/api/zeffy/webhook',
   path: '/api/zeffy/webhook',
@@ -193,162 +52,34 @@ const ApiOpenapiJsonRoute = ApiOpenapiJsonRouteImport.update({
   path: '/api/openapi/json',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DashboardSuperadminProgramsIndexRoute =
-  DashboardSuperadminProgramsIndexRouteImport.update({
-    id: '/programs/',
-    path: '/programs/',
-    getParentRoute: () => DashboardSuperadminRouteRoute,
-  } as any)
-const DashboardAdminProgramsIndexRoute =
-  DashboardAdminProgramsIndexRouteImport.update({
-    id: '/programs/',
-    path: '/programs/',
-    getParentRoute: () => DashboardAdminRouteRoute,
-  } as any)
-const DashboardSuperadminProgramsNewRoute =
-  DashboardSuperadminProgramsNewRouteImport.update({
-    id: '/programs/new',
-    path: '/programs/new',
-    getParentRoute: () => DashboardSuperadminRouteRoute,
-  } as any)
-const DashboardSuperadminProgramsProgramIdRoute =
-  DashboardSuperadminProgramsProgramIdRouteImport.update({
-    id: '/programs/$programId',
-    path: '/programs/$programId',
-    getParentRoute: () => DashboardSuperadminRouteRoute,
-  } as any)
-const DashboardAdminProgramsNewRoute =
-  DashboardAdminProgramsNewRouteImport.update({
-    id: '/programs/new',
-    path: '/programs/new',
-    getParentRoute: () => DashboardAdminRouteRoute,
-  } as any)
-const DashboardAdminProgramsProgramIdRoute =
-  DashboardAdminProgramsProgramIdRouteImport.update({
-    id: '/programs/$programId',
-    path: '/programs/$programId',
-    getParentRoute: () => DashboardAdminRouteRoute,
-  } as any)
-const DashboardSuperadminProgramsProgramIdEditRoute =
-  DashboardSuperadminProgramsProgramIdEditRouteImport.update({
-    id: '/edit',
-    path: '/edit',
-    getParentRoute: () => DashboardSuperadminProgramsProgramIdRoute,
-  } as any)
-const DashboardAdminRegistrationsSummer2026ParticipantsRoute =
-  DashboardAdminRegistrationsSummer2026ParticipantsRouteImport.update({
-    id: '/summer2026/participants',
-    path: '/summer2026/participants',
-    getParentRoute: () => DashboardAdminRegistrationsRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/terms': typeof TermsRoute
-  '/dashboard/admin': typeof DashboardAdminRouteRouteWithChildren
-  '/dashboard/guardian': typeof DashboardGuardianRouteRouteWithChildren
-  '/dashboard/student': typeof DashboardStudentRouteRoute
-  '/dashboard/superadmin': typeof DashboardSuperadminRouteRouteWithChildren
-  '/dashboard/supervisor': typeof DashboardSupervisorRouteRouteWithChildren
   '/api/contact': typeof ApiContactRoute
   '/api/health': typeof ApiHealthRoute
   '/api/openapi/json': typeof ApiOpenapiJsonRoute
   '/api/zeffy/webhook': typeof ApiZeffyWebhookRoute
-  '/dashboard/admin/registrations': typeof DashboardAdminRegistrationsRouteWithChildren
-  '/dashboard/admin/staff': typeof DashboardAdminStaffRoute
-  '/dashboard/admin/teams': typeof DashboardAdminTeamsRoute
-  '/dashboard/admin/transactions': typeof DashboardAdminTransactionsRoute
-  '/dashboard/guardian/registrations': typeof DashboardGuardianRegistrationsRoute
-  '/dashboard/guardian/transactions': typeof DashboardGuardianTransactionsRoute
-  '/dashboard/superadmin/registrations': typeof DashboardSuperadminRegistrationsRoute
-  '/dashboard/superadmin/roles': typeof DashboardSuperadminRolesRoute
-  '/dashboard/superadmin/staff': typeof DashboardSuperadminStaffRoute
-  '/dashboard/superadmin/transactions': typeof DashboardSuperadminTransactionsRoute
-  '/dashboard/supervisor/teams': typeof DashboardSupervisorTeamsRoute
-  '/dashboard/admin/': typeof DashboardAdminIndexRoute
-  '/dashboard/guardian/': typeof DashboardGuardianIndexRoute
-  '/dashboard/superadmin/': typeof DashboardSuperadminIndexRoute
-  '/dashboard/supervisor/': typeof DashboardSupervisorIndexRoute
-  '/dashboard/admin/programs/$programId': typeof DashboardAdminProgramsProgramIdRoute
-  '/dashboard/admin/programs/new': typeof DashboardAdminProgramsNewRoute
-  '/dashboard/superadmin/programs/$programId': typeof DashboardSuperadminProgramsProgramIdRouteWithChildren
-  '/dashboard/superadmin/programs/new': typeof DashboardSuperadminProgramsNewRoute
-  '/dashboard/admin/programs/': typeof DashboardAdminProgramsIndexRoute
-  '/dashboard/superadmin/programs/': typeof DashboardSuperadminProgramsIndexRoute
-  '/dashboard/admin/registrations/summer2026/participants': typeof DashboardAdminRegistrationsSummer2026ParticipantsRoute
-  '/dashboard/superadmin/programs/$programId/edit': typeof DashboardSuperadminProgramsProgramIdEditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/terms': typeof TermsRoute
-  '/dashboard/student': typeof DashboardStudentRouteRoute
   '/api/contact': typeof ApiContactRoute
   '/api/health': typeof ApiHealthRoute
   '/api/openapi/json': typeof ApiOpenapiJsonRoute
   '/api/zeffy/webhook': typeof ApiZeffyWebhookRoute
-  '/dashboard/admin/registrations': typeof DashboardAdminRegistrationsRouteWithChildren
-  '/dashboard/admin/staff': typeof DashboardAdminStaffRoute
-  '/dashboard/admin/teams': typeof DashboardAdminTeamsRoute
-  '/dashboard/admin/transactions': typeof DashboardAdminTransactionsRoute
-  '/dashboard/guardian/registrations': typeof DashboardGuardianRegistrationsRoute
-  '/dashboard/guardian/transactions': typeof DashboardGuardianTransactionsRoute
-  '/dashboard/superadmin/registrations': typeof DashboardSuperadminRegistrationsRoute
-  '/dashboard/superadmin/roles': typeof DashboardSuperadminRolesRoute
-  '/dashboard/superadmin/staff': typeof DashboardSuperadminStaffRoute
-  '/dashboard/superadmin/transactions': typeof DashboardSuperadminTransactionsRoute
-  '/dashboard/supervisor/teams': typeof DashboardSupervisorTeamsRoute
-  '/dashboard/admin': typeof DashboardAdminIndexRoute
-  '/dashboard/guardian': typeof DashboardGuardianIndexRoute
-  '/dashboard/superadmin': typeof DashboardSuperadminIndexRoute
-  '/dashboard/supervisor': typeof DashboardSupervisorIndexRoute
-  '/dashboard/admin/programs/$programId': typeof DashboardAdminProgramsProgramIdRoute
-  '/dashboard/admin/programs/new': typeof DashboardAdminProgramsNewRoute
-  '/dashboard/superadmin/programs/$programId': typeof DashboardSuperadminProgramsProgramIdRouteWithChildren
-  '/dashboard/superadmin/programs/new': typeof DashboardSuperadminProgramsNewRoute
-  '/dashboard/admin/programs': typeof DashboardAdminProgramsIndexRoute
-  '/dashboard/superadmin/programs': typeof DashboardSuperadminProgramsIndexRoute
-  '/dashboard/admin/registrations/summer2026/participants': typeof DashboardAdminRegistrationsSummer2026ParticipantsRoute
-  '/dashboard/superadmin/programs/$programId/edit': typeof DashboardSuperadminProgramsProgramIdEditRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/terms': typeof TermsRoute
-  '/dashboard/admin': typeof DashboardAdminRouteRouteWithChildren
-  '/dashboard/guardian': typeof DashboardGuardianRouteRouteWithChildren
-  '/dashboard/student': typeof DashboardStudentRouteRoute
-  '/dashboard/superadmin': typeof DashboardSuperadminRouteRouteWithChildren
-  '/dashboard/supervisor': typeof DashboardSupervisorRouteRouteWithChildren
   '/api/contact': typeof ApiContactRoute
   '/api/health': typeof ApiHealthRoute
   '/api/openapi/json': typeof ApiOpenapiJsonRoute
   '/api/zeffy/webhook': typeof ApiZeffyWebhookRoute
-  '/dashboard/admin/registrations': typeof DashboardAdminRegistrationsRouteWithChildren
-  '/dashboard/admin/staff': typeof DashboardAdminStaffRoute
-  '/dashboard/admin/teams': typeof DashboardAdminTeamsRoute
-  '/dashboard/admin/transactions': typeof DashboardAdminTransactionsRoute
-  '/dashboard/guardian/registrations': typeof DashboardGuardianRegistrationsRoute
-  '/dashboard/guardian/transactions': typeof DashboardGuardianTransactionsRoute
-  '/dashboard/superadmin/registrations': typeof DashboardSuperadminRegistrationsRoute
-  '/dashboard/superadmin/roles': typeof DashboardSuperadminRolesRoute
-  '/dashboard/superadmin/staff': typeof DashboardSuperadminStaffRoute
-  '/dashboard/superadmin/transactions': typeof DashboardSuperadminTransactionsRoute
-  '/dashboard/supervisor/teams': typeof DashboardSupervisorTeamsRoute
-  '/dashboard/admin/': typeof DashboardAdminIndexRoute
-  '/dashboard/guardian/': typeof DashboardGuardianIndexRoute
-  '/dashboard/superadmin/': typeof DashboardSuperadminIndexRoute
-  '/dashboard/supervisor/': typeof DashboardSupervisorIndexRoute
-  '/dashboard/admin/programs/$programId': typeof DashboardAdminProgramsProgramIdRoute
-  '/dashboard/admin/programs/new': typeof DashboardAdminProgramsNewRoute
-  '/dashboard/superadmin/programs/$programId': typeof DashboardSuperadminProgramsProgramIdRouteWithChildren
-  '/dashboard/superadmin/programs/new': typeof DashboardSuperadminProgramsNewRoute
-  '/dashboard/admin/programs/': typeof DashboardAdminProgramsIndexRoute
-  '/dashboard/superadmin/programs/': typeof DashboardSuperadminProgramsIndexRoute
-  '/dashboard/admin/registrations/summer2026/participants': typeof DashboardAdminRegistrationsSummer2026ParticipantsRoute
-  '/dashboard/superadmin/programs/$programId/edit': typeof DashboardSuperadminProgramsProgramIdEditRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -356,119 +87,34 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/terms'
-    | '/dashboard/admin'
-    | '/dashboard/guardian'
-    | '/dashboard/student'
-    | '/dashboard/superadmin'
-    | '/dashboard/supervisor'
     | '/api/contact'
     | '/api/health'
     | '/api/openapi/json'
     | '/api/zeffy/webhook'
-    | '/dashboard/admin/registrations'
-    | '/dashboard/admin/staff'
-    | '/dashboard/admin/teams'
-    | '/dashboard/admin/transactions'
-    | '/dashboard/guardian/registrations'
-    | '/dashboard/guardian/transactions'
-    | '/dashboard/superadmin/registrations'
-    | '/dashboard/superadmin/roles'
-    | '/dashboard/superadmin/staff'
-    | '/dashboard/superadmin/transactions'
-    | '/dashboard/supervisor/teams'
-    | '/dashboard/admin/'
-    | '/dashboard/guardian/'
-    | '/dashboard/superadmin/'
-    | '/dashboard/supervisor/'
-    | '/dashboard/admin/programs/$programId'
-    | '/dashboard/admin/programs/new'
-    | '/dashboard/superadmin/programs/$programId'
-    | '/dashboard/superadmin/programs/new'
-    | '/dashboard/admin/programs/'
-    | '/dashboard/superadmin/programs/'
-    | '/dashboard/admin/registrations/summer2026/participants'
-    | '/dashboard/superadmin/programs/$programId/edit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contact'
     | '/terms'
-    | '/dashboard/student'
     | '/api/contact'
     | '/api/health'
     | '/api/openapi/json'
     | '/api/zeffy/webhook'
-    | '/dashboard/admin/registrations'
-    | '/dashboard/admin/staff'
-    | '/dashboard/admin/teams'
-    | '/dashboard/admin/transactions'
-    | '/dashboard/guardian/registrations'
-    | '/dashboard/guardian/transactions'
-    | '/dashboard/superadmin/registrations'
-    | '/dashboard/superadmin/roles'
-    | '/dashboard/superadmin/staff'
-    | '/dashboard/superadmin/transactions'
-    | '/dashboard/supervisor/teams'
-    | '/dashboard/admin'
-    | '/dashboard/guardian'
-    | '/dashboard/superadmin'
-    | '/dashboard/supervisor'
-    | '/dashboard/admin/programs/$programId'
-    | '/dashboard/admin/programs/new'
-    | '/dashboard/superadmin/programs/$programId'
-    | '/dashboard/superadmin/programs/new'
-    | '/dashboard/admin/programs'
-    | '/dashboard/superadmin/programs'
-    | '/dashboard/admin/registrations/summer2026/participants'
-    | '/dashboard/superadmin/programs/$programId/edit'
   id:
     | '__root__'
     | '/'
     | '/contact'
     | '/terms'
-    | '/dashboard/admin'
-    | '/dashboard/guardian'
-    | '/dashboard/student'
-    | '/dashboard/superadmin'
-    | '/dashboard/supervisor'
     | '/api/contact'
     | '/api/health'
     | '/api/openapi/json'
     | '/api/zeffy/webhook'
-    | '/dashboard/admin/registrations'
-    | '/dashboard/admin/staff'
-    | '/dashboard/admin/teams'
-    | '/dashboard/admin/transactions'
-    | '/dashboard/guardian/registrations'
-    | '/dashboard/guardian/transactions'
-    | '/dashboard/superadmin/registrations'
-    | '/dashboard/superadmin/roles'
-    | '/dashboard/superadmin/staff'
-    | '/dashboard/superadmin/transactions'
-    | '/dashboard/supervisor/teams'
-    | '/dashboard/admin/'
-    | '/dashboard/guardian/'
-    | '/dashboard/superadmin/'
-    | '/dashboard/supervisor/'
-    | '/dashboard/admin/programs/$programId'
-    | '/dashboard/admin/programs/new'
-    | '/dashboard/superadmin/programs/$programId'
-    | '/dashboard/superadmin/programs/new'
-    | '/dashboard/admin/programs/'
-    | '/dashboard/superadmin/programs/'
-    | '/dashboard/admin/registrations/summer2026/participants'
-    | '/dashboard/superadmin/programs/$programId/edit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   TermsRoute: typeof TermsRoute
-  DashboardAdminRouteRoute: typeof DashboardAdminRouteRouteWithChildren
-  DashboardGuardianRouteRoute: typeof DashboardGuardianRouteRouteWithChildren
-  DashboardStudentRouteRoute: typeof DashboardStudentRouteRoute
-  DashboardSuperadminRouteRoute: typeof DashboardSuperadminRouteRouteWithChildren
-  DashboardSupervisorRouteRoute: typeof DashboardSupervisorRouteRouteWithChildren
   ApiContactRoute: typeof ApiContactRoute
   ApiHealthRoute: typeof ApiHealthRoute
   ApiOpenapiJsonRoute: typeof ApiOpenapiJsonRoute
@@ -512,146 +158,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/dashboard/supervisor': {
-      id: '/dashboard/supervisor'
-      path: '/dashboard/supervisor'
-      fullPath: '/dashboard/supervisor'
-      preLoaderRoute: typeof DashboardSupervisorRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/superadmin': {
-      id: '/dashboard/superadmin'
-      path: '/dashboard/superadmin'
-      fullPath: '/dashboard/superadmin'
-      preLoaderRoute: typeof DashboardSuperadminRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/student': {
-      id: '/dashboard/student'
-      path: '/dashboard/student'
-      fullPath: '/dashboard/student'
-      preLoaderRoute: typeof DashboardStudentRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/guardian': {
-      id: '/dashboard/guardian'
-      path: '/dashboard/guardian'
-      fullPath: '/dashboard/guardian'
-      preLoaderRoute: typeof DashboardGuardianRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/admin': {
-      id: '/dashboard/admin'
-      path: '/dashboard/admin'
-      fullPath: '/dashboard/admin'
-      preLoaderRoute: typeof DashboardAdminRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard/supervisor/': {
-      id: '/dashboard/supervisor/'
-      path: '/'
-      fullPath: '/dashboard/supervisor/'
-      preLoaderRoute: typeof DashboardSupervisorIndexRouteImport
-      parentRoute: typeof DashboardSupervisorRouteRoute
-    }
-    '/dashboard/superadmin/': {
-      id: '/dashboard/superadmin/'
-      path: '/'
-      fullPath: '/dashboard/superadmin/'
-      preLoaderRoute: typeof DashboardSuperadminIndexRouteImport
-      parentRoute: typeof DashboardSuperadminRouteRoute
-    }
-    '/dashboard/guardian/': {
-      id: '/dashboard/guardian/'
-      path: '/'
-      fullPath: '/dashboard/guardian/'
-      preLoaderRoute: typeof DashboardGuardianIndexRouteImport
-      parentRoute: typeof DashboardGuardianRouteRoute
-    }
-    '/dashboard/admin/': {
-      id: '/dashboard/admin/'
-      path: '/'
-      fullPath: '/dashboard/admin/'
-      preLoaderRoute: typeof DashboardAdminIndexRouteImport
-      parentRoute: typeof DashboardAdminRouteRoute
-    }
-    '/dashboard/supervisor/teams': {
-      id: '/dashboard/supervisor/teams'
-      path: '/teams'
-      fullPath: '/dashboard/supervisor/teams'
-      preLoaderRoute: typeof DashboardSupervisorTeamsRouteImport
-      parentRoute: typeof DashboardSupervisorRouteRoute
-    }
-    '/dashboard/superadmin/transactions': {
-      id: '/dashboard/superadmin/transactions'
-      path: '/transactions'
-      fullPath: '/dashboard/superadmin/transactions'
-      preLoaderRoute: typeof DashboardSuperadminTransactionsRouteImport
-      parentRoute: typeof DashboardSuperadminRouteRoute
-    }
-    '/dashboard/superadmin/staff': {
-      id: '/dashboard/superadmin/staff'
-      path: '/staff'
-      fullPath: '/dashboard/superadmin/staff'
-      preLoaderRoute: typeof DashboardSuperadminStaffRouteImport
-      parentRoute: typeof DashboardSuperadminRouteRoute
-    }
-    '/dashboard/superadmin/roles': {
-      id: '/dashboard/superadmin/roles'
-      path: '/roles'
-      fullPath: '/dashboard/superadmin/roles'
-      preLoaderRoute: typeof DashboardSuperadminRolesRouteImport
-      parentRoute: typeof DashboardSuperadminRouteRoute
-    }
-    '/dashboard/superadmin/registrations': {
-      id: '/dashboard/superadmin/registrations'
-      path: '/registrations'
-      fullPath: '/dashboard/superadmin/registrations'
-      preLoaderRoute: typeof DashboardSuperadminRegistrationsRouteImport
-      parentRoute: typeof DashboardSuperadminRouteRoute
-    }
-    '/dashboard/guardian/transactions': {
-      id: '/dashboard/guardian/transactions'
-      path: '/transactions'
-      fullPath: '/dashboard/guardian/transactions'
-      preLoaderRoute: typeof DashboardGuardianTransactionsRouteImport
-      parentRoute: typeof DashboardGuardianRouteRoute
-    }
-    '/dashboard/guardian/registrations': {
-      id: '/dashboard/guardian/registrations'
-      path: '/registrations'
-      fullPath: '/dashboard/guardian/registrations'
-      preLoaderRoute: typeof DashboardGuardianRegistrationsRouteImport
-      parentRoute: typeof DashboardGuardianRouteRoute
-    }
-    '/dashboard/admin/transactions': {
-      id: '/dashboard/admin/transactions'
-      path: '/transactions'
-      fullPath: '/dashboard/admin/transactions'
-      preLoaderRoute: typeof DashboardAdminTransactionsRouteImport
-      parentRoute: typeof DashboardAdminRouteRoute
-    }
-    '/dashboard/admin/teams': {
-      id: '/dashboard/admin/teams'
-      path: '/teams'
-      fullPath: '/dashboard/admin/teams'
-      preLoaderRoute: typeof DashboardAdminTeamsRouteImport
-      parentRoute: typeof DashboardAdminRouteRoute
-    }
-    '/dashboard/admin/staff': {
-      id: '/dashboard/admin/staff'
-      path: '/staff'
-      fullPath: '/dashboard/admin/staff'
-      preLoaderRoute: typeof DashboardAdminStaffRouteImport
-      parentRoute: typeof DashboardAdminRouteRoute
-    }
-    '/dashboard/admin/registrations': {
-      id: '/dashboard/admin/registrations'
-      path: '/registrations'
-      fullPath: '/dashboard/admin/registrations'
-      preLoaderRoute: typeof DashboardAdminRegistrationsRouteImport
-      parentRoute: typeof DashboardAdminRouteRoute
-    }
     '/api/zeffy/webhook': {
       id: '/api/zeffy/webhook'
       path: '/api/zeffy/webhook'
@@ -666,195 +172,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOpenapiJsonRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/dashboard/superadmin/programs/': {
-      id: '/dashboard/superadmin/programs/'
-      path: '/programs'
-      fullPath: '/dashboard/superadmin/programs/'
-      preLoaderRoute: typeof DashboardSuperadminProgramsIndexRouteImport
-      parentRoute: typeof DashboardSuperadminRouteRoute
-    }
-    '/dashboard/admin/programs/': {
-      id: '/dashboard/admin/programs/'
-      path: '/programs'
-      fullPath: '/dashboard/admin/programs/'
-      preLoaderRoute: typeof DashboardAdminProgramsIndexRouteImport
-      parentRoute: typeof DashboardAdminRouteRoute
-    }
-    '/dashboard/superadmin/programs/new': {
-      id: '/dashboard/superadmin/programs/new'
-      path: '/programs/new'
-      fullPath: '/dashboard/superadmin/programs/new'
-      preLoaderRoute: typeof DashboardSuperadminProgramsNewRouteImport
-      parentRoute: typeof DashboardSuperadminRouteRoute
-    }
-    '/dashboard/superadmin/programs/$programId': {
-      id: '/dashboard/superadmin/programs/$programId'
-      path: '/programs/$programId'
-      fullPath: '/dashboard/superadmin/programs/$programId'
-      preLoaderRoute: typeof DashboardSuperadminProgramsProgramIdRouteImport
-      parentRoute: typeof DashboardSuperadminRouteRoute
-    }
-    '/dashboard/admin/programs/new': {
-      id: '/dashboard/admin/programs/new'
-      path: '/programs/new'
-      fullPath: '/dashboard/admin/programs/new'
-      preLoaderRoute: typeof DashboardAdminProgramsNewRouteImport
-      parentRoute: typeof DashboardAdminRouteRoute
-    }
-    '/dashboard/admin/programs/$programId': {
-      id: '/dashboard/admin/programs/$programId'
-      path: '/programs/$programId'
-      fullPath: '/dashboard/admin/programs/$programId'
-      preLoaderRoute: typeof DashboardAdminProgramsProgramIdRouteImport
-      parentRoute: typeof DashboardAdminRouteRoute
-    }
-    '/dashboard/superadmin/programs/$programId/edit': {
-      id: '/dashboard/superadmin/programs/$programId/edit'
-      path: '/edit'
-      fullPath: '/dashboard/superadmin/programs/$programId/edit'
-      preLoaderRoute: typeof DashboardSuperadminProgramsProgramIdEditRouteImport
-      parentRoute: typeof DashboardSuperadminProgramsProgramIdRoute
-    }
-    '/dashboard/admin/registrations/summer2026/participants': {
-      id: '/dashboard/admin/registrations/summer2026/participants'
-      path: '/summer2026/participants'
-      fullPath: '/dashboard/admin/registrations/summer2026/participants'
-      preLoaderRoute: typeof DashboardAdminRegistrationsSummer2026ParticipantsRouteImport
-      parentRoute: typeof DashboardAdminRegistrationsRoute
-    }
   }
 }
-
-interface DashboardAdminRegistrationsRouteChildren {
-  DashboardAdminRegistrationsSummer2026ParticipantsRoute: typeof DashboardAdminRegistrationsSummer2026ParticipantsRoute
-}
-
-const DashboardAdminRegistrationsRouteChildren: DashboardAdminRegistrationsRouteChildren =
-  {
-    DashboardAdminRegistrationsSummer2026ParticipantsRoute:
-      DashboardAdminRegistrationsSummer2026ParticipantsRoute,
-  }
-
-const DashboardAdminRegistrationsRouteWithChildren =
-  DashboardAdminRegistrationsRoute._addFileChildren(
-    DashboardAdminRegistrationsRouteChildren,
-  )
-
-interface DashboardAdminRouteRouteChildren {
-  DashboardAdminRegistrationsRoute: typeof DashboardAdminRegistrationsRouteWithChildren
-  DashboardAdminStaffRoute: typeof DashboardAdminStaffRoute
-  DashboardAdminTeamsRoute: typeof DashboardAdminTeamsRoute
-  DashboardAdminTransactionsRoute: typeof DashboardAdminTransactionsRoute
-  DashboardAdminIndexRoute: typeof DashboardAdminIndexRoute
-  DashboardAdminProgramsProgramIdRoute: typeof DashboardAdminProgramsProgramIdRoute
-  DashboardAdminProgramsNewRoute: typeof DashboardAdminProgramsNewRoute
-  DashboardAdminProgramsIndexRoute: typeof DashboardAdminProgramsIndexRoute
-}
-
-const DashboardAdminRouteRouteChildren: DashboardAdminRouteRouteChildren = {
-  DashboardAdminRegistrationsRoute:
-    DashboardAdminRegistrationsRouteWithChildren,
-  DashboardAdminStaffRoute: DashboardAdminStaffRoute,
-  DashboardAdminTeamsRoute: DashboardAdminTeamsRoute,
-  DashboardAdminTransactionsRoute: DashboardAdminTransactionsRoute,
-  DashboardAdminIndexRoute: DashboardAdminIndexRoute,
-  DashboardAdminProgramsProgramIdRoute: DashboardAdminProgramsProgramIdRoute,
-  DashboardAdminProgramsNewRoute: DashboardAdminProgramsNewRoute,
-  DashboardAdminProgramsIndexRoute: DashboardAdminProgramsIndexRoute,
-}
-
-const DashboardAdminRouteRouteWithChildren =
-  DashboardAdminRouteRoute._addFileChildren(DashboardAdminRouteRouteChildren)
-
-interface DashboardGuardianRouteRouteChildren {
-  DashboardGuardianRegistrationsRoute: typeof DashboardGuardianRegistrationsRoute
-  DashboardGuardianTransactionsRoute: typeof DashboardGuardianTransactionsRoute
-  DashboardGuardianIndexRoute: typeof DashboardGuardianIndexRoute
-}
-
-const DashboardGuardianRouteRouteChildren: DashboardGuardianRouteRouteChildren =
-  {
-    DashboardGuardianRegistrationsRoute: DashboardGuardianRegistrationsRoute,
-    DashboardGuardianTransactionsRoute: DashboardGuardianTransactionsRoute,
-    DashboardGuardianIndexRoute: DashboardGuardianIndexRoute,
-  }
-
-const DashboardGuardianRouteRouteWithChildren =
-  DashboardGuardianRouteRoute._addFileChildren(
-    DashboardGuardianRouteRouteChildren,
-  )
-
-interface DashboardSuperadminProgramsProgramIdRouteChildren {
-  DashboardSuperadminProgramsProgramIdEditRoute: typeof DashboardSuperadminProgramsProgramIdEditRoute
-}
-
-const DashboardSuperadminProgramsProgramIdRouteChildren: DashboardSuperadminProgramsProgramIdRouteChildren =
-  {
-    DashboardSuperadminProgramsProgramIdEditRoute:
-      DashboardSuperadminProgramsProgramIdEditRoute,
-  }
-
-const DashboardSuperadminProgramsProgramIdRouteWithChildren =
-  DashboardSuperadminProgramsProgramIdRoute._addFileChildren(
-    DashboardSuperadminProgramsProgramIdRouteChildren,
-  )
-
-interface DashboardSuperadminRouteRouteChildren {
-  DashboardSuperadminRegistrationsRoute: typeof DashboardSuperadminRegistrationsRoute
-  DashboardSuperadminRolesRoute: typeof DashboardSuperadminRolesRoute
-  DashboardSuperadminStaffRoute: typeof DashboardSuperadminStaffRoute
-  DashboardSuperadminTransactionsRoute: typeof DashboardSuperadminTransactionsRoute
-  DashboardSuperadminIndexRoute: typeof DashboardSuperadminIndexRoute
-  DashboardSuperadminProgramsProgramIdRoute: typeof DashboardSuperadminProgramsProgramIdRouteWithChildren
-  DashboardSuperadminProgramsNewRoute: typeof DashboardSuperadminProgramsNewRoute
-  DashboardSuperadminProgramsIndexRoute: typeof DashboardSuperadminProgramsIndexRoute
-}
-
-const DashboardSuperadminRouteRouteChildren: DashboardSuperadminRouteRouteChildren =
-  {
-    DashboardSuperadminRegistrationsRoute:
-      DashboardSuperadminRegistrationsRoute,
-    DashboardSuperadminRolesRoute: DashboardSuperadminRolesRoute,
-    DashboardSuperadminStaffRoute: DashboardSuperadminStaffRoute,
-    DashboardSuperadminTransactionsRoute: DashboardSuperadminTransactionsRoute,
-    DashboardSuperadminIndexRoute: DashboardSuperadminIndexRoute,
-    DashboardSuperadminProgramsProgramIdRoute:
-      DashboardSuperadminProgramsProgramIdRouteWithChildren,
-    DashboardSuperadminProgramsNewRoute: DashboardSuperadminProgramsNewRoute,
-    DashboardSuperadminProgramsIndexRoute:
-      DashboardSuperadminProgramsIndexRoute,
-  }
-
-const DashboardSuperadminRouteRouteWithChildren =
-  DashboardSuperadminRouteRoute._addFileChildren(
-    DashboardSuperadminRouteRouteChildren,
-  )
-
-interface DashboardSupervisorRouteRouteChildren {
-  DashboardSupervisorTeamsRoute: typeof DashboardSupervisorTeamsRoute
-  DashboardSupervisorIndexRoute: typeof DashboardSupervisorIndexRoute
-}
-
-const DashboardSupervisorRouteRouteChildren: DashboardSupervisorRouteRouteChildren =
-  {
-    DashboardSupervisorTeamsRoute: DashboardSupervisorTeamsRoute,
-    DashboardSupervisorIndexRoute: DashboardSupervisorIndexRoute,
-  }
-
-const DashboardSupervisorRouteRouteWithChildren =
-  DashboardSupervisorRouteRoute._addFileChildren(
-    DashboardSupervisorRouteRouteChildren,
-  )
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   TermsRoute: TermsRoute,
-  DashboardAdminRouteRoute: DashboardAdminRouteRouteWithChildren,
-  DashboardGuardianRouteRoute: DashboardGuardianRouteRouteWithChildren,
-  DashboardStudentRouteRoute: DashboardStudentRouteRoute,
-  DashboardSuperadminRouteRoute: DashboardSuperadminRouteRouteWithChildren,
-  DashboardSupervisorRouteRoute: DashboardSupervisorRouteRouteWithChildren,
   ApiContactRoute: ApiContactRoute,
   ApiHealthRoute: ApiHealthRoute,
   ApiOpenapiJsonRoute: ApiOpenapiJsonRoute,
