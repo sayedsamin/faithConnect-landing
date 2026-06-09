@@ -7,7 +7,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="site-footer relative mt-20 overflow-hidden rounded-t-[3rem] px-4 pt-16 pb-8 text-brand-white sm:px-6 lg:px-8">
+    <footer className="site-footer relative overflow-hidden px-4 pt-16 pb-8 text-brand-white sm:px-6 lg:px-8">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
         style={{
