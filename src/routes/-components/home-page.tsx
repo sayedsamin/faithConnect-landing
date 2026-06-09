@@ -39,28 +39,40 @@ export function HomePage() {
               {/* Stats removed from here and placed below to span full hero width */}
             </div>
 
-            {/* Right Image
+            {/* Right Image */}
             <div className="hidden lg:flex justify-center items-center">
-              <div className="relative w-full max-w-md">
+              <div className="relative w-full max-w-[34rem]">
                 <img
                   src="/images/home/hero-main.avif"
-                  alt="FaithConnect Dashboard and Mobile App"
-                  className="w-full h-auto"
+                  alt="FaithConnect dashboard and mobile app preview"
+                  className="w-full h-auto object-cover shadow-[0_30px_80px_rgba(15,23,42,0.12)]"
+                  style={{
+                    maskImage:
+                      'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.2) 12%, rgba(0,0,0,0.75) 38%, rgba(0,0,0,1) 100%)',
+                    WebkitMaskImage:
+                      'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.2) 12%, rgba(0,0,0,0.75) 38%, rgba(0,0,0,1) 100%)',
+                  }}
                 />
               </div>
-            </div>*/}
+            </div>
           </div>
 
-          {/* Mobile Image - shown below on smaller screens}
+          {/* Mobile Image - shown below on smaller screens */}
           <div className="lg:hidden mt-12 flex justify-center">
             <div className="relative w-full max-w-md">
               <img
                 src="/images/home/hero-main.avif"
-                alt="FaithConnect Dashboard and Mobile App"
-                className="w-full h-auto"
+                alt="FaithConnect dashboard and mobile app preview"
+                className="w-full h-auto rounded-[1.75rem] object-cover shadow-[0_30px_80px_rgba(15,23,42,0.12)]"
+                style={{
+                  maskImage:
+                    'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.2) 12%, rgba(0,0,0,0.75) 38%, rgba(0,0,0,1) 100%)',
+                  WebkitMaskImage:
+                    'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.2) 12%, rgba(0,0,0,0.75) 38%, rgba(0,0,0,1) 100%)',
+                }}
               />
             </div>
-          </div>*/}
+          </div>
 
           <StatsCards />
         </div>
