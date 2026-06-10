@@ -61,13 +61,13 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="hidden min-w-0 flex-1 items-center justify-center gap-x-6 md:flex"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-x-4 md:flex"
         >
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-brand-dark hover:text-brand-blue transition-colors"
+              className="text-sm font-bold text-brand-dark py-2 px-4 rounded-xl transition-colors"
             >
               {item.label}
             </a>
