@@ -1,6 +1,7 @@
-import { ArrowRight, Users } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { StatsCards } from '#/routes/-components/stats-cards'
 import { BottomPrompt } from '#/routes/-components/bottom-prompt'
+import { BenefitsCard } from '#/routes/-components/benefits-card'
 
 export function HomePage() {
   return (
@@ -14,10 +15,10 @@ export function HomePage() {
         </div>
 
         <div className="mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center my-24">
             {/* Left Content */}
             <div className="flex flex-col justify-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark leading-16 mb-6">
                 All-in-one church management for{' '}
                 <span className="text-brand-blue">modern ministries</span>
               </h1>
@@ -56,24 +57,7 @@ export function HomePage() {
             </div>
           </div>
 
-          <div>
-            <p className="font-bold text-gray-900 text-2xl mb-2">
-              Everything your church needs in one secure platform.
-            </p>
-
-            <div className="w-1/5 p-3 bg-brand-white rounded-xl aspect-square">
-              <div className="w-1/5 mb-2 bg-brand-blue rounded-full aspect-square grid grid-cols-1 items-center justify-items-center">
-                <Users className="w-5 h-5 text-brand-white" />
-              </div>
-              <p className="text-2xl font-bold">Membership Management</p>
-              <p className="text-sm">
-                Manage member profiles, groups, attendance, and engagement in
-                one place. A powerful CRM for churches to build stronger
-                relationships with their members.
-              </p>
-            </div>
-          </div>
-
+          <BenefitsCard />
           <StatsCards />
           <BottomPrompt />
         </div>
