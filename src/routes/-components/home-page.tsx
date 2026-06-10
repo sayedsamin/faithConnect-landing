@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Users } from 'lucide-react'
 import { StatsCards } from '#/routes/-components/stats-cards'
 import { BottomPrompt } from '#/routes/-components/bottom-prompt'
 
@@ -53,6 +53,24 @@ export function HomePage() {
                   }}
                 />
               </div>
+            </div>
+          </div>
+
+          <div>
+            <p className="font-bold text-gray-900 text-2xl mb-2">
+              Everything your church needs in one secure platform.
+            </p>
+
+            <div className="w-1/5 p-3 bg-brand-white rounded-xl aspect-square">
+              <div className="w-1/5 mb-2 bg-brand-blue rounded-full aspect-square grid grid-cols-1 items-center justify-items-center">
+                <Users className="w-5 h-5 text-brand-white" />
+              </div>
+              <p className="text-2xl font-bold">Membership Management</p>
+              <p className="text-sm">
+                Manage member profiles, groups, attendance, and engagement in
+                one place. A powerful CRM for churches to build stronger
+                relationships with their members.
+              </p>
             </div>
           </div>
 
