@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { StatsCards } from '#/routes/-components/stats-cards'
+import { BottomPrompt } from '#/routes/-components/bottom-prompt'
 
 export function HomePage() {
   return (
@@ -13,7 +14,7 @@ export function HomePage() {
         </div>
 
         <div className="mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center ">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="flex flex-col justify-center">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark leading-tight mb-6">
@@ -35,15 +36,13 @@ export function HomePage() {
                   Request Demo
                 </button>
               </div>
-
-              {/* Stats removed from here and placed below to span full hero width */}
             </div>
 
             {/* Right Image */}
-            <div className="hidden lg:flex justify-center items-center">
+            <div className="hidden lg:flex justify-end items-center">
               <div className="relative w-full max-w-[34rem]">
                 <img
-                  src="/images/home/hero-main.avif"
+                  src="/images/home/about-vision.avif"
                   alt="FaithConnect dashboard and mobile app preview"
                   className="w-full h-auto object-cover shadow-[0_30px_80px_rgba(15,23,42,0.12)]"
                   style={{
@@ -57,24 +56,8 @@ export function HomePage() {
             </div>
           </div>
 
-          {/* Mobile Image - shown below on smaller screens */}
-          <div className="lg:hidden mt-12 flex justify-center">
-            <div className="relative w-full max-w-md">
-              <img
-                src="/images/home/hero-main.avif"
-                alt="FaithConnect dashboard and mobile app preview"
-                className="w-full h-auto rounded-[1.75rem] object-cover shadow-[0_30px_80px_rgba(15,23,42,0.12)]"
-                style={{
-                  maskImage:
-                    'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.2) 12%, rgba(0,0,0,0.75) 38%, rgba(0,0,0,1) 100%)',
-                  WebkitMaskImage:
-                    'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.2) 12%, rgba(0,0,0,0.75) 38%, rgba(0,0,0,1) 100%)',
-                }}
-              />
-            </div>
-          </div>
-
           <StatsCards />
+          <BottomPrompt />
         </div>
       </section>
     </div>
