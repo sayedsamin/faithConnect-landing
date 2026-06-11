@@ -21,7 +21,7 @@ export function HomePage() {
         />
 
         <div className="z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mt-28 mb-50">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mt-28 mb-20 sm:mb-40">
             {/* Left Content */}
             <div className="z-20 flex flex-col justify-center">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-white leading-16 mb-6">

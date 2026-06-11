@@ -68,7 +68,7 @@ export function BenefitsCard() {
         Everything your church needs in one secure platform.
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
         {benefitItems.map((item) => (
           <div className="p-5 bg-brand-white rounded-xl aspect-square">
             <div
