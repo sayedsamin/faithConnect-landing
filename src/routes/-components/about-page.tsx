@@ -52,6 +52,15 @@ const metricChips = [
   },
 ]
 
+const iconColorClasses = [
+  'bg-blue-100 text-blue-600',
+  'bg-purple-100 text-purple-600',
+  'bg-amber-100 text-amber-600',
+  'bg-green-100 text-green-600',
+  'bg-rose-100 text-rose-600',
+  'bg-cyan-100 text-cyan-600',
+] as const
+
 const valueCards = [
   {
     icon: HeartHandshake,
@@ -354,12 +363,14 @@ function AboutMetricChips() {
       className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
       aria-label="FaithConnect platform highlights"
     >
-      {metricChips.map(({ icon: Icon, label, value }) => (
+      {metricChips.map(({ icon: Icon, label, value }, index) => (
         <div
           key={label}
           className="flex min-h-16 items-center gap-3 rounded-md border border-border bg-background px-4 py-3 shadow-sm"
         >
-          <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-md bg-brand-blue/10 text-brand-blue">
+          <span
+            className={`inline-flex size-9 shrink-0 items-center justify-center rounded-md ${iconColorClasses[index % iconColorClasses.length]}`}
+          >
             <Icon aria-hidden="true" className="size-5" />
           </span>
           <span className="min-w-0">
@@ -407,12 +418,14 @@ function AboutValues() {
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
-        {coreValues.map(({ icon: Icon, title, description }) => (
+        {coreValues.map(({ icon: Icon, title, description }, index) => (
           <article
             key={title}
             className="rounded-lg border border-border bg-background p-4 shadow-sm"
           >
-            <span className="inline-flex size-9 items-center justify-center rounded-md bg-brand-blue/10 text-brand-blue">
+            <span
+              className={`inline-flex size-9 items-center justify-center rounded-md ${iconColorClasses[index % iconColorClasses.length]}`}
+            >
               <Icon aria-hidden="true" className="size-5" />
             </span>
             <h3 className="mt-3 text-sm font-extrabold text-foreground">
@@ -451,12 +464,14 @@ function AboutFeatures() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-        {featureCards.map(({ icon: Icon, title, description }) => (
+        {featureCards.map(({ icon: Icon, title, description }, index) => (
           <article
             key={title}
             className="flex min-h-36 flex-col rounded-lg border border-border bg-background p-4 shadow-sm"
           >
-            <span className="inline-flex size-9 items-center justify-center rounded-md bg-brand-blue/10 text-brand-blue">
+            <span
+              className={`inline-flex size-9 items-center justify-center rounded-md ${iconColorClasses[index % iconColorClasses.length]}`}
+            >
               <Icon aria-hidden="true" className="size-5" />
             </span>
             <h3 className="mt-3 text-sm font-extrabold text-foreground">
@@ -489,12 +504,14 @@ function AboutBenefits() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        {benefitCards.map(({ icon: Icon, title, description }) => (
+        {benefitCards.map(({ icon: Icon, title, description }, index) => (
           <article
             key={title}
             className="flex min-h-52 flex-col rounded-lg border border-border bg-background p-5 shadow-sm"
           >
-            <span className="inline-flex size-11 items-center justify-center rounded-md bg-brand-blue/10 text-brand-blue">
+            <span
+              className={`inline-flex size-11 items-center justify-center rounded-md ${iconColorClasses[index % iconColorClasses.length]}`}
+            >
               <Icon aria-hidden="true" className="size-5" />
             </span>
             <h3 className="mt-4 text-lg font-extrabold text-foreground">
@@ -535,7 +552,9 @@ function AboutExperience() {
             className="relative overflow-hidden rounded-lg border border-border bg-background p-5 shadow-sm"
           >
             <div className="flex items-start gap-4">
-              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-brand-blue/10 text-brand-blue">
+              <span
+                className={`inline-flex size-11 shrink-0 items-center justify-center rounded-md ${iconColorClasses[index % iconColorClasses.length]}`}
+              >
                 <Icon aria-hidden="true" className="size-5" />
               </span>
               <div className="min-w-0">
@@ -583,12 +602,14 @@ function AboutTrust() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {trustCards.map(({ icon: Icon, title, description }) => (
+        {trustCards.map(({ icon: Icon, title, description }, index) => (
           <article
             key={title}
             className="flex min-h-36 items-start gap-4 rounded-lg border border-border bg-background p-4 shadow-sm"
           >
-            <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-md bg-brand-blue/10 text-brand-blue">
+            <span
+              className={`inline-flex size-10 shrink-0 items-center justify-center rounded-md ${iconColorClasses[index % iconColorClasses.length]}`}
+            >
               <Icon aria-hidden="true" className="size-5" />
             </span>
             <div className="min-w-0">
@@ -623,12 +644,14 @@ function AboutStats() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-        {statCards.map(({ icon: Icon, value, label, description }) => (
+        {statCards.map(({ icon: Icon, value, label, description }, index) => (
           <article
             key={label}
             className="rounded-lg border border-border bg-background p-4 shadow-sm"
           >
-            <span className="inline-flex size-10 items-center justify-center rounded-md bg-brand-blue/10 text-brand-blue">
+            <span
+              className={`inline-flex size-10 items-center justify-center rounded-md ${iconColorClasses[index % iconColorClasses.length]}`}
+            >
               <Icon aria-hidden="true" className="size-5" />
             </span>
             <p className="mt-4 text-2xl font-extrabold tabular-nums text-foreground">
