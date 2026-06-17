@@ -12,16 +12,16 @@ import {
   Lock,
   Megaphone,
   MessageCircle,
-  Monitor,
   Phone,
   QrCode,
   Shield,
   ShieldCheck,
-  Smartphone,
   Sparkles,
   Users,
 } from 'lucide-react'
 import type { ComponentProps, ComponentType, ReactNode } from 'react'
+
+import { CtaBanner } from '#/components/cta-banner'
 
 const trustedChurches = [
   'Grace Church',
@@ -1507,6 +1507,8 @@ export function HomePage() {
           ))}
         </div>
       </section>
+
+      <CtaBanner />
     </main>
   )
 }
