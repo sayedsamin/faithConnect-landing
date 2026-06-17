@@ -128,12 +128,8 @@ function SectionKicker({
   )
 }
 
-function GradientWord({ children }: { children: ReactNode }) {
-  return (
-    <span className="bg-linear-to-r from-brand-blue to-[#7557ff] bg-clip-text text-transparent">
-      {children}
-    </span>
-  )
+function BrandWord({ children }: { children: ReactNode }) {
+  return <span className="text-brand-blue">{children}</span>
 }
 
 function IconTile({
@@ -1200,7 +1196,7 @@ export function HomePage() {
             </p>
             <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.02] tracking-normal text-brand-dark sm:text-6xl lg:text-7xl">
               All-in-one church management for{' '}
-              <GradientWord>modern ministries</GradientWord>
+              <BrandWord>modern ministries</BrandWord>
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-brand-dark/70">
               FaithConnect helps churches manage members, giving, events,
@@ -1275,7 +1271,7 @@ export function HomePage() {
             <SectionKicker icon={Sparkles}>Trusted Platform</SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               One platform. Every church account{' '}
-              <GradientWord>fully organized.</GradientWord>
+              <BrandWord>fully organized.</BrandWord>
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-brand-dark/66">
               FaithConnect allows multiple church organizations to subscribe,
@@ -1309,8 +1305,7 @@ export function HomePage() {
           <div>
             <SectionKicker icon={Monitor}>Web App</SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
-              Powerful tools for{' '}
-              <GradientWord>church administrators.</GradientWord>
+              Powerful tools for <BrandWord>church administrators.</BrandWord>
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-dark/66">
               The FaithConnect web app gives church leaders and administrators a
@@ -1333,7 +1328,7 @@ export function HomePage() {
             <SectionKicker icon={Smartphone}>Mobile App</SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               A connected church experience in{' '}
-              <GradientWord>every member&apos;s pocket.</GradientWord>
+              <BrandWord>every member&apos;s pocket.</BrandWord>
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-dark/66">
               The FaithConnect mobile app gives users convenient access to
@@ -1385,7 +1380,7 @@ export function HomePage() {
         <div className="mx-auto max-w-7xl text-center">
           <SectionKicker icon={Sparkles}>Product Workflow</SectionKicker>
           <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
-            From first visit to <GradientWord>full engagement.</GradientWord>
+            From first visit to <BrandWord>full engagement.</BrandWord>
           </h2>
           <p className="mt-4 text-lg text-brand-dark/66">
             FaithConnect supports the complete journey of church engagement.
@@ -1510,7 +1505,7 @@ export function HomePage() {
             </SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Clear insights for better ministry{' '}
-              <GradientWord>decisions.</GradientWord>
+              <BrandWord>decisions.</BrandWord>
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-dark/66">
               FaithConnect converts church activity into simple, useful reports.
@@ -1548,8 +1543,7 @@ export function HomePage() {
           <div>
             <SectionKicker icon={ShieldCheck}>Security & Trust</SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
-              Secure, private, and organized by{' '}
-              <GradientWord>design.</GradientWord>
+              Secure, private, and organized by <BrandWord>design.</BrandWord>
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-dark/66">
               FaithConnect is designed to protect sensitive church, member,
