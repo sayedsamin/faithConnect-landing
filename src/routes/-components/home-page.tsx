@@ -113,21 +113,6 @@ function UserIcon(props: ComponentProps<typeof Users>) {
   return <Users {...props} />
 }
 
-function SectionKicker({
-  icon: Icon,
-  children,
-}: {
-  icon: ComponentType<{ className?: string }>
-  children: ReactNode
-}) {
-  return (
-    <p className="mb-5 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.14em] text-brand-blue">
-      <Icon className="size-5" aria-hidden="true" />
-      {children}
-    </p>
-  )
-}
-
 function BrandWord({ children }: { children: ReactNode }) {
   return <span className="text-brand-blue">{children}</span>
 }
@@ -664,19 +649,14 @@ function OrganizationMockup() {
 }
 
 function MobileAppShowcase() {
-  const screens = [
-    <MemberPhone key="member" />,
-    <GivePhone key="give" />,
-    <EventsPhone key="events" />,
-    <VolunteerPhone key="volunteer" />,
-  ]
+  const screens = [<GivePhone key="give" />, <EventsPhone key="events" />]
 
   return (
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+    <div className="mx-auto grid w-full max-w-[720px] grid-cols-1 items-center justify-items-center gap-8 sm:grid-cols-2 sm:gap-x-4 lg:max-w-[780px] xl:gap-x-5">
       {screens.map((screen, index) => (
         <div
           key={index}
-          className={index % 2 === 0 ? 'xl:translate-y-4' : 'xl:-translate-y-4'}
+          className={`w-full ${index === 0 ? 'xl:-translate-y-5' : 'xl:translate-y-5'}`}
         >
           {screen}
         </div>
@@ -687,42 +667,12 @@ function MobileAppShowcase() {
 
 function PhoneShell({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto w-full max-w-[225px] rounded-[2rem] border-[7px] border-brand-dark bg-brand-dark shadow-[0_26px_54px_rgb(0_14_53/0.2)]">
-      <div className="relative min-h-[430px] overflow-hidden rounded-[1.45rem] bg-white">
-        <span className="absolute left-1/2 top-2 z-10 h-5 w-20 -translate-x-1/2 rounded-full bg-brand-dark" />
+    <div className="mx-auto w-full max-w-[280px] rounded-[2.15rem] border-[8px] border-brand-dark bg-brand-dark shadow-[0_30px_64px_rgb(0_14_53/0.22)] sm:max-w-[330px] lg:max-w-[350px]">
+      <div className="relative min-h-[505px] overflow-hidden rounded-[1.55rem] bg-white sm:min-h-[545px]">
+        <span className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-brand-dark" />
         {children}
       </div>
     </div>
-  )
-}
-
-function MemberPhone() {
-  return (
-    <PhoneShell>
-      <div className="p-4 pt-8">
-        <div className="mb-4 flex items-center justify-between">
-          <Sparkles className="size-5 text-brand-blue" aria-hidden="true" />
-          <span className="size-8 rounded-full bg-brand-blue/20" />
-        </div>
-        <p className="text-xs text-brand-dark/58">Good morning,</p>
-        <h3 className="text-lg font-extrabold text-brand-dark">Grace</h3>
-        <div className="mt-3 rounded-lg bg-brand-blue p-4 text-white">
-          <p className="text-xs font-extrabold">Today&apos;s Verse</p>
-          <p className="mt-2 text-xs leading-5 text-white/82">
-            For where two or three gather in my name, there am I with them.
-          </p>
-          <p className="mt-2 text-[0.62rem] text-white/64">Matthew 18:20</p>
-        </div>
-        <PhoneList
-          title="Announcements"
-          items={[
-            'New sermon series',
-            'Volunteer appreciation',
-            'Sign-ups are open',
-          ]}
-        />
-      </div>
-    </PhoneShell>
   )
 }
 
@@ -784,31 +734,6 @@ function EventsPhone() {
             'Sunday Worship',
             'Youth Night',
             'Baptism Sunday',
-            'Community Outreach',
-          ]}
-        />
-      </div>
-    </PhoneShell>
-  )
-}
-
-function VolunteerPhone() {
-  return (
-    <PhoneShell>
-      <div className="p-4 pt-8">
-        <h3 className="text-lg font-extrabold text-brand-dark">Volunteer</h3>
-        <div className="mt-3 rounded-lg bg-brand-blue p-4 text-white">
-          <p className="text-xs font-extrabold">Make an impact</p>
-          <p className="mt-1 text-[0.62rem] text-white/72">
-            Serve together and bless others.
-          </p>
-        </div>
-        <PhoneList
-          title="Opportunities"
-          items={[
-            'Sunday Worship Team',
-            "Children's Ministry",
-            'Tech Team',
             'Community Outreach',
           ]}
         />
@@ -1191,9 +1116,6 @@ export function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_4%,rgb(0_64_205/0.12),transparent_28%),radial-gradient(circle_at_8%_24%,rgb(0_64_205/0.09),transparent_26%)]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <div className="min-w-0">
-            <p className="mb-6 inline-flex rounded-full bg-brand-blue/8 px-4 py-2 text-sm font-extrabold text-brand-blue">
-              All-in-one church management
-            </p>
             <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.02] tracking-normal text-brand-dark sm:text-6xl lg:text-7xl">
               All-in-one church management for{' '}
               <BrandWord>modern ministries</BrandWord>
@@ -1268,7 +1190,6 @@ export function HomePage() {
       <section className="relative px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <SectionKicker icon={Sparkles}>Trusted Platform</SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               One platform. Every church account{' '}
               <BrandWord>fully organized.</BrandWord>
@@ -1303,7 +1224,6 @@ export function HomePage() {
       <section className="bg-brand-blue/[0.035] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
           <div>
-            <SectionKicker icon={Monitor}>Web App</SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Powerful tools for <BrandWord>church administrators.</BrandWord>
             </h2>
@@ -1325,7 +1245,6 @@ export function HomePage() {
         <div className="absolute inset-x-0 bottom-0 h-24 bg-brand-blue/[0.055] [clip-path:ellipse(70%_45%_at_50%_100%)]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 xl:grid-cols-[0.56fr_1.44fr]">
           <div>
-            <SectionKicker icon={Smartphone}>Mobile App</SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               A connected church experience in{' '}
               <BrandWord>every member&apos;s pocket.</BrandWord>
@@ -1343,7 +1262,7 @@ export function HomePage() {
           </div>
           <MobileAppShowcase />
         </div>
-        <div className="relative mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mx-auto mt-22 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
             [Shield, 'Secure & private', 'Your data is always protected.'],
             [
@@ -1378,7 +1297,6 @@ export function HomePage() {
 
       <section className="bg-brand-blue/[0.035] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
-          <SectionKicker icon={Sparkles}>Product Workflow</SectionKicker>
           <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
             From first visit to <BrandWord>full engagement.</BrandWord>
           </h2>
@@ -1500,9 +1418,6 @@ export function HomePage() {
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
           <div>
-            <SectionKicker icon={ChartNoAxesColumnIncreasing}>
-              Reporting
-            </SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Clear insights for better ministry{' '}
               <BrandWord>decisions.</BrandWord>
@@ -1526,13 +1441,6 @@ export function HomePage() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 flex gap-4 rounded-lg border border-brand-blue/10 bg-brand-blue/5 p-5">
-              <IconTile icon={Sparkles} />
-              <p className="text-sm leading-6 text-brand-dark/64">
-                Make data-driven decisions that strengthen ministries and
-                advance your mission.
-              </p>
-            </div>
           </div>
           <ReportingMockup />
         </div>
@@ -1541,7 +1449,6 @@ export function HomePage() {
       <section className="bg-brand-blue/[0.035] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <div>
-            <SectionKicker icon={ShieldCheck}>Security & Trust</SectionKicker>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Secure, private, and organized by <BrandWord>design.</BrandWord>
             </h2>
