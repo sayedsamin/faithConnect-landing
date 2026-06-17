@@ -256,19 +256,76 @@ function HeroDashboard() {
                       View all
                     </span>
                   </div>
-                  <div className="flex h-36 items-end gap-3 border-b border-l border-brand-blue/10 px-2 pb-2">
-                    {[26, 46, 38, 62, 55, 78, 92].map((height, index) => (
-                      <div key={index} className="flex flex-1 items-end gap-1">
+                  <div className="relative h-36 overflow-hidden border-b border-l border-brand-blue/10 px-2 pb-5">
+                    <div className="absolute inset-x-2 top-2 bottom-5 grid grid-rows-3">
+                      {[0, 1, 2].map((line) => (
                         <span
-                          className="block flex-1 rounded-t-sm bg-brand-blue/35"
-                          style={{ height: `${height}%` }}
+                          key={line}
+                          className="border-t border-brand-blue/8"
                         />
-                        <span
-                          className="block flex-1 rounded-t-sm bg-brand-blue"
-                          style={{ height: `${Math.min(height + 14, 100)}%` }}
-                        />
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                    <svg
+                      className="absolute inset-x-3 top-4 bottom-8 h-[88px] w-[calc(100%-1.5rem)] overflow-visible"
+                      viewBox="0 0 280 88"
+                      preserveAspectRatio="none"
+                      aria-hidden="true"
+                    >
+                      <defs>
+                        <linearGradient
+                          id="hero-giving-area"
+                          x1="0"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        >
+                          <stop
+                            stopColor="var(--brand-blue)"
+                            stopOpacity="0.18"
+                          />
+                          <stop stopColor="var(--brand-blue)" stopOpacity="0" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M0 70 C28 58 34 45 70 48 C108 51 111 24 145 31 C178 38 180 19 215 22 C244 25 253 12 280 8 L280 88 L0 88 Z"
+                        fill="url(#hero-giving-area)"
+                      />
+                      <path
+                        d="M0 70 C28 58 34 45 70 48 C108 51 111 24 145 31 C178 38 180 19 215 22 C244 25 253 12 280 8"
+                        fill="none"
+                        stroke="var(--brand-blue)"
+                        strokeLinecap="round"
+                        strokeWidth="3"
+                      />
+                    </svg>
+                    <div className="relative z-10 flex h-full items-end gap-2">
+                      {[32, 48, 40, 64, 56, 78, 88].map((height, index) => (
+                        <div
+                          key={index}
+                          className="flex min-w-0 flex-1 flex-col items-center justify-end gap-1.5"
+                        >
+                          <div className="flex h-[88px] w-full items-end justify-center gap-1">
+                            <span
+                              className="block w-full max-w-3 rounded-t-sm bg-brand-blue/22"
+                              style={{
+                                height: `${Math.max(height - 18, 18)}%`,
+                              }}
+                            />
+                            <span
+                              className="block w-full max-w-3 rounded-t-sm bg-brand-blue"
+                              style={{ height: `${height}%` }}
+                            />
+                          </div>
+                          <span className="text-[0.5rem] font-bold text-brand-dark/42">
+                            {
+                              ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'][
+                                index
+                              ]
+                            }
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
                 <div className="space-y-3 rounded-lg border border-brand-blue/10 p-4">
