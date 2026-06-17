@@ -682,6 +682,27 @@ function PhoneShell({ children }: { children: ReactNode }) {
   )
 }
 
+function PhoneTabs({ active }: { active: 'Home' | 'Give' | 'Events' }) {
+  const tabs = [
+    ['Home', Home],
+    ['Give', Heart],
+    ['Events', CalendarDays],
+    ['Groups', Users],
+    ['More', MoreHorizontal],
+  ] as const
+
+  return (
+    <div className="absolute inset-x-0 bottom-0 grid grid-cols-5 border-t border-brand-blue/8 bg-white/96 px-3 py-2 text-center text-[0.48rem] font-bold text-brand-dark/54">
+      {tabs.map(([label, Icon]) => (
+        <div key={label} className={label === active ? 'text-brand-blue' : ''}>
+          <Icon className="mx-auto size-4" aria-hidden="true" />
+          <p className="mt-1">{label}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function AnnouncementsPhone() {
   const announcements = [
     {
@@ -799,45 +820,74 @@ function AnnouncementsPhone() {
           ))}
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 grid grid-cols-5 border-t border-brand-blue/8 bg-white/96 px-3 py-2 text-center text-[0.48rem] font-bold text-brand-dark/54">
-          {[
-            ['Home', Home],
-            ['Give', Heart],
-            ['Events', CalendarDays],
-            ['Groups', Users],
-            ['More', MoreHorizontal],
-          ].map(([label, Icon], index) => (
-            <div
-              key={label as string}
-              className={index === 0 ? 'text-brand-blue' : ''}
-            >
-              <Icon className="mx-auto size-4" aria-hidden="true" />
-              <p className="mt-1">{label as string}</p>
-            </div>
-          ))}
-        </div>
+        <PhoneTabs active="Home" />
       </div>
     </PhoneShell>
   )
 }
 
 function GivePhone() {
+  const givingHistory = [
+    ['General Fund', '$100.00', 'May 12'],
+    ['Youth Ministry', '$50.00', 'May 5'],
+    ['Missions', '$75.00', 'Apr 28'],
+  ] as const
+
   return (
     <PhoneShell>
-      <div className="p-4 pt-8">
-        <h3 className="text-lg font-extrabold text-brand-dark">Give</h3>
-        <div className="mt-3 rounded-lg bg-brand-blue p-4 text-white">
-          <p className="text-xs font-extrabold">
-            Your generosity makes a difference
-          </p>
-          <p className="mt-1 text-[0.62rem] text-white/72">
-            Thank you for supporting our mission.
-          </p>
+      <div className="px-3.5 pt-8 pb-16">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="text-[0.62rem] font-bold text-brand-dark/52">
+              FaithConnect
+            </p>
+            <h3 className="text-lg leading-tight font-extrabold text-brand-dark">
+              Give
+            </h3>
+          </div>
+          <span className="grid size-8 place-items-center rounded-full bg-brand-blue/8 text-brand-blue">
+            <Heart className="size-4" aria-hidden="true" />
+          </span>
         </div>
-        <div className="mt-4 text-xs font-extrabold text-brand-dark">
+
+        <div className="mt-3 rounded-lg bg-[linear-gradient(135deg,var(--brand-blue),#5f3dd0)] p-3 text-white shadow-[0_16px_28px_rgb(0_64_205/0.18)]">
+          <p className="text-[0.62rem] font-bold text-white/74">
+            Giving this month
+          </p>
+          <div className="mt-2 flex items-end justify-between gap-3">
+            <div>
+              <p className="text-2xl leading-none font-extrabold">$425</p>
+              <p className="mt-1 text-[0.58rem] font-semibold text-white/72">
+                Across 4 gifts
+              </p>
+            </div>
+            <span className="rounded-full bg-white/16 px-2 py-1 text-[0.52rem] font-extrabold">
+              +12%
+            </span>
+          </div>
+        </div>
+
+        <div className="mt-3 grid grid-cols-3 gap-2 text-center">
+          {[
+            ['General', '$100'],
+            ['Missions', '$75'],
+            ['Youth', '$50'],
+          ].map(([label, value]) => (
+            <div key={label} className="rounded-lg bg-brand-blue/6 p-2">
+              <p className="text-[0.52rem] font-bold text-brand-dark/52">
+                {label}
+              </p>
+              <p className="mt-1 text-xs font-extrabold text-brand-dark">
+                {value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-3 text-xs font-extrabold text-brand-dark">
           Select a fund
           <div
-            className="mt-2 flex min-h-11 w-full items-center justify-between rounded-md border border-brand-blue/10 bg-white px-3 text-sm text-brand-dark"
+            className="mt-2 flex min-h-10 w-full items-center justify-between rounded-md border border-brand-blue/10 bg-white px-3 text-xs text-brand-dark shadow-sm"
             aria-hidden="true"
           >
             <span>General Fund</span>
@@ -847,11 +897,12 @@ function GivePhone() {
             />
           </div>
         </div>
-        <div className="mt-4 grid grid-cols-4 gap-2">
+
+        <div className="mt-3 grid grid-cols-4 gap-2">
           {['$25', '$50', '$100', '$250'].map((amount) => (
             <button
               key={amount}
-              className={`min-h-10 rounded-md text-xs font-extrabold ${
+              className={`min-h-9 rounded-md text-[0.68rem] font-extrabold ${
                 amount === '$100'
                   ? 'bg-brand-blue text-white'
                   : 'bg-brand-blue/8 text-brand-dark'
@@ -861,65 +912,138 @@ function GivePhone() {
             </button>
           ))}
         </div>
-        <button className="mt-5 min-h-11 w-full rounded-md bg-brand-blue text-sm font-extrabold text-white">
+
+        <button className="mt-3 min-h-10 w-full rounded-md bg-brand-blue text-xs font-extrabold text-white shadow-[0_12px_22px_rgb(0_64_205/0.18)]">
           Give $100.00
         </button>
+
+        <div className="mt-3 flex items-center justify-between">
+          <p className="text-xs font-extrabold text-brand-dark">Recent gifts</p>
+          <span className="text-[0.58rem] font-extrabold text-brand-blue">
+            Receipts
+          </span>
+        </div>
+        <div className="mt-2 space-y-2">
+          {givingHistory.map(([fund, amount, date]) => (
+            <div
+              key={`${fund}-${date}`}
+              className="flex items-center justify-between gap-3 rounded-lg bg-brand-blue/5 p-2"
+            >
+              <div className="min-w-0">
+                <p className="truncate text-[0.66rem] font-extrabold text-brand-dark">
+                  {fund}
+                </p>
+                <p className="mt-0.5 text-[0.52rem] font-bold text-brand-dark/46">
+                  {date}, 2025
+                </p>
+              </div>
+              <p className="text-[0.66rem] font-extrabold text-brand-blue">
+                {amount}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <PhoneTabs active="Give" />
       </div>
     </PhoneShell>
   )
 }
 
 function EventsPhone() {
+  const events = [
+    ['Sunday Worship', 'May 12', '9:00 AM', 'Registered'],
+    ['Youth Night', 'May 14', '6:30 PM', 'Open'],
+    ['Baptism Sunday', 'May 18', '10:30 AM', 'Reminder set'],
+  ] as const
+
   return (
     <PhoneShell>
-      <div className="p-4 pt-8">
-        <h3 className="text-lg font-extrabold text-brand-dark">Events</h3>
-        <div className="mt-4 grid grid-cols-2 rounded-lg bg-brand-blue/6 p-1 text-xs font-extrabold">
+      <div className="px-3.5 pt-8 pb-16">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="text-[0.62rem] font-bold text-brand-dark/52">
+              FaithConnect
+            </p>
+            <h3 className="text-lg leading-tight font-extrabold text-brand-dark">
+              Events
+            </h3>
+          </div>
+          <span className="grid size-8 place-items-center rounded-full bg-brand-blue/8 text-brand-blue">
+            <CalendarDays className="size-4" aria-hidden="true" />
+          </span>
+        </div>
+
+        <div className="mt-3 overflow-hidden rounded-lg bg-[linear-gradient(135deg,var(--brand-blue),#5f3dd0)] p-3 text-white">
+          <p className="text-[0.62rem] font-bold text-white/72">Next event</p>
+          <p className="mt-2 text-base leading-tight font-extrabold">
+            Sunday Worship
+          </p>
+          <div className="mt-3 grid grid-cols-2 gap-2 text-[0.58rem] font-bold text-white/78">
+            <span className="rounded-md bg-white/14 px-2 py-1.5">May 12</span>
+            <span className="rounded-md bg-white/14 px-2 py-1.5">9:00 AM</span>
+          </div>
+        </div>
+
+        <div className="mt-3 grid grid-cols-2 rounded-lg bg-brand-blue/6 p-1 text-xs font-extrabold">
           <span className="rounded-md bg-white py-2 text-center text-brand-blue">
             Upcoming
           </span>
           <span className="py-2 text-center text-brand-dark/60">My Events</span>
         </div>
-        <PhoneList
-          title=""
-          items={[
-            'Sunday Worship',
-            'Youth Night',
-            'Baptism Sunday',
-            'Community Outreach',
-          ]}
-        />
+
+        <div className="mt-3 space-y-2.5">
+          {events.map(([title, date, time, status], index) => (
+            <article
+              key={title}
+              className="grid grid-cols-[42px_1fr] gap-2.5 rounded-lg bg-brand-blue/5 p-2"
+            >
+              <span
+                className={`grid size-10 place-items-center rounded-md text-[0.58rem] font-extrabold ${
+                  index === 0
+                    ? 'bg-brand-blue text-white'
+                    : 'bg-brand-blue/12 text-brand-blue'
+                }`}
+              >
+                {date.split(' ')[1]}
+              </span>
+              <div className="min-w-0">
+                <p className="truncate text-[0.68rem] font-extrabold text-brand-dark">
+                  {title}
+                </p>
+                <p className="mt-0.5 text-[0.56rem] font-bold text-brand-dark/52">
+                  {date} • {time}
+                </p>
+                <p className="mt-1 w-fit rounded-full bg-white px-2 py-0.5 text-[0.5rem] font-extrabold text-brand-blue">
+                  {status}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-3 rounded-lg border border-brand-blue/10 p-2.5">
+          <div className="flex items-center justify-between">
+            <p className="text-[0.68rem] font-extrabold text-brand-dark">
+              Serving this week
+            </p>
+            <span className="text-[0.56rem] font-extrabold text-emerald-500">
+              2 roles
+            </span>
+          </div>
+          <div className="mt-2 grid grid-cols-2 gap-2 text-[0.56rem] font-bold text-brand-dark/60">
+            <span className="rounded-md bg-brand-blue/6 px-2 py-1.5">
+              Welcome team
+            </span>
+            <span className="rounded-md bg-brand-blue/6 px-2 py-1.5">
+              Kids check-in
+            </span>
+          </div>
+        </div>
+
+        <PhoneTabs active="Events" />
       </div>
     </PhoneShell>
-  )
-}
-
-function PhoneList({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div className="mt-4">
-      {title ? (
-        <p className="mb-3 text-xs font-extrabold text-brand-dark">{title}</p>
-      ) : null}
-      <div className="space-y-3">
-        {items.map((item, index) => (
-          <div key={item} className="flex gap-3 rounded-lg bg-brand-blue/5 p-2">
-            <span
-              className={`size-10 shrink-0 rounded-md ${
-                index % 2 === 0 ? 'bg-brand-blue/20' : 'bg-brand-dark/12'
-              }`}
-            />
-            <div className="min-w-0">
-              <p className="truncate text-xs font-extrabold text-brand-dark">
-                {item}
-              </p>
-              <p className="mt-1 text-[0.58rem] text-brand-dark/56">
-                May {12 + index}, 2026 • {index + 8}:00 AM
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
   )
 }
 
