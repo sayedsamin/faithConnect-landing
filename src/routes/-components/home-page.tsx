@@ -9,9 +9,11 @@ import {
   DollarSign,
   FileText,
   Heart,
+  Home,
   Lock,
   Megaphone,
   MessageCircle,
+  MoreHorizontal,
   Phone,
   QrCode,
   Shield,
@@ -649,14 +651,18 @@ function OrganizationMockup() {
 }
 
 function MobileAppShowcase() {
-  const screens = [<GivePhone key="give" />, <EventsPhone key="events" />]
+  const screens = [
+    <AnnouncementsPhone key="announcements" />,
+    <GivePhone key="give" />,
+    <EventsPhone key="events" />,
+  ]
 
   return (
-    <div className="mx-auto grid w-full max-w-[720px] grid-cols-1 items-center justify-items-center gap-8 sm:grid-cols-2 sm:gap-x-4 lg:max-w-[780px] xl:gap-x-5">
+    <div className="mx-auto grid w-full max-w-[680px] grid-cols-1 items-center justify-items-center gap-7 sm:grid-cols-3 sm:gap-x-3 lg:max-w-[660px] xl:gap-x-4">
       {screens.map((screen, index) => (
         <div
           key={index}
-          className={`w-full ${index === 0 ? 'xl:-translate-y-5' : 'xl:translate-y-5'}`}
+          className={`w-full ${index === 1 ? 'xl:translate-y-5' : 'xl:-translate-y-3'}`}
         >
           {screen}
         </div>
@@ -667,12 +673,151 @@ function MobileAppShowcase() {
 
 function PhoneShell({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto w-full max-w-[280px] rounded-[2.15rem] border-[8px] border-brand-dark bg-brand-dark shadow-[0_30px_64px_rgb(0_14_53/0.22)] sm:max-w-[330px] lg:max-w-[350px]">
-      <div className="relative min-h-[505px] overflow-hidden rounded-[1.55rem] bg-white sm:min-h-[545px]">
-        <span className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-brand-dark" />
+    <div className="mx-auto w-full max-w-[245px] rounded-[1.8rem] border-[6px] border-brand-dark bg-brand-dark shadow-[0_24px_52px_rgb(0_14_53/0.2)] sm:max-w-[198px] lg:max-w-[205px] xl:max-w-[215px]">
+      <div className="relative min-h-[470px] overflow-hidden rounded-[1.35rem] bg-white sm:min-h-[432px] lg:min-h-[448px] xl:min-h-[468px]">
+        <span className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-full bg-brand-dark" />
         {children}
       </div>
     </div>
+  )
+}
+
+function AnnouncementsPhone() {
+  const announcements = [
+    {
+      title: 'New sermon series: Faith in Action',
+      text: 'Join us this Sunday as we begin our new series.',
+      date: 'May 12, 2025',
+      color: 'bg-brand-blue',
+      image: 'bg-[linear-gradient(135deg,#f7b267,#1f3f8f)]',
+    },
+    {
+      title: 'Volunteer appreciation night',
+      text: 'Thank you to all our amazing volunteers!',
+      date: 'May 8, 2025',
+      color: 'bg-brand-blue',
+      image: 'bg-[linear-gradient(135deg,#fbd38d,#0f285f)]',
+    },
+    {
+      title: 'Church picnic sign-ups are open',
+      text: 'Bring your family and enjoy a day together.',
+      date: 'May 5, 2025',
+      color: 'bg-emerald-500',
+      image: 'bg-[linear-gradient(135deg,#7dd3fc,#f59e0b)]',
+    },
+  ]
+
+  const quickActions = [
+    ['Give', Shield],
+    ['Events', CalendarDays],
+    ['Groups', Users],
+    ['Invite', UserIcon],
+  ] as const
+
+  return (
+    <PhoneShell>
+      <div className="px-3.5 pt-8 pb-4">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <Sparkles className="size-5 text-brand-blue" aria-hidden="true" />
+            <span className="text-sm font-extrabold text-brand-dark">
+              FaithConnect
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Bell className="size-4 text-brand-dark/58" aria-hidden="true" />
+            <span className="size-7 rounded-full bg-[linear-gradient(135deg,#f7b267,#7c2d12)]" />
+          </div>
+        </div>
+
+        <p className="mt-3.5 text-[0.68rem] font-semibold text-brand-dark/68">
+          Good morning,
+        </p>
+        <h3 className="text-lg leading-none font-extrabold text-brand-dark">
+          Grace
+        </h3>
+
+        <div className="relative mt-3 overflow-hidden rounded-lg bg-[linear-gradient(135deg,var(--brand-blue),#6432d7)] p-3 text-white shadow-[0_16px_28px_rgb(0_64_205/0.2)]">
+          <div className="absolute right-4 bottom-2 text-6xl leading-none font-extrabold text-white/12">
+            +
+          </div>
+          <p className="text-xs font-extrabold">Today&apos;s Verse</p>
+          <p className="mt-2 text-[0.7rem] leading-4 font-extrabold">
+            “For where two or three gather in my name, there am I with them.”
+          </p>
+          <p className="mt-2 text-[0.58rem] font-bold text-white/72">
+            Matthew 18:20
+          </p>
+        </div>
+
+        <div className="mt-3 flex items-center justify-between">
+          <p className="text-xs font-extrabold text-brand-dark">
+            Announcements
+          </p>
+          <span className="text-[0.62rem] font-extrabold text-brand-blue">
+            View all
+          </span>
+        </div>
+        <div className="mt-2.5 space-y-2.5">
+          {announcements.map((item) => (
+            <article
+              key={item.title}
+              className="grid grid-cols-[38px_1fr] gap-2.5"
+            >
+              <span className={`h-10 w-10 rounded-md ${item.image}`} />
+              <div className="min-w-0">
+                <p className="flex items-start gap-1.5 text-[0.68rem] leading-4 font-extrabold text-brand-dark">
+                  <span
+                    className={`mt-1.5 size-1.5 shrink-0 rounded-full ${item.color}`}
+                  />
+                  <span className="line-clamp-1">{item.title}</span>
+                </p>
+                <p className="mt-0.5 line-clamp-2 text-[0.56rem] leading-[0.875rem] text-brand-dark/62">
+                  {item.text}
+                </p>
+                <p className="mt-0.5 text-[0.52rem] font-bold text-brand-dark/46">
+                  {item.date}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-3 text-xs font-extrabold text-brand-dark">
+          Quick actions
+        </p>
+        <div className="mt-2 grid grid-cols-4 gap-2">
+          {quickActions.map(([label, Icon]) => (
+            <div key={label} className="text-center">
+              <span className="mx-auto grid size-8 place-items-center rounded-lg bg-brand-blue/8 text-brand-blue">
+                <Icon className="size-4" aria-hidden="true" />
+              </span>
+              <p className="mt-1 text-[0.52rem] font-bold text-brand-dark/62">
+                {label}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="absolute inset-x-0 bottom-0 grid grid-cols-5 border-t border-brand-blue/8 bg-white/96 px-3 py-2 text-center text-[0.48rem] font-bold text-brand-dark/54">
+          {[
+            ['Home', Home],
+            ['Give', Heart],
+            ['Events', CalendarDays],
+            ['Groups', Users],
+            ['More', MoreHorizontal],
+          ].map(([label, Icon], index) => (
+            <div
+              key={label as string}
+              className={index === 0 ? 'text-brand-blue' : ''}
+            >
+              <Icon className="mx-auto size-4" aria-hidden="true" />
+              <p className="mt-1">{label as string}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PhoneShell>
   )
 }
 
@@ -1250,7 +1395,7 @@ export function HomePage() {
 
       <section className="relative px-4 py-20 sm:px-6 lg:px-8">
         <div className="absolute inset-x-0 bottom-0 h-24 bg-brand-blue/[0.055] [clip-path:ellipse(70%_45%_at_50%_100%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 xl:grid-cols-[0.56fr_1.44fr]">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 xl:grid-cols-2">
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               A connected church experience in{' '}
