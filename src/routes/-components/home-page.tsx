@@ -689,12 +689,19 @@ function GivePhone() {
             Thank you for supporting our mission.
           </p>
         </div>
-        <label className="mt-4 block text-xs font-extrabold text-brand-dark">
+        <div className="mt-4 text-xs font-extrabold text-brand-dark">
           Select a fund
-          <select className="mt-2 min-h-11 w-full rounded-md border border-brand-blue/10 bg-white px-3 text-sm text-brand-dark">
-            <option>General Fund</option>
-          </select>
-        </label>
+          <div
+            className="mt-2 flex min-h-11 w-full items-center justify-between rounded-md border border-brand-blue/10 bg-white px-3 text-sm text-brand-dark"
+            aria-hidden="true"
+          >
+            <span>General Fund</span>
+            <ChevronRight
+              className="size-4 rotate-90 text-brand-dark/58"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
         <div className="mt-4 grid grid-cols-4 gap-2">
           {['$25', '$50', '$100', '$250'].map((amount) => (
             <button

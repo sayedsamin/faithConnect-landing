@@ -589,15 +589,10 @@ a {
 }
 
 .site-footer {
-  background: linear-gradient(
-    155deg,
-    color-mix(in oklab, var(--brand-dark) 98%, var(--brand-white)),
-    color-mix(in oklab, var(--brand-blue) 28%, var(--brand-dark)) 62%,
-    color-mix(in oklab, var(--brand-dark) 88%, var(--brand-blue))
-  );
+  background: var(--white);
   box-shadow:
-    0 -1px 0 color-mix(in oklab, var(--brand-blue) 22%, transparent),
-    0 -24px 48px color-mix(in oklab, var(--brand-dark) 12%, transparent);
+    0 -1px 0 color-mix(in oklab, var(--brand-dark) 5%, transparent),
+    0 -18px 42px color-mix(in oklab, var(--brand-dark) 5%, transparent);
 }
 
 @layer base {
