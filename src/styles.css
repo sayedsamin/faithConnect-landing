@@ -535,6 +535,23 @@ a {
   }
 }
 
+@keyframes faithconnect-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.faithconnect-marquee {
+  animation: faithconnect-marquee 24s linear infinite;
+}
+
+.faithconnect-marquee:hover {
+  animation-play-state: paused;
+}
+
 @keyframes questura-hero-float {
   0% {
     transform: translate3d(0, 0, 0);
