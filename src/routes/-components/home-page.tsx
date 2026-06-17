@@ -1510,7 +1510,7 @@ export function HomePage() {
             <p className="mt-6 text-lg leading-8 text-brand-dark/66">
               FaithConnect converts church activity into simple, useful reports.
             </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
               {reportingTopics.map(([label, Icon]) => (
                 <div
                   key={label as string}
@@ -1520,7 +1520,7 @@ export function HomePage() {
                     icon={Icon as ComponentType<{ className?: string }>}
                     className="size-10 rounded-md"
                   />
-                  <span className="text-sm font-extrabold text-brand-dark">
+                  <span className="min-w-0 break-words text-sm font-extrabold leading-snug text-brand-dark">
                     {label as string}
                   </span>
                 </div>
