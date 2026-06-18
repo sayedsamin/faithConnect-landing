@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@github/copilot": "^1.0.61",
-    "@sentry/tanstackstart-react": "^10.42.0",
+    "@sentry/tanstackstart-react": "^10.58.0",
     "@t3-oss/env-core": "^0.13.11",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "latest",
@@ -43,7 +43,7 @@
     "msw": "^2.13.4",
     "nitro": "npm:nitro-nightly@latest",
     "pino": "^10.3.1",
-    "posthog-js": "^1.369.3",
+    "posthog-js": "^1.390.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwind-merge": "^3.0.2",
