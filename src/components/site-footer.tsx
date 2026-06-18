@@ -26,7 +26,7 @@ export function SiteFooter() {
             <span className="inline-flex size-11 items-center justify-center rounded-md bg-school-bus-yellow text-shadow-grey">
               <Sparkles className="size-5" aria-hidden />
             </span>
-            Questura
+            Faith Connect
           </Link>
           <p className="mt-5 max-w-md leading-7 text-brand-white/72">
             Innovation-driven learning programs for children, youth, families,
@@ -71,7 +71,7 @@ export function SiteFooter() {
                 className="size-4 shrink-0 text-school-bus-yellow"
                 aria-hidden
               />
-              info@questura.ca
+              info@faithconnect.ca
             </a>
             <a
               href="tel:+14319969120"
@@ -93,7 +93,7 @@ export function SiteFooter() {
           borderColor: 'color-mix(in oklab, var(--white) 14%, transparent)',
         }}
       >
-        <p>&copy; {year} Questura Academy. All rights reserved.</p>
+        <p>&copy; {year}Faith Connect. All rights reserved.</p>
         <p>Built for curious learners and stronger communities.</p>
       </div>
     </footer>

@@ -1,0 +1,301 @@
+VITE_SENTRY_DSN is not defined. Sentry is not running.
+VITE_SENTRY_DSN is not defined. Sentry is not running.
+[2m2:02:38 p.m.[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Unexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/routes/-components/about-page.tsx:124:5 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m124 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m}
+ [38;5;240m    │[0m     ┬  
+ [38;5;240m    │[0m     ╰── 
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/Owner/Documents/GitHub/faithConnect-landing/src/routes/-components/about-page.tsx[39m
+      at transformWithOxc (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:3742:19)
+      at TransformPluginContext.transform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:3810:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:30141:51)
+      at async loadAndTransform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:24489:26)
+      at async viteTransformMiddleware (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:24283:20)
+[2m2:02:38 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/routes/-components/about-page.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m2:02:38 p.m.[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Unexpected token
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/routes/-components/about-page.tsx:124:5 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m124 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m}
+ [38;5;240m    │[0m     ┬  
+ [38;5;240m    │[0m     ╰── 
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mC:/Users/Owner/Documents/GitHub/faithConnect-landing/src/routes/-components/about-page.tsx[39m
+      at transformWithOxc (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:3742:19)
+      at TransformPluginContext.transform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:3810:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:30141:51)
+      at async loadAndTransform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:24489:26)
+      at async viteTransformMiddleware (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:24283:20)
+[2m2:02:38 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/routes/-components/about-page.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[Client] [vite] Failed to reload /src/routes/-components/about-page.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[Client] [vite] Failed to reload /src/routes/-components/about-page.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m2:02:57 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mReferenceError: useScrollReveal is not defined
+    at AboutFeatures (http://localhost:3000/src/routes/-components/about-page.tsx?t=1781722976953:439:29)
+    at Object.react_stack_bottom_frame (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:12868:12)
+    at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:4213:19)
+    at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:5569:16)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:6140:20)
+    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:851:66)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8429:92)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8325:37)
+    at renderRootSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8309:6)
+    at performWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:7994:27)
+
+The above error occurred in the <AboutFeatures> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+
+[2m2:02:57 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[2m2:02:57 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: useScrollReveal is not defined
+[Client] %o
+
+%s
+
+%s
+ {} The above error occurred in the <AboutFeatures> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+[Client] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[Client] Warning: useScrollReveal is not defined
+[2m2:02:57 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mReferenceError: useScrollReveal is not defined
+    at AboutFeatures (http://localhost:3000/src/routes/-components/about-page.tsx?t=1781722976953:439:29)
+    at Object.react_stack_bottom_frame (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:12868:12)
+    at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:4213:19)
+    at updateFunctionComponent (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:5569:16)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:6140:20)
+    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:851:66)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8429:92)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8325:37)
+    at renderRootSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8309:6)
+    at performWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:7994:27)
+
+The above error occurred in the <AboutFeatures> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+
+[2m2:02:57 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[2m2:02:57 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: useScrollReveal is not defined
+[Client] %o
+
+%s
+
+%s
+ {} The above error occurred in the <AboutFeatures> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+[Client] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[Client] Warning: useScrollReveal is not defined
+[2m2:03:44 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.
+
+Previous: [1]
+Incoming: []
+[Client] The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [1] []
+[2m2:03:45 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.
+
+Previous: [0]
+Incoming: []
+[Client] The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [0] []
+[2m2:21:26 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mError: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+    at createFiberFromTypeAndProps (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2817:21)
+    at createFiberFromElement (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2828:11)
+    at reconcileChildFibersImpl (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3813:373)
+    at http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3869:28
+    at reconcileChildren (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:5386:114)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:6200:1569)
+    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:851:66)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8429:92)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8325:37)
+    at renderRootSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8309:6)
+
+The above error occurred in the <span> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+
+[2m2:21:26 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[2m2:21:26 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[Client] %o
+
+%s
+
+%s
+ {} The above error occurred in the <span> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+[Client] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[Client] Warning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[2m2:21:26 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mError: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+    at createFiberFromTypeAndProps (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2817:21)
+    at createFiberFromElement (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2828:11)
+    at reconcileChildFibersImpl (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3813:373)
+    at http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3869:28
+    at reconcileChildren (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:5386:114)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:6200:1569)
+    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:851:66)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8429:92)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8325:37)
+    at renderRootSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8309:6)
+
+The above error occurred in the <span> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+
+[2m2:21:26 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[2m2:21:26 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[Client] %o
+
+%s
+
+%s
+ {} The above error occurred in the <span> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+[Client] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[Client] Warning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[2m2:24:34 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mError: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+    at createFiberFromTypeAndProps (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2817:21)
+    at createFiberFromElement (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2828:11)
+    at reconcileChildFibersImpl (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3813:373)
+    at http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3869:28
+    at reconcileChildren (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:5386:46)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:6200:1569)
+    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:851:66)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8429:92)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8325:37)
+    at renderRootSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8309:6)
+
+The above error occurred in the <span> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+
+[2m2:24:34 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[2m2:24:34 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[Client] %o
+
+%s
+
+%s
+ {} The above error occurred in the <span> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+[Client] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[Client] Warning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[2m2:24:34 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mError: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+    at createFiberFromTypeAndProps (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2817:21)
+    at createFiberFromElement (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2828:11)
+    at reconcileChildFibersImpl (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3813:373)
+    at http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3869:28
+    at reconcileChildren (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:5386:46)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:6200:1569)
+    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:851:66)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8429:92)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8325:37)
+    at renderRootSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8309:6)
+
+The above error occurred in the <span> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+
+[2m2:24:34 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[2m2:24:34 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[Client] %o
+
+%s
+
+%s
+ {} The above error occurred in the <span> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+[Client] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[Client] Warning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[2m2:24:44 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mError: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+    at createFiberFromTypeAndProps (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2817:21)
+    at createFiberFromElement (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2828:11)
+    at reconcileChildFibersImpl (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3813:373)
+    at http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3869:28
+    at reconcileChildren (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:5386:46)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:6200:1569)
+    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:851:66)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8429:92)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8325:37)
+    at renderRootSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8309:6)
+
+The above error occurred in the <span> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+
+[2m2:24:44 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[2m2:24:44 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[Client] %o
+
+%s
+
+%s
+ {} The above error occurred in the <span> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+[Client] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[Client] Warning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[2m2:24:44 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mError: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+    at createFiberFromTypeAndProps (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2817:21)
+    at createFiberFromElement (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:2828:11)
+    at reconcileChildFibersImpl (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3813:373)
+    at http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:3869:28
+    at reconcileChildren (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:5386:46)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:6200:1569)
+    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:851:66)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8429:92)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8325:37)
+    at renderRootSync (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=2bc07edd:8309:6)
+
+The above error occurred in the <span> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+
+[2m2:24:44 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[2m2:24:44 p.m.[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mWarning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+[Client] %o
+
+%s
+
+%s
+ {} The above error occurred in the <span> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl.
+[Client] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute!
+[Client] Warning: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `AboutExperience`.
+VITE_SENTRY_DSN is not defined. Sentry is not running.
