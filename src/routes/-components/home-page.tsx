@@ -213,7 +213,7 @@ function ToolRow({
   text: string
 }) {
   return (
-    <article className="group flex min-h-20 items-center gap-4 rounded-lg border border-brand-blue/10 bg-white/86 p-4 shadow-[0_14px_28px_rgb(0_14_53/0.06)]">
+    <article className="flex min-h-20 items-center gap-4 rounded-lg border border-brand-blue/10 bg-white/86 p-4 shadow-[0_14px_28px_rgb(0_14_53/0.06)]">
       <FlatIconTile icon={icon} className="size-11 rounded-md" />
       <div className="min-w-0 flex-1">
         <h3 className="text-sm font-extrabold text-brand-dark">{title}</h3>
@@ -221,10 +221,6 @@ function ToolRow({
           {text}
         </p>
       </div>
-      <FlatIconImage
-        icon="arrowRight"
-        className="size-5 shrink-0 opacity-70 transition-transform group-hover:translate-x-1"
-      />
     </article>
   )
 }
@@ -1161,7 +1157,7 @@ function WorkflowStep({
         {number}
       </span>
       <h3 className="mt-5 text-xl font-extrabold text-brand-dark">{title}</h3>
-      <p className="mx-auto mt-3 min-h-16 max-w-[220px] text-sm leading-6 text-brand-dark/66">
+      <p className="mx-auto mt-3 min-h-16 max-w-[220px] text-sm leading-6 text-brand-dark/66 lg:min-h-24">
         {text}
       </p>
       <div className="mt-6">{children}</div>
@@ -1671,7 +1667,7 @@ export function HomePage() {
             FaithConnect supports the complete journey of church engagement.
           </p>
           <div className="relative mt-16 grid gap-8 lg:grid-cols-4">
-            <div className="absolute left-[10%] right-[10%] top-0 hidden border-t border-brand-blue/18 lg:block" />
+            <div className="absolute -top-4 left-[12%] right-[12%] hidden border-t-2 border-brand-blue/35 lg:block" />
             <WorkflowStep
               number="01"
               title="Guest connects"
@@ -1721,7 +1717,6 @@ export function HomePage() {
               text="New members create profiles, join groups, register for events, and begin receiving communication."
             >
               <div className="rounded-lg border border-brand-blue/10 bg-white p-4 text-left shadow-sm">
-                <IconTile icon={Users} className="mx-auto mb-4" />
                 <p className="text-sm font-extrabold text-brand-dark">
                   Complete your profile
                 </p>
@@ -1742,9 +1737,6 @@ export function HomePage() {
               text="Members donate, volunteer, attend events, and remain connected through the mobile app."
             >
               <div className="rounded-lg border border-brand-blue/10 bg-white p-4 text-left shadow-sm">
-                <div className="mb-4 flex justify-end">
-                  <span className="size-7 rounded-full bg-brand-blue/20" />
-                </div>
                 <p className="text-xs text-brand-dark/56">Good morning,</p>
                 <p className="text-sm font-extrabold text-brand-dark">Grace</p>
                 <div className="mt-4 grid grid-cols-3 gap-2">
