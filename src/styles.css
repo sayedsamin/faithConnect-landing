@@ -379,6 +379,95 @@ section[id] {
     0 4px 14px color-mix(in oklab, var(--brand-blue) 8%, transparent);
 }
 
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--brand-blue) 12%, var(--white));
+  border-radius: 1.7rem;
+  padding: 1.5rem;
+  box-shadow:
+    0 1px 0 color-mix(in oklab, var(--white) 78%, transparent) inset,
+    0 22px 44px color-mix(in oklab, var(--brand-dark) 12%, transparent),
+    0 10px 24px color-mix(in oklab, var(--brand-blue) 10%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-card--primary {
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--white) 95%, var(--brand-blue) 5%),
+    color-mix(in oklab, var(--white) 86%, var(--brand-blue) 14%)
+  );
+}
+
+.hero-card--secondary {
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--white) 92%, var(--brand-blue) 8%),
+    color-mix(in oklab, var(--brand-blue) 4%, var(--white))
+  );
+}
+
+.hero-card-kicker {
+  margin-bottom: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  rounded: 9999px;
+  border: 1px solid color-mix(in oklab, var(--brand-blue) 16%, transparent);
+  background: color-mix(in oklab, var(--brand-blue) 8%, var(--white));
+  padding: 0.45rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand-dark);
+}
+
+.hero-card-visual {
+  display: flex;
+  min-width: min(19rem, 100%);
+  align-items: flex-start;
+  gap: 1rem;
+  rounded: 1.25rem;
+  border: 1px solid color-mix(in oklab, var(--brand-blue) 12%, transparent);
+  background: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--brand-blue) 7%, var(--white)),
+    color-mix(in oklab, var(--white) 80%, transparent)
+  );
+  padding: 1.1rem 1.15rem;
+}
+
+.hero-card-visual__icon {
+  display: flex;
+  h: 2.8rem;
+  w: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  rounded: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--brand-blue),
+    color-mix(in oklab, var(--brand-blue) 70%, var(--white))
+  );
+  color: var(--white);
+  box-shadow: 0 12px 24px
+    color-mix(in oklab, var(--brand-blue) 24%, transparent);
+}
+
 .feature-card:hover {
   transform: translateY(-2px);
   border-color: color-mix(in oklab, var(--lagoon-deep) 35%, var(--line));
@@ -522,6 +611,21 @@ a {
   .pricing-trust-item:focus-within::after {
     animation: none;
   }
+@keyframes faithconnect-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.faithconnect-marquee {
+  animation: faithconnect-marquee 24s linear infinite;
+}
+
+.faithconnect-marquee:hover {
+  animation-play-state: paused;
 }
 
 @keyframes questura-hero-float {
@@ -561,15 +665,10 @@ a {
 }
 
 .site-footer {
-  background: linear-gradient(
-    155deg,
-    color-mix(in oklab, var(--brand-dark) 98%, var(--brand-white)),
-    color-mix(in oklab, var(--brand-blue) 28%, var(--brand-dark)) 62%,
-    color-mix(in oklab, var(--brand-dark) 88%, var(--brand-blue))
-  );
+  background: var(--white);
   box-shadow:
-    0 -1px 0 color-mix(in oklab, var(--brand-blue) 22%, transparent),
-    0 -24px 48px color-mix(in oklab, var(--brand-dark) 12%, transparent);
+    0 -1px 0 color-mix(in oklab, var(--brand-dark) 5%, transparent),
+    0 -18px 42px color-mix(in oklab, var(--brand-dark) 5%, transparent);
 }
 
 @layer base {
