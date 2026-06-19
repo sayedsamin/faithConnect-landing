@@ -46,7 +46,7 @@ export function SiteHeader() {
           className="inline-flex shrink-0 items-center gap-2 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded-lg"
         >
           <img
-            src="/images/home/questura-logo.svg"
+            src="/images/home/FaithConnect%20Icon%20V3.svg"
             alt="FaithConnect"
             width={40}
             height={40}
@@ -61,13 +61,13 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="hidden min-w-0 flex-1 items-center justify-center gap-x-6 md:flex"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-x-4 md:flex"
         >
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-brand-dark hover:text-brand-blue transition-colors"
+              className="text-sm font-bold text-brand-dark py-2 px-4 rounded-xl transition-colors"
             >
               {item.label}
             </a>
