@@ -524,6 +524,62 @@ a {
   animation: rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.pricing-trust-strip {
+  position: relative;
+  border-top: 1px solid color-mix(in oklab, var(--brand-blue) 18%, var(--white));
+  border-bottom: 1px solid
+    color-mix(in oklab, var(--brand-blue) 18%, var(--white));
+}
+
+.pricing-trust-item {
+  position: relative;
+  transition:
+    color 220ms ease,
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.pricing-trust-item::before,
+.pricing-trust-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--brand-blue) 35%, transparent),
+    var(--brand-blue),
+    color-mix(in oklab, var(--brand-blue) 35%, transparent),
+    transparent
+  );
+  background-size: 220% 100%;
+  transition: opacity 220ms ease;
+}
+
+.pricing-trust-item::before {
+  top: -3rem;
+}
+
+.pricing-trust-item::after {
+  bottom: -3rem;
+}
+
+.pricing-trust-item:hover::before,
+.pricing-trust-item:hover::after,
+.pricing-trust-item:focus-within::before,
+.pricing-trust-item:focus-within::after {
+  opacity: 1;
+  animation: trust-line-shine 1200ms ease-in-out infinite;
+}
+
+.pricing-trust-item:hover {
+  transform: translateY(-2px);
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -535,6 +591,26 @@ a {
   }
 }
 
+@keyframes trust-line-shine {
+  from {
+    background-position: 120% 50%;
+  }
+  to {
+    background-position: -120% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in {
+    animation: none;
+  }
+
+  .pricing-trust-item:hover::before,
+  .pricing-trust-item:hover::after,
+  .pricing-trust-item:focus-within::before,
+  .pricing-trust-item:focus-within::after {
+    animation: none;
+  }
 @keyframes faithconnect-marquee {
   from {
     transform: translateX(0);
