@@ -51,7 +51,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       {
         rel: 'icon',
         type: 'image/svg+xml',
-        href: '/images/home/questura-favicon.svg',
+        href: '/images/home/FaithConnect%20Icon%20V3.svg',
       },
     ],
   }),

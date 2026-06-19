@@ -11,7 +11,6 @@ import {
   QrCode,
   Shield,
   ShieldCheck,
-  Sparkles,
   Users,
 } from 'lucide-react'
 import type { ComponentProps, ComponentType, ReactNode } from 'react'
@@ -238,10 +237,7 @@ function HeroDashboard() {
         <div className="overflow-hidden rounded-xl bg-white">
           <div className="grid min-h-[330px] grid-cols-[118px_1fr] sm:min-h-[410px]">
             <aside className="bg-brand-dark p-4 text-white">
-              <div className="mb-7 flex items-center gap-2 text-xs font-extrabold">
-                <Sparkles className="size-4 text-white" aria-hidden="true" />
-                FaithConnect
-              </div>
+              <div className="mb-7 text-xs font-extrabold">FaithConnect</div>
               {[
                 'Dashboard',
                 'Members',
@@ -500,8 +496,7 @@ function WebAppMockup() {
   return (
     <div className="rounded-[1.35rem] border border-brand-blue/10 bg-white p-4 shadow-[0_24px_70px_rgb(0_14_53/0.12)] sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-blue/10 pb-5">
-        <div className="flex items-center gap-3">
-          <Sparkles className="size-6 text-brand-blue" aria-hidden="true" />
+        <div>
           <span className="text-base font-extrabold text-brand-dark">
             FaithConnect
           </span>
@@ -675,8 +670,7 @@ function OrganizationMockup() {
       <div className="rounded-[1.25rem] border border-brand-blue/10 bg-white/92 p-4 shadow-[0_24px_70px_rgb(0_14_53/0.12)] sm:p-5">
         <div className="grid overflow-hidden rounded-xl border border-brand-blue/10 sm:grid-cols-[150px_1fr]">
           <aside className="hidden bg-brand-blue/5 p-5 sm:block">
-            <div className="mb-6 flex items-center gap-2 text-sm font-extrabold text-brand-dark">
-              <Sparkles className="size-5 text-brand-blue" aria-hidden="true" />
+            <div className="mb-6 text-sm font-extrabold text-brand-dark">
               FaithConnect
             </div>
             {[
@@ -843,8 +837,7 @@ function AnnouncementsPhone() {
     <PhoneShell>
       <div className="px-3.5 pt-8 pb-4">
         <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <Sparkles className="size-5 text-brand-blue" aria-hidden="true" />
+          <div>
             <span className="text-sm font-extrabold text-brand-dark">
               FaithConnect
             </span>
@@ -1180,8 +1173,7 @@ function ReportingMockup() {
   return (
     <div className="rounded-[1.25rem] border border-brand-blue/10 bg-white p-5 shadow-[0_24px_70px_rgb(0_14_53/0.12)]">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
-          <Sparkles className="size-6 text-brand-blue" aria-hidden="true" />
+        <div>
           <h3 className="text-lg font-extrabold text-brand-dark">Reports</h3>
         </div>
         <div className="flex flex-wrap gap-2 text-xs font-extrabold text-brand-blue">
@@ -1343,8 +1335,7 @@ function SecurityMockup() {
     <div className="rounded-[1.25rem] border border-brand-blue/10 bg-white shadow-[0_24px_70px_rgb(0_14_53/0.12)]">
       <div className="grid overflow-hidden rounded-[1.25rem] lg:grid-cols-[170px_1fr]">
         <aside className="hidden border-r border-brand-blue/10 bg-brand-blue/5 p-5 lg:block">
-          <div className="mb-7 flex items-center gap-2 text-sm font-extrabold text-brand-dark">
-            <Sparkles className="size-5 text-brand-blue" aria-hidden="true" />
+          <div className="mb-7 text-sm font-extrabold text-brand-dark">
             FaithConnect
           </div>
           {[
@@ -1751,11 +1742,7 @@ export function HomePage() {
               text="Members donate, volunteer, attend events, and remain connected through the mobile app."
             >
               <div className="rounded-lg border border-brand-blue/10 bg-white p-4 text-left shadow-sm">
-                <div className="mb-4 flex items-center justify-between">
-                  <Sparkles
-                    className="size-5 text-brand-blue"
-                    aria-hidden="true"
-                  />
+                <div className="mb-4 flex justify-end">
                   <span className="size-7 rounded-full bg-brand-blue/20" />
                 </div>
                 <p className="text-xs text-brand-dark/56">Good morning,</p>

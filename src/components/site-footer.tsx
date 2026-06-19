@@ -27,7 +27,7 @@ export function SiteFooter() {
           className="inline-flex shrink-0 items-center gap-3 rounded-lg no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-4"
         >
           <img
-            src="/images/home/questura-logo.svg"
+            src="/images/home/FaithConnect%20Icon%20V3.svg"
             alt=""
             width={36}
             height={36}
