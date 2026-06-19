@@ -36,10 +36,10 @@ export function CtaBanner({
 
   return (
     <section className="px-4 py-8 sm:px-6 lg:px-8" aria-labelledby={titleId}>
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-xl bg-[linear-gradient(112deg,var(--brand-blue)_0%,#0b45bd_45%,#5f3dd0_100%)] shadow-[0_22px_48px_rgb(0_14_53/0.16)]">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-xl bg-[linear-gradient(112deg,var(--brand-blue)_0%,#0b45bd_45%,#3373e6_100%)] shadow-[0_22px_48px_rgb(0_14_53/0.16)]">
         <div className="relative grid min-h-[230px] items-center gap-8 px-8 py-9 sm:px-12 lg:grid-cols-[1.1fr_0.9fr] lg:px-16 lg:py-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_35%,rgb(255_255_255/0.13),transparent_27%),radial-gradient(circle_at_92%_42%,rgb(255_255_255/0.18),transparent_30%)]" />
-          <div className="absolute inset-y-0 right-0 hidden w-[42%] bg-[radial-gradient(circle_at_70%_36%,rgb(255_255_255/0.18),transparent_31%),linear-gradient(110deg,transparent_0%,rgb(255_255_255/0.04)_36%,rgb(255_255_255/0.12)_100%)] lg:block" />
+          <div className="absolute inset-0 hidden bg-[radial-gradient(circle_at_88%_36%,rgb(255_255_255/0.18),transparent_31%),linear-gradient(110deg,transparent_45%,rgb(255_255_255/0.04)_72%,rgb(255_255_255/0.12)_100%)] lg:block" />
 
           <div className="relative z-10 max-w-[560px] text-white">
             <h2
