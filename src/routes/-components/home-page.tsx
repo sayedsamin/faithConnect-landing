@@ -1,20 +1,13 @@
 import {
   Bell,
   CalendarDays,
-  ChartNoAxesColumnIncreasing,
   ChevronRight,
   Church,
-  Cloud,
-  Database,
-  DollarSign,
   FileText,
   Heart,
   Home,
-  Lock,
   Megaphone,
-  MessageCircle,
   MoreHorizontal,
-  Phone,
   QrCode,
   Shield,
   ShieldCheck,
@@ -24,6 +17,26 @@ import {
 import type { ComponentProps, ComponentType, ReactNode } from 'react'
 
 import { CtaBanner } from '#/components/cta-banner'
+
+const flatIconSrcs = {
+  arrowRight: '/images/home/arrow-right.png',
+  bell: '/images/home/bell.png',
+  calendar: '/images/home/calendar.png',
+  church: '/images/home/church.png',
+  cloud: '/images/home/cloud.png',
+  database: '/images/home/database.png',
+  file: '/images/home/file.png',
+  giving: '/images/home/giving.png',
+  guest: '/images/home/guest.png',
+  lock: '/images/home/lock.png',
+  members: '/images/home/members.png',
+  message: '/images/home/message.png',
+  phone: '/images/home/phone.png',
+  reports: '/images/home/reports.png',
+  shield: '/images/home/shield.png',
+} as const
+
+type FlatIconName = keyof typeof flatIconSrcs
 
 const trustedChurches = [
   'Grace Church',
@@ -35,81 +48,81 @@ const trustedChurches = [
 ]
 
 const heroStats = [
-  { icon: Users, value: '2,450', label: 'Members' },
-  { icon: DollarSign, value: '$18,900', label: 'Monthly Giving' },
-  { icon: CalendarDays, value: '24', label: 'Upcoming Events' },
-  { icon: ChartNoAxesColumnIncreasing, value: '98%', label: 'Engagement' },
-]
+  { icon: 'members', value: '2,450', label: 'Members' },
+  { icon: 'giving', value: '$18,900', label: 'Monthly Giving' },
+  { icon: 'calendar', value: '24', label: 'Upcoming Events' },
+  { icon: 'reports', value: '98%', label: 'Engagement' },
+] as const
 
 const adminTools = [
   {
-    icon: Users,
+    icon: 'members',
     title: 'Manage Members',
     text: 'Maintain member profiles and directories.',
   },
   {
-    icon: Heart,
+    icon: 'giving',
     title: 'Process Donations',
     text: 'Track giving and financial summaries.',
   },
   {
-    icon: CalendarDays,
+    icon: 'calendar',
     title: 'Coordinate Events',
     text: 'Manage registrations, schedules, and volunteers.',
   },
   {
-    icon: MessageCircle,
+    icon: 'message',
     title: 'Communicate with Congregants',
     text: 'Send messages, updates, and newsletters.',
   },
   {
-    icon: ChartNoAxesColumnIncreasing,
+    icon: 'reports',
     title: 'Access Reports',
     text: 'Generate insights on membership, donations, and engagement.',
   },
-]
+] as const
 
 const mobileAudiences = [
   {
-    icon: Users,
+    icon: 'members',
     title: 'For Church Members',
     text: 'View announcements, update profiles, join groups, register for events, and stay connected.',
   },
   {
-    icon: Heart,
+    icon: 'giving',
     title: 'For Donors',
     text: 'Give securely, view donation history, receive receipts, and support church campaigns.',
   },
   {
-    icon: Users,
+    icon: 'members',
     title: 'For Volunteers',
     text: 'See upcoming opportunities, sign up for roles, receive reminders, and track responsibilities.',
   },
   {
-    icon: UserIcon,
+    icon: 'guest',
     title: 'For General Users and Guests',
     text: 'Explore church information, submit guest forms, register interest, and learn about programs.',
   },
-]
+] as const
 
 const reportingTopics = [
-  ['Membership growth', Users],
-  ['New guests and follow-ups', UserIcon],
-  ['Donation trends', Heart],
-  ['Event participation', CalendarDays],
-  ['Volunteer engagement', ShieldCheck],
-  ['Communication reach', MessageCircle],
-  ['Department and ministry activity', Church],
-]
+  ['Membership growth', 'members'],
+  ['New guests and follow-ups', 'guest'],
+  ['Donation trends', 'giving'],
+  ['Event participation', 'calendar'],
+  ['Volunteer engagement', 'shield'],
+  ['Communication reach', 'message'],
+  ['Department and ministry activity', 'church'],
+] as const
 
 const securityFeatures = [
-  ['Secure organizational accounts', Church],
-  ['Role-based permissions', Users],
-  ['Encrypted user access', Lock],
-  ['Donation record protection', Heart],
-  ['Admin activity tracking', FileText],
-  ['Data separation between churches', Database],
-]
+  ['Secure organizational accounts', 'church'],
+  ['Role-based permissions', 'members'],
+  ['Encrypted user access', 'lock'],
+  ['Donation record protection', 'giving'],
+  ['Admin activity tracking', 'file'],
+  ['Data separation between churches', 'database'],
+] as const
 
 function UserIcon(props: ComponentProps<typeof Users>) {
   return <Users {...props} />
@@ -117,6 +130,40 @@ function UserIcon(props: ComponentProps<typeof Users>) {
 
 function BrandWord({ children }: { children: ReactNode }) {
   return <span className="text-brand-blue">{children}</span>
+}
+
+function FlatIconImage({
+  icon,
+  className = '',
+}: {
+  icon: FlatIconName
+  className?: string
+}) {
+  return (
+    <img
+      src={flatIconSrcs[icon]}
+      alt=""
+      className={`block object-contain ${className}`}
+      aria-hidden="true"
+      draggable={false}
+    />
+  )
+}
+
+function FlatIconTile({
+  icon,
+  className = '',
+}: {
+  icon: FlatIconName
+  className?: string
+}) {
+  return (
+    <span
+      className={`inline-flex size-12 shrink-0 items-center justify-center rounded-lg bg-brand-blue/10 ${className}`}
+    >
+      <FlatIconImage icon={icon} className="size-6" />
+    </span>
+  )
 }
 
 function IconTile({
@@ -140,14 +187,14 @@ function MiniFeatureCard({
   title,
   text,
 }: {
-  icon: ComponentType<{ className?: string }>
+  icon: FlatIconName
   title: string
   text: string
 }) {
   return (
     <article className="feature-card rounded-lg border border-brand-blue/10 p-5">
       <div className="flex min-w-0 items-start gap-4">
-        <IconTile icon={icon} />
+        <FlatIconTile icon={icon} />
         <div className="min-w-0">
           <h3 className="text-base font-extrabold text-brand-dark">{title}</h3>
           <p className="mt-2 text-sm leading-6 text-brand-dark/68">{text}</p>
@@ -162,22 +209,22 @@ function ToolRow({
   title,
   text,
 }: {
-  icon: ComponentType<{ className?: string }>
+  icon: FlatIconName
   title: string
   text: string
 }) {
   return (
     <article className="group flex min-h-20 items-center gap-4 rounded-lg border border-brand-blue/10 bg-white/86 p-4 shadow-[0_14px_28px_rgb(0_14_53/0.06)]">
-      <IconTile icon={icon} className="size-11 rounded-md" />
+      <FlatIconTile icon={icon} className="size-11 rounded-md" />
       <div className="min-w-0 flex-1">
         <h3 className="text-sm font-extrabold text-brand-dark">{title}</h3>
         <p className="mt-1 line-clamp-2 text-xs leading-5 text-brand-dark/64">
           {text}
         </p>
       </div>
-      <ChevronRight
-        className="size-5 shrink-0 text-brand-dark/50 transition-transform group-hover:translate-x-1"
-        aria-hidden="true"
+      <FlatIconImage
+        icon="arrowRight"
+        className="size-5 shrink-0 opacity-70 transition-transform group-hover:translate-x-1"
       />
     </article>
   )
@@ -1464,7 +1511,10 @@ export function HomePage() {
                 className="inline-flex min-h-12 touch-manipulation items-center justify-center gap-2 rounded-md bg-brand-blue px-7 text-sm font-extrabold !text-white no-underline shadow-[0_16px_28px_rgb(0_64_205/0.22)] transition-colors hover:bg-blue-700 hover:!text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/30"
               >
                 Start Free Trial
-                <ChevronRight className="size-4" aria-hidden="true" />
+                <FlatIconImage
+                  icon="arrowRight"
+                  className="size-4 brightness-0 invert"
+                />
               </a>
               <a
                 href="/contact"
@@ -1474,15 +1524,12 @@ export function HomePage() {
               </a>
             </div>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {heroStats.map(({ icon: Icon, value, label }) => (
+              {heroStats.map(({ icon, value, label }) => (
                 <div
                   key={label}
                   className="rounded-lg border border-brand-blue/10 bg-white/90 p-4 shadow-[0_12px_26px_rgb(0_14_53/0.08)]"
                 >
-                  <Icon
-                    className="mb-2 size-6 text-brand-blue"
-                    aria-hidden="true"
-                  />
+                  <FlatIconImage icon={icon} className="mb-2 size-6" />
                   <p className="text-xl font-extrabold text-brand-dark">
                     {value}
                   </p>
@@ -1506,10 +1553,7 @@ export function HomePage() {
                   key={`${name}-${index}`}
                   className="flex min-w-44 items-center justify-center gap-3 text-brand-dark/72"
                 >
-                  <Church
-                    className="size-8 text-brand-dark/44"
-                    aria-hidden="true"
-                  />
+                  <FlatIconImage icon="church" className="size-8" />
                   <span className="text-lg font-extrabold tracking-tight">
                     {name}
                   </span>
@@ -1537,17 +1581,17 @@ export function HomePage() {
         </div>
         <div className="mx-auto mt-14 grid max-w-7xl gap-6 lg:grid-cols-3">
           <MiniFeatureCard
-            icon={Church}
+            icon="church"
             title="Multi-Church SaaS Accounts"
             text="Each church gets its own secure workspace, users, data, roles, and subscription access."
           />
           <MiniFeatureCard
-            icon={Users}
+            icon="members"
             title="Role-Based Access"
             text="Assign permissions for pastors, administrators, finance teams, coordinators, volunteers, and members."
           />
           <MiniFeatureCard
-            icon={Cloud}
+            icon="cloud"
             title="Cloud-Based Access"
             text="Manage church operations from anywhere using the web platform and mobile app."
           />
@@ -1596,31 +1640,30 @@ export function HomePage() {
           <MobileAppShowcase />
         </div>
         <div className="relative mx-auto mt-22 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            [Shield, 'Secure & private', 'Your data is always protected.'],
+          {(
             [
-              Bell,
-              'Stay connected',
-              'Instant updates and real-time notifications.',
-            ],
-            [
-              Users,
-              'Built for everyone',
-              'Designed for members, volunteers, donors, and guests.',
-            ],
-            [Phone, 'On the go', 'Access church life anytime, anywhere.'],
-          ].map(([Icon, title, text]) => (
-            <div key={title as string} className="flex gap-4">
-              <Icon
-                className="size-7 shrink-0 text-brand-blue"
-                aria-hidden="true"
-              />
+              ['shield', 'Secure & private', 'Your data is always protected.'],
+              [
+                'bell',
+                'Stay connected',
+                'Instant updates and real-time notifications.',
+              ],
+              [
+                'members',
+                'Built for everyone',
+                'Designed for members, volunteers, donors, and guests.',
+              ],
+              ['phone', 'On the go', 'Access church life anytime, anywhere.'],
+            ] as const
+          ).map(([icon, title, text]) => (
+            <div key={title} className="flex gap-4">
+              <FlatIconImage icon={icon} className="size-7 shrink-0" />
               <div>
                 <h3 className="text-sm font-extrabold text-brand-dark">
-                  {title as string}
+                  {title}
                 </h3>
                 <p className="mt-1 text-sm leading-6 text-brand-dark/62">
-                  {text as string}
+                  {text}
                 </p>
               </div>
             </div>
@@ -1759,15 +1802,12 @@ export function HomePage() {
               FaithConnect converts church activity into simple, useful reports.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              {reportingTopics.map(([label, Icon]) => (
+              {reportingTopics.map(([label, icon]) => (
                 <div
                   key={label as string}
                   className="flex min-h-16 items-center gap-3 rounded-lg border border-brand-blue/10 bg-white p-4 shadow-sm"
                 >
-                  <IconTile
-                    icon={Icon as ComponentType<{ className?: string }>}
-                    className="size-10 rounded-md"
-                  />
+                  <FlatIconTile icon={icon} className="size-10 rounded-md" />
                   <span className="min-w-0 break-words text-sm font-extrabold leading-snug text-brand-dark">
                     {label as string}
                   </span>
@@ -1793,7 +1833,7 @@ export function HomePage() {
               {securityFeatures.map(([label, Icon]) => (
                 <MiniFeatureCard
                   key={label as string}
-                  icon={Icon as ComponentType<{ className?: string }>}
+                  icon={Icon}
                   title={label as string}
                   text="Keep operations protected, auditable, and properly separated."
                 />
@@ -1804,7 +1844,7 @@ export function HomePage() {
         </div>
         <div className="mx-auto mt-10 grid max-w-7xl gap-4 rounded-lg border border-brand-blue/10 bg-white p-5 shadow-[0_18px_44px_rgb(0_14_53/0.08)] md:grid-cols-[1fr_repeat(4,auto)] md:items-center">
           <div className="flex items-center gap-4">
-            <IconTile icon={ShieldCheck} />
+            <FlatIconTile icon="shield" />
             <div>
               <h3 className="text-lg font-extrabold text-brand-dark">
                 Built with enterprise-grade security
@@ -1815,19 +1855,19 @@ export function HomePage() {
               </p>
             </div>
           </div>
-          {[
-            [Lock, '256-bit', 'Encryption'],
-            [ShieldCheck, 'SOC 2', 'Compliant'],
-            [Cloud, 'Regular', 'Backups'],
-            [Shield, '99.9%', 'Uptime'],
-          ].map(([Icon, stat, label]) => (
-            <div key={label as string} className="flex items-center gap-3">
-              <Icon className="size-7 text-brand-blue" aria-hidden="true" />
+          {(
+            [
+              ['lock', '256-bit', 'Encryption'],
+              ['shield', 'SOC 2', 'Compliant'],
+              ['cloud', 'Regular', 'Backups'],
+              ['shield', '99.9%', 'Uptime'],
+            ] as const
+          ).map(([icon, stat, label]) => (
+            <div key={label} className="flex items-center gap-3">
+              <FlatIconImage icon={icon} className="size-7" />
               <div>
-                <p className="text-sm font-extrabold text-brand-dark">
-                  {stat as string}
-                </p>
-                <p className="text-xs text-brand-dark/58">{label as string}</p>
+                <p className="text-sm font-extrabold text-brand-dark">{stat}</p>
+                <p className="text-xs text-brand-dark/58">{label}</p>
               </div>
             </div>
           ))}
