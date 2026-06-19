@@ -648,10 +648,10 @@ function OrganizationMockup() {
           <IconTile icon={ShieldCheck} className="size-10 rounded-md" />
           <div>
             <p className="text-xs font-extrabold text-brand-dark">
-              Organization Status
+              Department Status
             </p>
             <p className="text-xs font-bold text-emerald-500">
-              All systems secure
+              12 Currently Active
             </p>
           </div>
         </div>
@@ -1496,7 +1496,7 @@ export function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_4%,rgb(0_64_205/0.12),transparent_28%),radial-gradient(circle_at_8%_24%,rgb(0_64_205/0.09),transparent_26%)]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <div className="min-w-0">
-            <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.02] tracking-normal text-brand-dark sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.02] tracking-normal text-brand-dark sm:text-4xl lg:text-5xl">
               All-in-one church management for{' '}
               <BrandWord>modern ministries</BrandWord>
             </h1>
@@ -1542,8 +1542,8 @@ export function HomePage() {
           </div>
           <HeroDashboard />
         </div>
-        <div className="relative mx-auto mt-14 max-w-7xl">
-          <p className="text-center text-lg font-extrabold text-brand-dark">
+        <div className="relative mx-auto mt-32 max-w-7xl">
+          <p className="text-center text-xl font-extrabold text-brand-dark">
             Trusted by churches of all sizes
           </p>
           <div className="mt-6 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
@@ -1842,7 +1842,7 @@ export function HomePage() {
           </div>
           <SecurityMockup />
         </div>
-        <div className="mx-auto mt-10 grid max-w-7xl gap-4 rounded-lg border border-brand-blue/10 bg-white p-5 shadow-[0_18px_44px_rgb(0_14_53/0.08)] md:grid-cols-[1fr_repeat(4,auto)] md:items-center">
+        {/* <div className="mx-auto mt-10 grid max-w-7xl gap-4 rounded-lg border border-brand-blue/10 bg-white p-5 shadow-[0_18px_44px_rgb(0_14_53/0.08)] md:grid-cols-[1fr_repeat(4,auto)] md:items-center">
           <div className="flex items-center gap-4">
             <FlatIconTile icon="shield" />
             <div>
@@ -1871,7 +1871,7 @@ export function HomePage() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </section>
 
       <CtaBanner />
