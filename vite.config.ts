@@ -11,6 +11,9 @@ const config = defineConfig({
   resolve: { tsconfigPaths: true },
   server: {
     allowedHosts: ['fascinating-stats-considerable-archived.trycloudflare.com'],
+    watch: {
+      ignored: ['**/public/images/**', '**/node_modules/**'],
+    },
   },
   plugins: [
     devtools(),

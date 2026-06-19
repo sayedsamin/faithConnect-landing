@@ -359,8 +359,16 @@ Code used by all portals but still portal/domain-specific also belongs in
 ## Component Locality Rule
 
 - Route-specific UI belongs in `src/routes/**`.
+- Route files such as `src/routes/about.tsx` should own route registration,
+  route metadata, and the top-level page composition for that route.
+- Do not create a separate route-local wrapper file whose only job is to render
+  the page sections, such as `src/routes/-components/about-page.tsx`. Put that
+  composition directly in the route file instead.
 - For route-specific UI, colocate components beside the route file using a
   `-components/` folder.
+- For pages with multiple sections or repeated elements, create a
+  page-specific folder under `-components/` and split each section, card, list,
+  hook, data set, or reusable page element into its own file.
 - If the route file is `route.tsx`, place local components in a sibling
   `-components/` folder.
 - If the route file is `index.tsx`, place local components in a sibling
@@ -372,6 +380,20 @@ Code used by all portals but still portal/domain-specific also belongs in
   they may be reused later.
 
 Examples:
+
+Preferred page composition pattern:
+
+```txt
+src/routes/
++-- about.tsx
++-- -components/
+    +-- about-page/
+        +-- about-hero.tsx
+        +-- about-values.tsx
+        +-- about-benefit-card.tsx
+        +-- about-data.ts
+        +-- feature-reveal.ts
+```
 
 ```txt
 ├── route.tsx
@@ -392,8 +414,11 @@ Examples:
 ## New Page Rules
 
 1. Create route files in `src/routes/**`.
-2. Keep route components lean: orchestration only.
-3. Move route-specific UI into route-local `-components/` folders.
+2. Keep route files focused on route registration, metadata, and top-level page
+   composition.
+3. Move every non-trivial route-specific section, card, list, hook, data set,
+   or reusable page element into its own file under a route-local
+   `-components/{page-name}/` folder.
 4. Keep user-facing data access, data orchestration, hooks, API wrappers,
    queries, mutations, and schemas in `src/portals/**`.
 5. Do not put UI components in `src/portals/**`.
