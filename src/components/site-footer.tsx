@@ -2,13 +2,12 @@ import { Link } from '@tanstack/react-router'
 import { Facebook, Instagram, Mail } from 'lucide-react'
 
 const footerLinks = [
-  { label: 'Product', href: '#product' },
-  { label: 'Web App', href: '#web-app' },
-  { label: 'Mobile App', href: '#mobile-app' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Security', href: '#security' },
-  { label: 'Support', href: '#support' },
+  { label: 'Home', href: '/' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Terms', href: '/terms' },
 ]
 
 const socialLinks = [
