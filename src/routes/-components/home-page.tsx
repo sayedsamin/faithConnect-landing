@@ -1384,11 +1384,8 @@ function SecurityMockup() {
               ].map((item, index) => (
                 <div
                   key={item}
-                  className="mb-2 grid min-h-9 grid-cols-[1.75rem_minmax(0,1fr)_auto] items-center gap-2 last:mb-0"
+                  className="mb-2 grid min-h-9 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 last:mb-0"
                 >
-                  <span className="grid size-7 shrink-0 place-items-center rounded-md bg-brand-blue/8 text-brand-blue">
-                    <Users className="size-4 shrink-0" aria-hidden="true" />
-                  </span>
                   <span className="min-w-0 text-sm leading-5 font-bold break-words text-brand-dark/70">
                     {item}
                   </span>
