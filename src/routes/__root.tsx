@@ -91,7 +91,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 function RootNotFound() {
   return (
-    <section className="page-wrap flex min-h-[60vh] flex-col items-center justify-center px-4 py-20 text-center sm:px-6">
+    <section className="page-wrap flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
       <p className="island-kicker">Page Not Found</p>
       <h1 className="display-title mt-4 text-4xl font-bold text-foreground sm:text-5xl">
         We couldn&apos;t find that page.

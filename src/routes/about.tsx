@@ -27,7 +27,7 @@ function AboutPage() {
     <section className="pb-20">
       <AboutHero />
 
-      <div className="px-4 sm:px-6">
+      <div className="page-shell">
         <AboutValues />
         <AboutFeatures />
         <AboutBenefits />

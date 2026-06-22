@@ -6,7 +6,7 @@ import { sectionIconShellClass, sectionIconSvgClass } from './about-styles'
 export function AboutCta() {
   return (
     <section
-      className="mx-auto w-full max-w-7xl py-16"
+      className="mx-auto w-full max-w-6xl py-16"
       aria-labelledby="about-cta-title"
     >
       <div className="rounded-lg border border-brand-blue/20 bg-brand-blue p-5 text-white shadow-lg sm:p-6 lg:flex lg:items-center lg:justify-between lg:gap-8">

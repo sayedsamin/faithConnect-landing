@@ -7,7 +7,7 @@ export function AboutExperience() {
       className="relative left-1/2 w-screen -translate-x-1/2 py-16"
       aria-labelledby="experience-title"
     >
-      <div className="mx-auto mb-6 w-full max-w-7xl px-4 text-center sm:px-6">
+      <div className="mx-auto mb-6 w-full max-w-6xl px-4 text-center sm:px-6">
         <h2
           id="experience-title"
           className="text-xl font-extrabold text-foreground"
@@ -21,7 +21,7 @@ export function AboutExperience() {
       </div>
 
       <div className="experience-strip">
-        <div className="mx-auto grid w-full max-w-7xl gap-y-8 px-4 sm:px-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mx-auto grid w-full max-w-6xl gap-y-8 px-4 sm:px-6 md:grid-cols-2 xl:grid-cols-4">
           {experienceCards.map(({ title, description }, index) => (
             <AboutExperienceCard
               key={title}

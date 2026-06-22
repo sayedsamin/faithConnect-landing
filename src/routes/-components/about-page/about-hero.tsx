@@ -3,15 +3,15 @@ import { ArrowRight } from 'lucide-react'
 
 export function AboutHero() {
   return (
-    <header className="relative overflow-hidden px-4 pt-32 pb-16 sm:px-6">
+    <header className="relative overflow-hidden pt-32 pb-16">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-brand-blue/5 to-background"
       />
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(24rem,1.1fr)]">
+      <div className="page-shell relative z-10 grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(24rem,1.1fr)]">
         <div className="max-w-3xl">
           <p className="island-kicker">About FaithConnect</p>
-          <h1 className="display-title mt-4 text-4xl font-bold text-foreground sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-bold text-foreground sm:text-5xl">
             Helping churches organize, connect, and grow.
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">

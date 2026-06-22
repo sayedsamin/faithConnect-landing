@@ -348,9 +348,26 @@ section[id] {
   color: color-mix(in oklab, var(--white) 88%, var(--brand-blue));
 }
 
-.page-wrap {
-  width: min(1320px, calc(100% - 2rem));
+.page-wrap,
+.page-shell {
+  width: 100%;
+  max-width: 72rem;
   margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 40rem) {
+  .page-wrap,
+  .page-shell {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .page-wrap,
+  .page-shell {
+    padding-inline: 2.5rem;
+  }
 }
 
 .display-title {
@@ -611,6 +628,7 @@ a {
   .pricing-trust-item:focus-within::after {
     animation: none;
   }
+}
 @keyframes faithconnect-marquee {
   from {
     transform: translateX(0);

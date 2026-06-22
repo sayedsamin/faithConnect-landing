@@ -10,7 +10,7 @@ export function AboutFeatures() {
       className="relative left-1/2 w-screen -translate-x-1/2 border-y border-border bg-background py-16"
       aria-labelledby="features-title"
     >
-      <div className="about-features-reveal relative mx-auto w-full max-w-7xl overflow-hidden px-4 pr-6 sm:px-6 sm:pr-8 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-8 lg:pr-10 xl:pr-12">
+      <div className="about-features-reveal relative mx-auto w-full max-w-6xl overflow-hidden px-4 pr-6 sm:px-6 sm:pr-8 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-8 lg:pr-10 xl:pr-12">
         <div
           aria-hidden="true"
           className="absolute right-8 top-10 hidden h-36 w-36 rounded-full border border-brand-blue/15 lg:block"

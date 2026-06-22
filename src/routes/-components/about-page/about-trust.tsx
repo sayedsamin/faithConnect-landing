@@ -4,7 +4,7 @@ import { AboutTrustCard } from './about-trust-card'
 export function AboutTrust() {
   return (
     <section
-      className="mx-auto w-full max-w-7xl py-16"
+      className="mx-auto w-full max-w-6xl py-16"
       aria-labelledby="trust-title"
     >
       <div className="mb-6 text-center">

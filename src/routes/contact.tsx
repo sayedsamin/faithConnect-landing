@@ -9,8 +9,8 @@ export const Route = createFileRoute('/contact')({
 
 function ContactPage() {
   return (
-    <>
+    <main className="page-wrap pt-32 pb-20">
       <p>This is the contact page.</p>
-    </>
+    </main>
   )
 }

@@ -46,13 +46,6 @@ const trustedChurches = [
   'City Chapel',
 ]
 
-const heroStats = [
-  { icon: 'members', value: '2,450', label: 'Members' },
-  { icon: 'giving', value: '$18,900', label: 'Monthly Giving' },
-  { icon: 'calendar', value: '24', label: 'Upcoming Events' },
-  { icon: 'reports', value: '98%', label: 'Engagement' },
-] as const
-
 const adminTools = [
   {
     icon: 'members',
@@ -115,12 +108,12 @@ const reportingTopics = [
 ] as const
 
 const securityFeatures = [
-  ['Secure organizational accounts', 'church'],
-  ['Role-based permissions', 'members'],
-  ['Encrypted user access', 'lock'],
-  ['Donation record protection', 'giving'],
-  ['Admin activity tracking', 'file'],
-  ['Data separation between churches', 'database'],
+  ['Secure accounts', 'church'],
+  ['Role-based', 'members'],
+  ['Encrypted access', 'lock'],
+  ['Record protection', 'giving'],
+  ['Activity tracking', 'file'],
+  ['Data separation', 'database'],
 ] as const
 
 function UserIcon(props: ComponentProps<typeof Users>) {
@@ -192,13 +185,13 @@ function MiniFeatureCard({
 }) {
   return (
     <article className="feature-card rounded-lg border border-brand-blue/10 p-5">
-      <div className="flex min-w-0 items-start gap-4">
+      <div className="flex min-w-0 items-center gap-4">
         <FlatIconTile icon={icon} />
-        <div className="min-w-0">
-          <h3 className="text-base font-extrabold text-brand-dark">{title}</h3>
-          <p className="mt-2 text-sm leading-6 text-brand-dark/68">{text}</p>
-        </div>
+        <h3 className="min-w-0 text-base leading-6 font-extrabold break-words text-brand-dark">
+          {title}
+        </h3>
       </div>
+      <p className="mt-4 text-sm leading-6 text-brand-dark/68">{text}</p>
     </article>
   )
 }
@@ -1378,7 +1371,7 @@ function SecurityMockup() {
             </span>
           </div>
           <div className="grid gap-4 lg:grid-cols-2">
-            <div className="rounded-lg border border-brand-blue/10 p-5">
+            <div className="rounded-lg border border-brand-blue/10 p-4 sm:p-5">
               <h4 className="mb-4 text-sm font-extrabold text-brand-dark">
                 Access & Permissions
               </h4>
@@ -1389,15 +1382,17 @@ function SecurityMockup() {
                 'Volunteers',
                 'Members',
               ].map((item, index) => (
-                <div key={item} className="mb-3 flex items-center gap-3">
-                  <Users
-                    className="size-4 text-brand-blue"
-                    aria-hidden="true"
-                  />
-                  <span className="flex-1 text-sm font-bold text-brand-dark/70">
+                <div
+                  key={item}
+                  className="mb-2 grid min-h-9 grid-cols-[1.75rem_minmax(0,1fr)_auto] items-center gap-2 last:mb-0"
+                >
+                  <span className="grid size-7 shrink-0 place-items-center rounded-md bg-brand-blue/8 text-brand-blue">
+                    <Users className="size-4 shrink-0" aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0 text-sm leading-5 font-bold break-words text-brand-dark/70">
                     {item}
                   </span>
-                  <span className="rounded bg-brand-blue/8 px-2 py-1 text-[0.62rem] font-bold text-brand-blue">
+                  <span className="inline-flex min-h-7 min-w-[4.25rem] items-center justify-center rounded-md bg-brand-blue/8 px-2.5 py-1.5 text-center text-[0.62rem] leading-tight font-extrabold whitespace-nowrap text-brand-blue">
                     {index < 2
                       ? 'Full access'
                       : index < 4
@@ -1479,9 +1474,9 @@ function SecurityMockup() {
 export function HomePage() {
   return (
     <main className="overflow-hidden bg-white text-brand-dark">
-      <section className="relative overflow-hidden border-b border-brand-blue/10 px-4 pt-28 pb-10 sm:px-6 lg:px-8 lg:pt-32">
+      <section className="relative overflow-hidden border-b border-brand-blue/10 pt-28 pb-10 lg:pt-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_4%,rgb(0_64_205/0.12),transparent_28%),radial-gradient(circle_at_8%_24%,rgb(0_64_205/0.09),transparent_26%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+        <div className="page-shell relative grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <div className="min-w-0">
             <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.02] tracking-normal text-brand-dark sm:text-4xl lg:text-5xl">
               All-in-one church management for{' '}
@@ -1510,26 +1505,10 @@ export function HomePage() {
                 Request Demo
               </a>
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {heroStats.map(({ icon, value, label }) => (
-                <div
-                  key={label}
-                  className="rounded-lg border border-brand-blue/10 bg-white/90 p-4 shadow-[0_12px_26px_rgb(0_14_53/0.08)]"
-                >
-                  <FlatIconImage icon={icon} className="mb-2 size-6" />
-                  <p className="text-xl font-extrabold text-brand-dark">
-                    {value}
-                  </p>
-                  <p className="text-xs font-bold text-brand-dark/58">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
           <HeroDashboard />
         </div>
-        <div className="relative mx-auto mt-32 max-w-7xl">
+        <div className="page-shell relative mt-32">
           <p className="text-center text-xl font-extrabold text-brand-dark">
             Trusted by churches of all sizes
           </p>
@@ -1551,8 +1530,8 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="relative px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <section className="relative py-20">
+        <div className="page-shell grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               One platform. Every church account{' '}
@@ -1566,7 +1545,7 @@ export function HomePage() {
           </div>
           <OrganizationMockup />
         </div>
-        <div className="mx-auto mt-14 grid max-w-7xl gap-6 lg:grid-cols-3">
+        <div className="page-shell mt-14 grid gap-6 lg:grid-cols-3">
           <MiniFeatureCard
             icon="church"
             title="Multi-Church SaaS Accounts"
@@ -1585,8 +1564,8 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-blue/[0.035] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
+      <section className="bg-brand-blue/[0.035] py-20">
+        <div className="page-shell grid items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Powerful tools for <BrandWord>church administrators.</BrandWord>
@@ -1605,9 +1584,9 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="relative px-4 py-20 sm:px-6 lg:px-8">
+      <section className="relative py-20">
         <div className="absolute inset-x-0 bottom-0 h-24 bg-brand-blue/[0.055] [clip-path:ellipse(70%_45%_at_50%_100%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 xl:grid-cols-2">
+        <div className="page-shell relative grid items-center gap-12 xl:grid-cols-2">
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               A connected church experience in{' '}
@@ -1626,7 +1605,7 @@ export function HomePage() {
           </div>
           <MobileAppShowcase />
         </div>
-        <div className="relative mx-auto mt-22 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="page-shell relative mt-22 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {(
             [
               ['shield', 'Secure & private', 'Your data is always protected.'],
@@ -1658,8 +1637,8 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-blue/[0.035] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl text-center">
+      <section className="bg-brand-blue/[0.035] py-20">
+        <div className="page-shell text-center">
           <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
             From first visit to <BrandWord>full engagement.</BrandWord>
           </h2>
@@ -1770,10 +1749,10 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
+      <section className="py-20">
+        <div className="page-shell grid items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
           <div>
-            <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-tight text-brand-dark sm:text-3xl">
               Clear insights for better ministry{' '}
               <BrandWord>decisions.</BrandWord>
             </h2>
@@ -1798,8 +1777,8 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-blue/[0.035] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+      <section className="bg-brand-blue/[0.035] py-20">
+        <div className="page-shell grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Secure, private, and organized by <BrandWord>design.</BrandWord>

@@ -9,7 +9,7 @@ export const Route = createFileRoute('/terms')({
 
 function TermsPage() {
   return (
-    <main className="page-wrap px-4 pt-32 pb-20 sm:px-6">
+    <main className="page-wrap pt-32 pb-20">
       <section className="max-w-3xl">
         <p className="island-kicker">Questura Academy</p>
         <h1 className="display-title mt-4 text-4xl font-bold text-foreground sm:text-5xl">

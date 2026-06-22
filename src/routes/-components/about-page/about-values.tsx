@@ -4,7 +4,7 @@ import { AboutMissionHighlightCard } from './about-mission-highlight-card'
 export function AboutValues() {
   return (
     <section
-      className="mx-auto w-full max-w-7xl py-16 text-center"
+      className="mx-auto w-full max-w-6xl py-16 text-center"
       aria-labelledby="values-title"
     >
       <h2 id="values-title" className="text-2xl font-extrabold text-foreground">
