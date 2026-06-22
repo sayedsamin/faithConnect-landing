@@ -763,7 +763,7 @@ function MobileAppShowcase() {
 function PhoneShell({ children }: { children: ReactNode }) {
   return (
     <div className="mx-auto w-full max-w-[245px] rounded-[1.8rem] border-[6px] border-brand-dark bg-brand-dark shadow-[0_24px_52px_rgb(0_14_53/0.2)] sm:max-w-[198px] lg:max-w-[205px] xl:max-w-[215px]">
-      <div className="relative min-h-[470px] overflow-hidden rounded-[1.35rem] bg-white sm:min-h-[432px] lg:min-h-[448px] xl:min-h-[468px]">
+      <div className="relative h-[470px] overflow-hidden rounded-[1.35rem] bg-white sm:h-[432px] lg:h-[448px] xl:h-[468px]">
         <span className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-full bg-brand-dark" />
         {children}
       </div>
