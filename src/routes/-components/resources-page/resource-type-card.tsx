@@ -1,25 +1,19 @@
-import {
-  ArrowRight,
-  BookOpen,
-  Download,
-  Lightbulb,
-  PlaySquare,
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 import type { ResourceType, ResourceTypeIcon } from './resources-data'
 
 const iconByType = {
-  book: BookOpen,
-  download: Download,
-  lightbulb: Lightbulb,
-  video: PlaySquare,
-} satisfies Record<ResourceTypeIcon, typeof BookOpen>
+  book: '/images/home/file.png',
+  download: '/images/home/reports.png',
+  lightbulb: '/images/home/message.png',
+  video: '/images/home/phone.png',
+} satisfies Record<ResourceTypeIcon, string>
 
 const iconToneByType = {
-  book: 'bg-brand-blue/10 text-brand-blue',
-  download: 'bg-violet-500/10 text-violet-600',
-  lightbulb: 'bg-amber-500/10 text-amber-600',
-  video: 'bg-emerald-500/10 text-emerald-600',
+  book: 'bg-brand-blue/10',
+  download: 'bg-violet-500/10',
+  lightbulb: 'bg-amber-500/10',
+  video: 'bg-emerald-500/10',
 } satisfies Record<ResourceTypeIcon, string>
 
 export function ResourceTypeCard({
@@ -28,14 +22,22 @@ export function ResourceTypeCard({
   icon,
   title,
 }: ResourceType) {
-  const Icon = iconByType[icon]
-
   return (
     <article className="feature-card flex min-h-64 flex-col rounded-xl border border-brand-blue/10 bg-white p-6 shadow-[0_16px_38px_rgb(0_14_53/0.06)]">
       <span
         className={`grid size-14 place-items-center rounded-full ${iconToneByType[icon]}`}
       >
-        <Icon className="size-7" aria-hidden="true" />
+        <img
+          src={iconByType[icon]}
+          alt=""
+          width={28}
+          height={28}
+          loading="lazy"
+          decoding="async"
+          className="size-7 object-contain"
+          aria-hidden="true"
+          draggable={false}
+        />
       </span>
       <h3 className="mt-5 text-lg font-extrabold text-brand-dark">{title}</h3>
       <p className="mt-3 flex-1 text-sm leading-6 text-brand-dark/62">

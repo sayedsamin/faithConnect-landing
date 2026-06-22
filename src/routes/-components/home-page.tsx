@@ -459,7 +459,7 @@ function MobilePhoneMockup({ className = '' }: { className?: string }) {
                   className="mx-auto size-4 text-brand-blue"
                   aria-hidden="true"
                 />
-                <p className="mt-1 text-[0.52rem] font-bold text-brand-dark">
+                <p className="mt-1 text-[0.46rem] font-bold text-brand-dark">
                   {label as string}
                 </p>
               </div>
@@ -1147,15 +1147,15 @@ function WorkflowStep({
   children: ReactNode
 }) {
   return (
-    <article className="home-motion-item relative rounded-lg border border-brand-blue/10 bg-white/88 p-6 text-center shadow-[0_18px_44px_rgb(0_14_53/0.08)]">
-      <span className="absolute left-1/2 top-0 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brand-blue/15 bg-white text-lg font-extrabold text-brand-blue shadow-lg">
+    <article className="home-motion-item relative rounded-lg border border-brand-blue/10 bg-white/88 p-5 text-center shadow-[0_18px_44px_rgb(0_14_53/0.08)]">
+      <span className="absolute left-1/2 top-0 grid size-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brand-blue/15 bg-white text-base font-extrabold text-brand-blue shadow-lg">
         {number}
       </span>
-      <h3 className="mt-5 text-xl font-extrabold text-brand-dark">{title}</h3>
-      <p className="mx-auto mt-3 min-h-16 max-w-[220px] text-sm leading-6 text-brand-dark/66 lg:min-h-24">
+      <h3 className="mt-4 text-lg font-extrabold text-brand-dark">{title}</h3>
+      <p className="mx-auto mt-2 max-w-[220px] text-sm leading-6 text-brand-dark/66">
         {text}
       </p>
-      <div className="mt-6">{children}</div>
+      <div className="mt-4">{children}</div>
     </article>
   )
 }
@@ -1656,7 +1656,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-blue/[0.035] py-20">
+      <section className="bg-brand-blue/[0.035] py-16">
         <div className="page-shell text-center" data-home-reveal="up">
           <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
             From first visit to <BrandWord>full engagement.</BrandWord>
@@ -1665,37 +1665,33 @@ export function HomePage() {
             FaithConnect supports the complete journey of church engagement.
           </p>
           <div
-            className="relative mt-16 grid gap-8 lg:grid-cols-4"
+            className="relative mt-14 grid gap-6 lg:grid-cols-4"
             data-home-reveal="stagger"
           >
             <div className="absolute -top-4 left-[12%] right-[12%] hidden border-t-2 border-brand-blue/35 lg:block" />
             <WorkflowStep
               number="01"
               title="Guest connects"
-              text="Guests scan a QR code, complete a simple form, and indicate whether they want to become members."
+              text="Guests connect through a simple QR form."
             >
-              <div className="rounded-lg border border-brand-blue/10 bg-white p-4 shadow-sm">
+              <div className="rounded-lg border border-brand-blue/10 bg-white p-3 shadow-sm">
                 <QrCode
-                  className="mx-auto size-20 text-brand-dark"
+                  className="mx-auto size-14 text-brand-dark"
                   aria-hidden="true"
                 />
-                <div className="mt-3 space-y-2">
-                  <span className="block h-8 rounded-md bg-brand-blue/8" />
-                  <span className="block h-8 rounded-md bg-brand-blue/8" />
-                  <button className="min-h-10 w-full rounded-md bg-brand-blue text-xs font-extrabold text-white">
-                    I&apos;m interested
-                  </button>
-                </div>
+                <p className="mt-2 text-xs font-extrabold text-brand-blue">
+                  Scan to connect
+                </p>
               </div>
             </WorkflowStep>
             <WorkflowStep
               number="02"
               title="Church follows up"
-              text="Administrators receive guest information, assign follow-up actions, and send personalized messages."
+              text="Teams receive details and assign a follow-up."
             >
-              <div className="rounded-lg border border-brand-blue/10 bg-white p-4 text-left shadow-sm">
+              <div className="rounded-lg border border-brand-blue/10 bg-white p-3 text-left shadow-sm">
                 <div className="flex gap-3">
-                  <span className="size-12 rounded-full bg-brand-blue/20" />
+                  <span className="size-10 rounded-full bg-brand-blue/20" />
                   <div>
                     <p className="text-sm font-extrabold text-brand-dark">
                       John Anderson
@@ -1703,44 +1699,35 @@ export function HomePage() {
                     <p className="text-xs text-brand-dark/56">New Guest</p>
                   </div>
                 </div>
-                <p className="mt-4 rounded-md bg-brand-blue/6 p-3 text-xs text-brand-dark/70">
-                  Follow-up task: Contact John and welcome him to Hope
-                  Community.
-                </p>
-                <p className="mt-3 rounded-md bg-brand-blue/6 p-3 text-xs text-brand-dark/70">
-                  Message sent at 10:32 AM
+                <p className="mt-3 rounded-md bg-brand-blue/6 p-2.5 text-xs text-brand-dark/70">
+                  Welcome message assigned
                 </p>
               </div>
             </WorkflowStep>
             <WorkflowStep
               number="03"
               title="Member joins"
-              text="New members create profiles, join groups, register for events, and begin receiving communication."
+              text="Members complete profiles and join church life."
             >
-              <div className="rounded-lg border border-brand-blue/10 bg-white p-4 text-left shadow-sm">
+              <div className="rounded-lg border border-brand-blue/10 bg-white p-3 text-left shadow-sm">
                 <p className="text-sm font-extrabold text-brand-dark">
                   Complete your profile
                 </p>
                 <div className="mt-3 h-2 overflow-hidden rounded-full bg-brand-blue/10">
                   <span className="block h-full w-3/5 rounded-full bg-brand-blue" />
                 </div>
-                <p className="mt-4 rounded-md bg-brand-blue/6 p-3 text-xs">
+                <p className="mt-3 rounded-md bg-brand-blue/6 p-2.5 text-xs">
                   Join a group
-                </p>
-                <p className="mt-2 rounded-md bg-brand-blue/6 p-3 text-xs">
-                  Register for an event
                 </p>
               </div>
             </WorkflowStep>
             <WorkflowStep
               number="04"
               title="Engagement grows"
-              text="Members donate, volunteer, attend events, and remain connected through the mobile app."
+              text="Giving, serving, and participation grow."
             >
-              <div className="rounded-lg border border-brand-blue/10 bg-white p-4 text-left shadow-sm">
-                <p className="text-xs text-brand-dark/56">Good morning,</p>
-                <p className="text-sm font-extrabold text-brand-dark">Grace</p>
-                <div className="mt-4 grid grid-cols-3 gap-2">
+              <div className="rounded-lg border border-brand-blue/10 bg-white p-3 shadow-sm">
+                <div className="grid grid-cols-3 gap-2">
                   {[
                     [Heart, 'Give'],
                     [Users, 'Volunteer'],
@@ -1759,11 +1746,6 @@ export function HomePage() {
                       </p>
                     </div>
                   ))}
-                </div>
-                <div className="mt-4 grid grid-cols-3 gap-2 rounded-lg bg-brand-blue/6 p-3 text-center text-xs font-extrabold">
-                  <span>1,248</span>
-                  <span>$24,680</span>
-                  <span>32</span>
                 </div>
               </div>
             </WorkflowStep>
