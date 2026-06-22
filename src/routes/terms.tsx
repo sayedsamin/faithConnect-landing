@@ -11,8 +11,7 @@ function TermsPage() {
   return (
     <main className="page-wrap pt-32 pb-20">
       <section className="max-w-3xl">
-        <p className="island-kicker">Questura Academy</p>
-        <h1 className="display-title mt-4 text-4xl font-bold text-foreground sm:text-5xl">
+        <h1 className="display-title text-4xl font-bold text-foreground sm:text-5xl">
           Terms and Conditions
         </h1>
         <p className="mt-5 leading-8 text-muted-foreground">

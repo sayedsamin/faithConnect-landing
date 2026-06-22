@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { CtaBanner } from '#/components/cta-banner'
 import './-components/about-page/about-page.css'
 import { AboutBenefits } from './-components/about-page/about-benefits'
-import { AboutCta } from './-components/about-page/about-cta'
 import { AboutExperience } from './-components/about-page/about-experience'
 import { AboutFeatures } from './-components/about-page/about-features'
 import { AboutHero } from './-components/about-page/about-hero'
@@ -33,8 +33,8 @@ function AboutPage() {
         <AboutBenefits />
         <AboutExperience />
         <AboutTrust />
-        <AboutCta />
       </div>
+      <CtaBanner />
     </section>
   )
 }

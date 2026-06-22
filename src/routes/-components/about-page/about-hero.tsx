@@ -10,8 +10,7 @@ export function AboutHero() {
       />
       <div className="page-shell relative z-10 grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(24rem,1.1fr)]">
         <div className="max-w-3xl">
-          <p className="island-kicker">About FaithConnect</p>
-          <h1 className="mt-4 text-4xl font-bold text-foreground sm:text-5xl">
+          <h1 className="text-4xl font-bold text-foreground sm:text-5xl">
             Helping churches organize, connect, and grow.
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">

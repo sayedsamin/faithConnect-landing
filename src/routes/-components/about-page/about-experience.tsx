@@ -22,11 +22,10 @@ export function AboutExperience() {
 
       <div className="experience-strip">
         <div className="mx-auto grid w-full max-w-6xl gap-y-8 px-4 sm:px-6 md:grid-cols-2 xl:grid-cols-4">
-          {experienceCards.map(({ title, description }, index) => (
+          {experienceCards.map(({ title, description }) => (
             <AboutExperienceCard
               key={title}
               description={description}
-              index={index}
               title={title}
             />
           ))}

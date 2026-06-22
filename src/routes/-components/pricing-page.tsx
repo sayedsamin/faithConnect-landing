@@ -167,10 +167,7 @@ export function PricingPage() {
           <div className="grid gap-8 lg:min-h-[23.5rem] lg:grid-cols-[minmax(0,0.82fr)_minmax(34rem,1.18fr)] lg:items-stretch xl:min-h-[25rem]">
             <div className="relative z-10 flex max-w-2xl flex-col self-stretch lg:justify-between lg:py-5">
               <div>
-                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-brand-blue">
-                  Pricing
-                </p>
-                <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-normal text-brand-dark sm:text-4xl lg:text-5xl">
+                <h1 className="text-3xl font-extrabold leading-tight tracking-normal text-brand-dark sm:text-4xl lg:text-5xl">
                   Simple pricing for every{' '}
                   <span className="text-brand-blue">church structure.</span>
                 </h1>
