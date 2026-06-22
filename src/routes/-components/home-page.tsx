@@ -16,6 +16,8 @@ import {
 import type { ComponentProps, ComponentType, ReactNode } from 'react'
 
 import { CtaBanner } from '#/components/cta-banner'
+import './home-page/home-page.css'
+import { useHomeMotion } from './home-page/home-motion'
 
 const flatIconSrcs = {
   arrowRight: '/images/home/arrow-right.png',
@@ -184,7 +186,7 @@ function MiniFeatureCard({
   text: string
 }) {
   return (
-    <article className="feature-card rounded-lg border border-brand-blue/10 p-5">
+    <article className="home-motion-item feature-card rounded-lg border border-brand-blue/10 p-5">
       <div className="flex min-w-0 items-center gap-4">
         <FlatIconTile icon={icon} />
         <h3 className="min-w-0 text-base leading-6 font-extrabold break-words text-brand-dark">
@@ -1145,7 +1147,7 @@ function WorkflowStep({
   children: ReactNode
 }) {
   return (
-    <article className="relative rounded-lg border border-brand-blue/10 bg-white/88 p-6 text-center shadow-[0_18px_44px_rgb(0_14_53/0.08)]">
+    <article className="home-motion-item relative rounded-lg border border-brand-blue/10 bg-white/88 p-6 text-center shadow-[0_18px_44px_rgb(0_14_53/0.08)]">
       <span className="absolute left-1/2 top-0 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brand-blue/15 bg-white text-lg font-extrabold text-brand-blue shadow-lg">
         {number}
       </span>
@@ -1469,11 +1471,16 @@ function SecurityMockup() {
 }
 
 export function HomePage() {
+  const motionRef = useHomeMotion<HTMLElement>()
+
   return (
-    <main className="overflow-hidden bg-white text-brand-dark">
+    <main ref={motionRef} className="overflow-hidden bg-white text-brand-dark">
       <section className="relative overflow-hidden border-b border-brand-blue/10 pt-28 pb-10 lg:pt-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_4%,rgb(0_64_205/0.12),transparent_28%),radial-gradient(circle_at_8%_24%,rgb(0_64_205/0.09),transparent_26%)]" />
-        <div className="page-shell relative grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+        <div
+          className="page-shell relative grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]"
+          data-home-reveal="split"
+        >
           <div className="min-w-0">
             <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.02] tracking-normal text-brand-dark sm:text-4xl lg:text-5xl">
               All-in-one church management for{' '}
@@ -1505,7 +1512,7 @@ export function HomePage() {
           </div>
           <HeroDashboard />
         </div>
-        <div className="page-shell relative mt-32">
+        <div className="page-shell relative mt-32" data-home-reveal="up">
           <p className="text-center text-xl font-extrabold text-brand-dark">
             Trusted by churches of all sizes
           </p>
@@ -1528,7 +1535,10 @@ export function HomePage() {
       </section>
 
       <section className="relative py-20">
-        <div className="page-shell grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div
+          className="page-shell grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]"
+          data-home-reveal="split"
+        >
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               One platform. Every church account{' '}
@@ -1542,7 +1552,10 @@ export function HomePage() {
           </div>
           <OrganizationMockup />
         </div>
-        <div className="page-shell mt-14 grid gap-6 lg:grid-cols-3">
+        <div
+          className="page-shell mt-14 grid gap-6 lg:grid-cols-3"
+          data-home-reveal="stagger"
+        >
           <MiniFeatureCard
             icon="church"
             title="Multi-Church SaaS Accounts"
@@ -1562,7 +1575,10 @@ export function HomePage() {
       </section>
 
       <section className="bg-brand-blue/[0.035] py-20">
-        <div className="page-shell grid items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
+        <div
+          className="page-shell grid items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]"
+          data-home-reveal="split"
+        >
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Powerful tools for <BrandWord>church administrators.</BrandWord>
@@ -1583,7 +1599,10 @@ export function HomePage() {
 
       <section className="relative py-20">
         <div className="absolute inset-x-0 bottom-0 h-24 bg-brand-blue/[0.055] [clip-path:ellipse(70%_45%_at_50%_100%)]" />
-        <div className="page-shell relative grid items-center gap-12 xl:grid-cols-2">
+        <div
+          className="page-shell relative grid items-center gap-12 xl:grid-cols-2"
+          data-home-reveal="split"
+        >
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               A connected church experience in{' '}
@@ -1602,7 +1621,10 @@ export function HomePage() {
           </div>
           <MobileAppShowcase />
         </div>
-        <div className="page-shell relative mt-22 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          className="page-shell relative mt-22 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          data-home-reveal="up"
+        >
           {(
             [
               ['shield', 'Secure & private', 'Your data is always protected.'],
@@ -1635,14 +1657,17 @@ export function HomePage() {
       </section>
 
       <section className="bg-brand-blue/[0.035] py-20">
-        <div className="page-shell text-center">
+        <div className="page-shell text-center" data-home-reveal="up">
           <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
             From first visit to <BrandWord>full engagement.</BrandWord>
           </h2>
           <p className="mt-4 text-lg text-brand-dark/66">
             FaithConnect supports the complete journey of church engagement.
           </p>
-          <div className="relative mt-16 grid gap-8 lg:grid-cols-4">
+          <div
+            className="relative mt-16 grid gap-8 lg:grid-cols-4"
+            data-home-reveal="stagger"
+          >
             <div className="absolute -top-4 left-[12%] right-[12%] hidden border-t-2 border-brand-blue/35 lg:block" />
             <WorkflowStep
               number="01"
@@ -1747,7 +1772,10 @@ export function HomePage() {
       </section>
 
       <section className="py-20">
-        <div className="page-shell grid items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
+        <div
+          className="page-shell grid items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]"
+          data-home-reveal="split"
+        >
           <div>
             <h2 className="text-2xl font-extrabold leading-tight text-brand-dark sm:text-3xl">
               Clear insights for better ministry{' '}
@@ -1775,7 +1803,10 @@ export function HomePage() {
       </section>
 
       <section className="bg-brand-blue/[0.035] py-20">
-        <div className="page-shell grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+        <div
+          className="page-shell grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]"
+          data-home-reveal="split"
+        >
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Secure, private, and organized by <BrandWord>design.</BrandWord>
