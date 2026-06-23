@@ -35,7 +35,7 @@ export function ContactDetails() {
         <div className="relative overflow-hidden rounded-[1.4rem] border border-brand-blue/10 bg-white p-6 shadow-[0_24px_60px_rgb(0_14_53/0.10)] sm:p-8">
           <div className="absolute -right-12 -bottom-12 size-48 rounded-full bg-brand-blue/8 blur-2xl" />
           <img
-            src="/images/about/platform.png"
+            src="/images/about/platform.webp"
             alt="FaithConnect available across web, tablet, and mobile"
             width={512}
             height={512}

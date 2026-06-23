@@ -13,7 +13,7 @@ export const contactOptions: ContactOption[] = [
       'Explore plans, rollout options, and the right setup for your church.',
     action: 'Contact sales',
     email: 'sales@faithconnect.com',
-    iconSrc: '/images/home/reports.png',
+    iconSrc: '/images/home/reports.webp',
   },
   {
     title: 'Product support',
@@ -21,7 +21,7 @@ export const contactOptions: ContactOption[] = [
       'Get help with your FaithConnect workspace, access, or product questions.',
     action: 'Get support',
     email: 'support@faithconnect.com',
-    iconSrc: '/images/home/message.png',
+    iconSrc: '/images/home/message.webp',
   },
   {
     title: 'Partnerships',
@@ -29,7 +29,7 @@ export const contactOptions: ContactOption[] = [
       'Connect with us about networks, integrations, and ministry partnerships.',
     action: 'Discuss a partnership',
     email: 'partners@faithconnect.com',
-    iconSrc: '/images/home/members.png',
+    iconSrc: '/images/home/members.webp',
   },
 ]
 

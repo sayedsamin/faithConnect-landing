@@ -38,7 +38,7 @@ export function AboutHero() {
 
         <div className="relative mx-auto w-full max-w-2xl lg:pt-2">
           <img
-            src="/images/about/faithconnect-about-hero.png"
+            src="/images/about/faithconnect-about-hero.webp"
             alt="FaithConnect dashboard and mobile app interface preview"
             width={1536}
             height={1024}

@@ -20,21 +20,21 @@ import './home-page/home-page.css'
 import { useHomeMotion } from './home-page/home-motion'
 
 const flatIconSrcs = {
-  arrowRight: '/images/home/arrow-right.png',
-  bell: '/images/home/bell.png',
-  calendar: '/images/home/calendar.png',
-  church: '/images/home/church.png',
-  cloud: '/images/home/cloud.png',
-  database: '/images/home/database.png',
-  file: '/images/home/file.png',
-  giving: '/images/home/giving.png',
-  guest: '/images/home/guest.png',
-  lock: '/images/home/lock.png',
-  members: '/images/home/members.png',
-  message: '/images/home/message.png',
-  phone: '/images/home/phone.png',
-  reports: '/images/home/reports.png',
-  shield: '/images/home/shield.png',
+  arrowRight: '/images/home/arrow-right.webp',
+  bell: '/images/home/bell.webp',
+  calendar: '/images/home/calendar.webp',
+  church: '/images/home/church.webp',
+  cloud: '/images/home/cloud.webp',
+  database: '/images/home/database.webp',
+  file: '/images/home/file.webp',
+  giving: '/images/home/giving.webp',
+  guest: '/images/home/guest.webp',
+  lock: '/images/home/lock.webp',
+  members: '/images/home/members.webp',
+  message: '/images/home/message.webp',
+  phone: '/images/home/phone.webp',
+  reports: '/images/home/reports.webp',
+  shield: '/images/home/shield.webp',
 } as const
 
 type FlatIconName = keyof typeof flatIconSrcs

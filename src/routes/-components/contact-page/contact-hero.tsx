@@ -54,7 +54,7 @@ export function ContactHero() {
           <div className="absolute inset-8 rounded-full bg-brand-blue/10 blur-3xl" />
           <div className="relative overflow-hidden rounded-2xl border border-brand-blue/10 bg-white p-3 shadow-[0_28px_70px_rgb(0_14_53/0.13)] sm:p-4">
             <img
-              src="/images/contact/contact-hero-support.png"
+              src="/images/contact/contact-hero-support.webp"
               alt="FaithConnect dashboard shown on a laptop with support tools for church leaders"
               width={1536}
               height={1024}

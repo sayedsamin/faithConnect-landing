@@ -3,10 +3,10 @@ import { ArrowRight } from 'lucide-react'
 import type { ResourceType, ResourceTypeIcon } from './resources-data'
 
 const iconByType = {
-  book: '/images/home/file.png',
-  download: '/images/home/reports.png',
-  lightbulb: '/images/home/message.png',
-  video: '/images/home/phone.png',
+  book: '/images/home/file.webp',
+  download: '/images/home/reports.webp',
+  lightbulb: '/images/home/message.webp',
+  video: '/images/home/phone.webp',
 } satisfies Record<ResourceTypeIcon, string>
 
 const iconToneByType = {

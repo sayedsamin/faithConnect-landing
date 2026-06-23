@@ -5,7 +5,7 @@ import { CtaBanner } from '#/components/cta-banner'
 const pricingPlans = [
   {
     name: 'Starter',
-    image: '/images/pricing/church.png',
+    image: '/images/pricing/church.webp',
     tone: 'text-emerald-600 bg-emerald-50',
     description: 'For small churches beginning digital management.',
     price: '$29',
@@ -23,7 +23,7 @@ const pricingPlans = [
   },
   {
     name: 'Growth',
-    image: '/images/pricing/church 2.png',
+    image: '/images/pricing/church 2.webp',
     tone: 'text-brand-blue bg-brand-blue/10',
     description:
       'For churches needing donations, events, and member engagement tools.',
@@ -42,7 +42,7 @@ const pricingPlans = [
   },
   {
     name: 'Multi-Branch',
-    image: '/images/pricing/churches.png',
+    image: '/images/pricing/churches.webp',
     tone: 'text-brand-blue bg-brand-blue/10',
     description:
       'For larger ministries requiring multiple locations and priority support.',
@@ -63,22 +63,22 @@ const pricingPlans = [
 
 const trustItems = [
   {
-    image: '/images/pricing/encrypted.png',
+    image: '/images/pricing/encrypted.webp',
     title: 'Secure and private by design',
     description: 'Your data is protected.',
   },
   {
-    image: '/images/pricing/contract.png',
+    image: '/images/pricing/contract.webp',
     title: 'No long-term contracts',
     description: 'Cancel or change anytime.',
   },
   {
-    image: '/images/pricing/group.png',
+    image: '/images/pricing/group.webp',
     title: 'Role-based access',
     description: 'Control who sees what.',
   },
   {
-    image: '/images/pricing/growth.png',
+    image: '/images/pricing/growth.webp',
     title: 'Built for growing churches',
     description: 'Scale with confidence.',
   },
@@ -224,7 +224,7 @@ function PricingHeroImage() {
   return (
     <div className="relative z-10 flex self-stretch lg:h-full lg:items-stretch">
       <img
-        src="/images/pricing/pricing-hero.png"
+        src="/images/pricing/pricing-hero.webp"
         alt="FaithConnect dashboard preview with church management metrics"
         width={860}
         height={560}

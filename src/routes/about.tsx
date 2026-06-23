@@ -15,7 +15,7 @@ export const Route = createFileRoute('/about')({
     links: [
       {
         rel: 'preload',
-        href: '/images/about/faithconnect-about-hero.png',
+        href: '/images/about/faithconnect-about-hero.webp',
         as: 'image',
       },
     ],

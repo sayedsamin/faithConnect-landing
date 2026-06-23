@@ -22,7 +22,7 @@ export const Route = createFileRoute('/contact')({
     links: [
       {
         rel: 'preload',
-        href: '/images/contact/contact-hero-support.png',
+        href: '/images/contact/contact-hero-support.webp',
         as: 'image',
       },
     ],

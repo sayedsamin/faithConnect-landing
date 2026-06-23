@@ -24,7 +24,7 @@ export function AboutFeatures() {
             className={`${getFeatureRevealClass(1, visibleStep)} ${sectionIconShellClass} rounded-full bg-purple-100 text-purple-600`}
           >
             <img
-              src="/images/about/church.png"
+              src="/images/about/church.webp"
               alt=""
               aria-hidden="true"
               className={sectionIconImageClass}
@@ -56,7 +56,7 @@ export function AboutFeatures() {
           className={`${getFeatureRevealClass(5, visibleStep)} about-features-media relative z-10 mt-8 lg:mt-0`}
         >
           <img
-            src="/images/about/member-overview.png"
+            src="/images/about/member-overview.webp"
             alt="FaithConnect member overview and recent activity dashboard preview"
             width={1920}
             height={802}

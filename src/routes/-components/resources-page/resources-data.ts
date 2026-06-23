@@ -48,7 +48,7 @@ export const popularResources: PopularResource[] = [
     description:
       'A practical guide to setting up your church and bringing your team onto one connected platform.',
     type: 'Guide',
-    imageSrc: '/images/about/faithconnect-about-hero.png',
+    imageSrc: '/images/about/faithconnect-about-hero.webp',
     imageAlt: 'Church leaders collaborating with FaithConnect',
   },
   {
@@ -56,7 +56,7 @@ export const popularResources: PopularResource[] = [
     description:
       'Simple ways to keep members informed, engaged, and connected throughout the week.',
     type: 'Article',
-    imageSrc: '/images/about/team.png',
+    imageSrc: '/images/about/team.webp',
     imageAlt: 'Illustration of a collaborative ministry team',
   },
   {
@@ -64,7 +64,7 @@ export const popularResources: PopularResource[] = [
     description:
       'See how a shared dashboard can streamline everyday ministry tasks and save your team time.',
     type: 'Video',
-    imageSrc: '/images/about/member-overview.png',
+    imageSrc: '/images/about/member-overview.webp',
     imageAlt: 'FaithConnect member overview and recent activity dashboard',
   },
   {
@@ -72,7 +72,7 @@ export const popularResources: PopularResource[] = [
     description:
       'Plan responsibilities, communication, registration, and follow-up with one adaptable template.',
     type: 'Template',
-    imageSrc: '/images/pricing/contract.png',
+    imageSrc: '/images/pricing/contract.webp',
     imageAlt: 'Illustration of a church planning document',
   },
 ]
