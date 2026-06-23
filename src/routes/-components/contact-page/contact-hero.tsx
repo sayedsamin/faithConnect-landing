@@ -52,15 +52,15 @@ export function ContactHero() {
 
         <div className="relative mx-auto w-full max-w-2xl">
           <div className="absolute inset-8 rounded-full bg-brand-blue/10 blur-3xl" />
-          <div className="relative overflow-hidden rounded-[1.5rem] border border-brand-blue/10 bg-white p-5 shadow-[0_28px_70px_rgb(0_14_53/0.13)] sm:p-7">
+          <div className="relative overflow-hidden rounded-2xl border border-brand-blue/10 bg-white p-3 shadow-[0_28px_70px_rgb(0_14_53/0.13)] sm:p-4">
             <img
-              src="/images/about/faithconnect-about-hero.png"
-              alt="FaithConnect company team supporting church leaders"
-              width={1200}
-              height={800}
+              src="/images/contact/contact-hero-support.png"
+              alt="FaithConnect dashboard shown on a laptop with support tools for church leaders"
+              width={1536}
+              height={1024}
               loading="eager"
               decoding="async"
-              className="aspect-[3/2] w-full rounded-xl bg-brand-blue/[0.035] object-contain"
+              className="aspect-[3/2] w-full rounded-xl bg-brand-blue/[0.035] object-cover"
             />
           </div>
         </div>
