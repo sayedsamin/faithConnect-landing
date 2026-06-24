@@ -1,10 +1,10 @@
 export const iconColorClasses = [
-  'bg-blue-100 text-blue-600',
-  'bg-purple-100 text-purple-600',
-  'bg-amber-100 text-amber-600',
-  'bg-green-100 text-green-600',
-  'bg-rose-100 text-rose-600',
-  'bg-cyan-100 text-cyan-600',
+  'bg-brand-blue/8 text-brand-blue',
+  'bg-brand-blue/10 text-brand-blue',
+  'bg-brand-blue/[0.06] text-brand-blue',
+  'bg-brand-blue/8 text-brand-blue',
+  'bg-brand-blue/10 text-brand-blue',
+  'bg-brand-blue/[0.06] text-brand-blue',
 ] as const
 
 export const sectionIconShellClass =

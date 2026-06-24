@@ -7,10 +7,10 @@ export function AboutValues() {
       className="mx-auto w-full max-w-6xl py-16 text-center"
       aria-labelledby="values-title"
     >
-      <h2 id="values-title" className="text-2xl font-extrabold text-foreground">
+      <h2 id="values-title" className="text-2xl font-extrabold text-brand-dark">
         Our mission
       </h2>
-      <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
+      <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 font-semibold text-brand-dark/60">
         We empower churches with simple, secure digital tools that strengthen
         administration, communication, generosity, and community engagement.
       </p>

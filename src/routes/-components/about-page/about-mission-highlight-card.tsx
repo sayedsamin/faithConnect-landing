@@ -30,10 +30,10 @@ export function AboutMissionHighlightCard({
         />
       </span>
       <span className="min-w-0">
-        <span className="block text-sm font-extrabold text-foreground">
+        <span className="block text-sm font-extrabold text-brand-dark">
           {title}
         </span>
-        <span className="mt-1 block text-xs leading-5 text-muted-foreground">
+        <span className="mt-1 block text-xs leading-5 font-semibold text-brand-dark/58">
           {description}
         </span>
       </span>

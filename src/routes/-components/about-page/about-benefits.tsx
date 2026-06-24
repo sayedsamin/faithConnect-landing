@@ -14,11 +14,11 @@ export function AboutBenefits() {
       <div className="mx-auto mb-8 w-full max-w-6xl px-4 text-center sm:px-6">
         <h2
           id="benefits-title"
-          className="text-2xl font-extrabold text-foreground"
+          className="text-2xl font-extrabold text-brand-dark"
         >
           What we value
         </h2>
-        <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
+        <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 font-semibold text-brand-dark/60">
           Practical benefits for churches, ministries, campuses, and faith-based
           nonprofits.
         </p>

@@ -24,7 +24,7 @@ export const Route = createFileRoute('/about')({
 
 function AboutPage() {
   return (
-    <section className="pb-20">
+    <main className="overflow-hidden bg-white pb-20 text-brand-dark">
       <AboutHero />
 
       <div className="page-shell">
@@ -32,9 +32,12 @@ function AboutPage() {
         <AboutFeatures />
         <AboutBenefits />
         <AboutExperience />
-        <AboutTrust />
       </div>
-      <CtaBanner />
-    </section>
+
+      <div className="about-closing-band">
+        <AboutTrust />
+        <CtaBanner />
+      </div>
+    </main>
   )
 }
