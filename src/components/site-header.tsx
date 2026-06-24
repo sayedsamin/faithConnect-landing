@@ -10,6 +10,14 @@ const navItems = [
   { label: 'About', href: '/about' },
 ]
 
+function isActiveNavItem(pathname: string, href: string) {
+  if (href === '/') {
+    return pathname === '/'
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`)
+}
+
 export function SiteHeader() {
   const pathname = useRouterState({
     select: (state) => state.location.pathname,
@@ -64,15 +72,22 @@ export function SiteHeader() {
           aria-label="Primary"
           className="hidden min-w-0 flex-1 items-center justify-center gap-x-4 md:flex"
         >
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-bold text-brand-dark py-2 px-4 rounded-xl transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isActive = isActiveNavItem(pathname, item.href)
+
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                aria-current={isActive ? 'page' : undefined}
+                className={`nav-link rounded-xl px-4 py-2 text-sm font-bold transition-colors ${
+                  isActive ? 'is-active' : ''
+                }`}
+              >
+                {item.label}
+              </a>
+            )
+          })}
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
@@ -115,18 +130,25 @@ export function SiteHeader() {
             className="absolute top-full right-4 left-4 mt-3 rounded-xl border border-brand-blue/20 bg-white p-4 shadow-lg md:hidden"
           >
             <nav aria-label="Mobile primary" className="grid gap-3">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-brand-dark hover:text-brand-blue hover:bg-brand-blue/5 rounded-lg transition-colors"
-                  onClick={() => {
-                    setIsMenuOpen(false)
-                  }}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const isActive = isActiveNavItem(pathname, item.href)
+
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`nav-link rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-brand-blue/5 ${
+                      isActive ? 'is-active bg-brand-blue/5' : ''
+                    }`}
+                    onClick={() => {
+                      setIsMenuOpen(false)
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                )
+              })}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-brand-blue/10">
                 <button className="w-full px-4 py-2 text-sm font-medium text-brand-blue border border-brand-blue rounded-lg hover:bg-brand-blue hover:text-white transition-colors">
                   Book Demo
