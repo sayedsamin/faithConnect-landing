@@ -79,7 +79,6 @@
   --surface-strong: color-mix(in oklab, var(--white) 92%, transparent);
   --line: color-mix(in oklab, var(--brand-dark) 16%, transparent);
   --inset-glint: color-mix(in oklab, var(--white) 84%, transparent);
-  --kicker: var(--brand-blue);
   --bg-base: color-mix(in oklab, var(--brand-white) 92%, var(--brand-blue));
   --header-bg: color-mix(in oklab, var(--brand-dark) 92%, transparent);
   --chip-bg: color-mix(in oklab, var(--white) 82%, transparent);
@@ -134,7 +133,6 @@
   --surface-strong: color-mix(in oklab, var(--brand-dark) 92%, transparent);
   --line: color-mix(in oklab, var(--white) 22%, transparent);
   --inset-glint: color-mix(in oklab, var(--white) 18%, transparent);
-  --kicker: color-mix(in oklab, var(--brand-blue) 72%, var(--white));
   --bg-base: color-mix(in oklab, var(--brand-dark) 94%, var(--brand-white));
   --header-bg: color-mix(in oklab, var(--brand-dark) 86%, transparent);
   --chip-bg: color-mix(in oklab, var(--brand-dark) 88%, transparent);
@@ -348,9 +346,26 @@ section[id] {
   color: color-mix(in oklab, var(--white) 88%, var(--brand-blue));
 }
 
-.page-wrap {
-  width: min(1320px, calc(100% - 2rem));
+.page-wrap,
+.page-shell {
+  width: 100%;
+  max-width: 72rem;
   margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 40rem) {
+  .page-wrap,
+  .page-shell {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .page-wrap,
+  .page-shell {
+    padding-inline: 2.5rem;
+  }
 }
 
 .display-title {
@@ -415,15 +430,6 @@ section[id] {
   );
 }
 
-.hero-card-kicker {
-  margin-bottom: 0.5rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--brand-blue);
-}
-
 .hero-pill {
   display: inline-flex;
   align-items: center;
@@ -483,36 +489,29 @@ a {
     transform 180ms ease;
 }
 
-.island-kicker {
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.69rem;
-  color: var(--kicker);
-}
-
 .nav-link {
   position: relative;
   text-decoration: none;
-  color: var(--sea-ink-soft);
+  color: color-mix(in oklab, var(--brand-dark) 88%, transparent);
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
+  right: 1rem;
+  bottom: 0.25rem;
+  left: 1rem;
   height: 2px;
   transform: scaleX(0);
   transform-origin: left;
-  background: linear-gradient(90deg, var(--brand-blue), var(--brand-white));
+  border-radius: 999px;
+  background: var(--brand-blue);
   transition: transform 170ms ease;
 }
 
 .nav-link:hover,
 .nav-link.is-active {
-  color: var(--sea-ink);
+  color: var(--brand-blue);
 }
 
 .nav-link:hover::after,
@@ -611,6 +610,7 @@ a {
   .pricing-trust-item:focus-within::after {
     animation: none;
   }
+}
 @keyframes faithconnect-marquee {
   from {
     transform: translateX(0);

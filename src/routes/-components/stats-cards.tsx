@@ -1,7 +1,7 @@
 export function StatsCards() {
   return (
     <div className="mt-6">
-      <div className="mx-auto max-w-7xl">
+      <div className="page-shell">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4 items-stretch">
           <div className="flex w-full min-w-0 items-center justify-between gap-4 rounded-xl border border-gray-200 bg-white/80 p-4 sm:p-6 shadow-sm">
             <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-blue-50 text-brand-blue">

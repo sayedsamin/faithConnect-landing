@@ -39,10 +39,10 @@ export function AboutBenefitCard({
         />
       </span>
       <div className="min-w-0 pt-1">
-        <h3 className="text-base font-extrabold leading-6 text-foreground">
+        <h3 className="text-base font-extrabold leading-6 text-brand-dark">
           {title}
         </h3>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+        <p className="mt-2 text-sm leading-6 font-semibold text-brand-dark/62">
           {description}
         </p>
       </div>

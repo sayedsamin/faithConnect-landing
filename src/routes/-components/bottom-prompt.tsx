@@ -2,7 +2,7 @@ import { Church } from 'lucide-react'
 
 export function BottomPrompt() {
   return (
-    <div className="w-full h-full mx-auto max-w-7xl mt-10 p-8 bg-linear-to-l from-brand-blue to-brand-dark rounded-xl grid grid-cols-2 justify-items-center shadow-lg">
+    <div className="mx-auto mt-10 grid h-full w-full max-w-6xl grid-cols-2 justify-items-center rounded-xl bg-linear-to-l from-brand-blue to-brand-dark p-8 shadow-lg">
       <div>
         <p className="text-2xl font-bold text-brand-white">
           Bring your church manangement and your member engagement together.

@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { CtaBanner } from '#/components/cta-banner'
 import './-components/about-page/about-page.css'
 import { AboutBenefits } from './-components/about-page/about-benefits'
-import { AboutCta } from './-components/about-page/about-cta'
 import { AboutExperience } from './-components/about-page/about-experience'
 import { AboutFeatures } from './-components/about-page/about-features'
 import { AboutHero } from './-components/about-page/about-hero'
@@ -15,7 +15,7 @@ export const Route = createFileRoute('/about')({
     links: [
       {
         rel: 'preload',
-        href: '/images/about/faithconnect-about-hero.png',
+        href: '/images/about/faithconnect-about-hero.webp',
         as: 'image',
       },
     ],
@@ -24,17 +24,20 @@ export const Route = createFileRoute('/about')({
 
 function AboutPage() {
   return (
-    <section className="pb-20">
+    <main className="overflow-hidden bg-white pb-20 text-brand-dark">
       <AboutHero />
 
-      <div className="px-4 sm:px-6">
+      <div className="page-shell">
         <AboutValues />
         <AboutFeatures />
         <AboutBenefits />
         <AboutExperience />
-        <AboutTrust />
-        <AboutCta />
       </div>
-    </section>
+
+      <div className="about-closing-band">
+        <AboutTrust />
+        <CtaBanner />
+      </div>
+    </main>
   )
 }

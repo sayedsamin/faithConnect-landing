@@ -4,7 +4,7 @@ import FeatureCard from './FeatureCard'
 
 export default function AboutSection() {
   return (
-    <section className="mx-auto w-full max-w-7xl py-12">
+    <section className="page-shell py-12">
       <div className="grid items-stretch gap-4 lg:grid-cols-[1.7fr_repeat(4,1fr)]">
         <div className="flex h-full flex-col justify-center rounded-lg bg-white p-4">
           <h2 className="text-xl font-bold text-slate-900">

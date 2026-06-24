@@ -12,9 +12,9 @@ export function AboutTrustCard({
   title,
 }: AboutTrustCardProps) {
   return (
-    <article className="group relative flex min-h-32 items-center gap-4 overflow-hidden rounded-lg border border-border/80 bg-background/80 p-4 shadow-sm backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 hover:border-brand-blue/25 hover:shadow-md">
+    <article className="group relative flex min-h-32 items-center gap-4 overflow-hidden rounded-lg border border-brand-blue/10 bg-white p-4 shadow-[0_16px_38px_rgb(0_14_53/0.06)] transition-transform duration-200 hover:-translate-y-1 hover:border-brand-blue/25 hover:shadow-md">
       <span
-        className={`${sectionIconShellClass} overflow-hidden rounded-full bg-transparent ring-1 ring-border/80`}
+        className={`${sectionIconShellClass} overflow-hidden rounded-full bg-brand-blue/5 ring-1 ring-brand-blue/10`}
       >
         <img
           src={iconSrc}
@@ -25,10 +25,10 @@ export function AboutTrustCard({
       </span>
 
       <div className="min-w-0 pr-9">
-        <h3 className="text-sm font-extrabold leading-5 text-foreground">
+        <h3 className="text-sm font-extrabold leading-5 text-brand-dark">
           {title}
         </h3>
-        <p className="mt-1 text-xs leading-5 text-muted-foreground">
+        <p className="mt-1 text-xs leading-5 font-semibold text-brand-dark/58">
           {description}
         </p>
       </div>

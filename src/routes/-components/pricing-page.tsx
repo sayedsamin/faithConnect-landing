@@ -1,16 +1,11 @@
 import { Link } from '@tanstack/react-router'
-import {
-  ArrowRight,
-  CalendarDays,
-  Check,
-  ChevronDown,
-  Church,
-} from 'lucide-react'
+import { Check, ChevronDown } from 'lucide-react'
+import { CtaBanner } from '#/components/cta-banner'
 
 const pricingPlans = [
   {
     name: 'Starter',
-    image: '/images/pricing/church.png',
+    image: '/images/pricing/church.webp',
     tone: 'text-emerald-600 bg-emerald-50',
     description: 'For small churches beginning digital management.',
     price: '$29',
@@ -28,7 +23,7 @@ const pricingPlans = [
   },
   {
     name: 'Growth',
-    image: '/images/pricing/church 2.png',
+    image: '/images/pricing/church 2.webp',
     tone: 'text-brand-blue bg-brand-blue/10',
     description:
       'For churches needing donations, events, and member engagement tools.',
@@ -47,7 +42,7 @@ const pricingPlans = [
   },
   {
     name: 'Multi-Branch',
-    image: '/images/pricing/churches.png',
+    image: '/images/pricing/churches.webp',
     tone: 'text-brand-blue bg-brand-blue/10',
     description:
       'For larger ministries requiring multiple locations and priority support.',
@@ -68,22 +63,22 @@ const pricingPlans = [
 
 const trustItems = [
   {
-    image: '/images/pricing/encrypted.png',
+    image: '/images/pricing/encrypted.webp',
     title: 'Secure and private by design',
     description: 'Your data is protected.',
   },
   {
-    image: '/images/pricing/contract.png',
+    image: '/images/pricing/contract.webp',
     title: 'No long-term contracts',
     description: 'Cancel or change anytime.',
   },
   {
-    image: '/images/pricing/group.png',
+    image: '/images/pricing/group.webp',
     title: 'Role-based access',
     description: 'Control who sees what.',
   },
   {
-    image: '/images/pricing/growth.png',
+    image: '/images/pricing/growth.webp',
     title: 'Built for growing churches',
     description: 'Scale with confidence.',
   },
@@ -166,16 +161,13 @@ const faqItems = [
 export function PricingPage() {
   return (
     <div className="bg-brand-white text-brand-dark">
-      <section className="mx-auto w-full max-w-6xl px-5 pt-20 pb-6 sm:px-8 sm:pt-22 sm:pb-8 lg:px-10 lg:pt-24 lg:pb-8">
+      <section className="page-shell pt-20 pb-6 sm:pt-22 sm:pb-8 lg:pt-24 lg:pb-8">
         <div className="relative overflow-hidden">
           <div className="pointer-events-none absolute right-0 top-8 hidden h-72 w-72 rounded-full bg-brand-blue/10 blur-3xl lg:block" />
           <div className="grid gap-8 lg:min-h-[23.5rem] lg:grid-cols-[minmax(0,0.82fr)_minmax(34rem,1.18fr)] lg:items-stretch xl:min-h-[25rem]">
             <div className="relative z-10 flex max-w-2xl flex-col self-stretch lg:justify-between lg:py-5">
               <div>
-                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-brand-blue">
-                  Pricing
-                </p>
-                <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-normal text-brand-dark sm:text-4xl lg:text-5xl">
+                <h1 className="text-3xl font-extrabold leading-tight tracking-normal text-brand-dark sm:text-4xl lg:text-5xl">
                   Simple pricing for every{' '}
                   <span className="text-brand-blue">church structure.</span>
                 </h1>
@@ -193,17 +185,16 @@ export function PricingPage() {
         </div>
       </section>
 
-      <main className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8 lg:px-10">
+      <main className="page-shell pb-2">
         <PricingPlans />
         <TrustStrip />
         <ComparisonTable />
         <PricingFaq />
-        <PricingCta />
       </main>
+      <CtaBanner />
     </div>
   )
 }
-
 function BillingToggle() {
   return (
     <div
@@ -233,7 +224,7 @@ function PricingHeroImage() {
   return (
     <div className="relative z-10 flex self-stretch lg:h-full lg:items-stretch">
       <img
-        src="/images/pricing/pricing-hero.png"
+        src="/images/pricing/pricing-hero.webp"
         alt="FaithConnect dashboard preview with church management metrics"
         width={860}
         height={560}
@@ -331,7 +322,6 @@ function PricingPlans() {
     </section>
   )
 }
-
 function TrustStrip() {
   return (
     <section
@@ -505,55 +495,6 @@ function PricingFaq() {
             </p>
           </details>
         ))}
-      </div>
-    </section>
-  )
-}
-
-function PricingCta() {
-  return (
-    <section
-      className="pt-12 sm:pt-14 lg:pt-16"
-      aria-labelledby="pricing-cta-title"
-    >
-      <div className="relative overflow-hidden rounded-lg border border-brand-blue/10 bg-brand-blue/[0.08] p-6 shadow-sm sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-8">
-        <div className="pointer-events-none absolute right-4 bottom-0 hidden text-brand-blue/15 lg:block">
-          <Church aria-hidden="true" className="h-32 w-32 stroke-[1.2]" />
-        </div>
-        <div className="relative z-10 flex items-start gap-5">
-          <span className="inline-flex size-20 shrink-0 items-center justify-center rounded-full bg-white text-brand-blue shadow-sm">
-            <Church aria-hidden="true" className="size-10" />
-          </span>
-          <div className="max-w-2xl">
-            <h2
-              id="pricing-cta-title"
-              className="text-2xl font-extrabold text-brand-dark"
-            >
-              Choose the plan that helps your ministry grow.
-            </h2>
-            <p className="mt-3 text-sm font-semibold leading-6 text-brand-dark/60">
-              Start with the tools your church needs today, and scale with
-              FaithConnect as your community grows.
-            </p>
-          </div>
-        </div>
-
-        <div className="relative z-10 mt-6 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:shrink-0">
-          <Link
-            to="/contact"
-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-brand-blue px-5 py-3 text-sm font-extrabold !text-white no-underline transition-colors hover:bg-blue-700 hover:!text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/25"
-          >
-            Start your church account
-            <ArrowRight aria-hidden="true" className="size-4" />
-          </Link>
-          <Link
-            to="/contact"
-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-extrabold text-brand-blue no-underline shadow-sm transition-colors hover:bg-brand-blue/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/20"
-          >
-            Schedule a demo
-            <CalendarDays aria-hidden="true" className="size-4" />
-          </Link>
-        </div>
       </div>
     </section>
   )

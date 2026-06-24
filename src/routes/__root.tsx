@@ -50,8 +50,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
       {
         rel: 'icon',
-        type: 'image/svg+xml',
-        href: '/images/home/FaithConnect%20Icon%20V3.svg',
+        type: 'image/webp',
+        href: '/images/home/FaithConnect%20Icon%20V3.webp',
       },
     ],
   }),
@@ -91,9 +91,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 function RootNotFound() {
   return (
-    <section className="page-wrap flex min-h-[60vh] flex-col items-center justify-center px-4 py-20 text-center sm:px-6">
-      <p className="island-kicker">Page Not Found</p>
-      <h1 className="display-title mt-4 text-4xl font-bold text-foreground sm:text-5xl">
+    <section className="page-wrap flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+      <h1 className="display-title text-4xl font-bold text-foreground sm:text-5xl">
         We couldn&apos;t find that page.
       </h1>
       <p className="mt-4 max-w-xl text-lg text-muted-foreground">

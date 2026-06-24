@@ -16,23 +16,25 @@ import {
 import type { ComponentProps, ComponentType, ReactNode } from 'react'
 
 import { CtaBanner } from '#/components/cta-banner'
+import './home-page/home-page.css'
+import { useHomeMotion } from './home-page/home-motion'
 
 const flatIconSrcs = {
-  arrowRight: '/images/home/arrow-right.png',
-  bell: '/images/home/bell.png',
-  calendar: '/images/home/calendar.png',
-  church: '/images/home/church.png',
-  cloud: '/images/home/cloud.png',
-  database: '/images/home/database.png',
-  file: '/images/home/file.png',
-  giving: '/images/home/giving.png',
-  guest: '/images/home/guest.png',
-  lock: '/images/home/lock.png',
-  members: '/images/home/members.png',
-  message: '/images/home/message.png',
-  phone: '/images/home/phone.png',
-  reports: '/images/home/reports.png',
-  shield: '/images/home/shield.png',
+  arrowRight: '/images/home/arrow-right.webp',
+  bell: '/images/home/bell.webp',
+  calendar: '/images/home/calendar.webp',
+  church: '/images/home/church.webp',
+  cloud: '/images/home/cloud.webp',
+  database: '/images/home/database.webp',
+  file: '/images/home/file.webp',
+  giving: '/images/home/giving.webp',
+  guest: '/images/home/guest.webp',
+  lock: '/images/home/lock.webp',
+  members: '/images/home/members.webp',
+  message: '/images/home/message.webp',
+  phone: '/images/home/phone.webp',
+  reports: '/images/home/reports.webp',
+  shield: '/images/home/shield.webp',
 } as const
 
 type FlatIconName = keyof typeof flatIconSrcs
@@ -45,13 +47,6 @@ const trustedChurches = [
   'Revive Church',
   'City Chapel',
 ]
-
-const heroStats = [
-  { icon: 'members', value: '2,450', label: 'Members' },
-  { icon: 'giving', value: '$18,900', label: 'Monthly Giving' },
-  { icon: 'calendar', value: '24', label: 'Upcoming Events' },
-  { icon: 'reports', value: '98%', label: 'Engagement' },
-] as const
 
 const adminTools = [
   {
@@ -115,12 +110,12 @@ const reportingTopics = [
 ] as const
 
 const securityFeatures = [
-  ['Secure organizational accounts', 'church'],
-  ['Role-based permissions', 'members'],
-  ['Encrypted user access', 'lock'],
-  ['Donation record protection', 'giving'],
-  ['Admin activity tracking', 'file'],
-  ['Data separation between churches', 'database'],
+  ['Secure accounts', 'church'],
+  ['Role-based', 'members'],
+  ['Encrypted access', 'lock'],
+  ['Record protection', 'giving'],
+  ['Activity tracking', 'file'],
+  ['Data separation', 'database'],
 ] as const
 
 function UserIcon(props: ComponentProps<typeof Users>) {
@@ -191,14 +186,14 @@ function MiniFeatureCard({
   text: string
 }) {
   return (
-    <article className="feature-card rounded-lg border border-brand-blue/10 p-5">
-      <div className="flex min-w-0 items-start gap-4">
+    <article className="home-motion-item feature-card rounded-lg border border-brand-blue/10 p-5">
+      <div className="flex min-w-0 items-center gap-4">
         <FlatIconTile icon={icon} />
-        <div className="min-w-0">
-          <h3 className="text-base font-extrabold text-brand-dark">{title}</h3>
-          <p className="mt-2 text-sm leading-6 text-brand-dark/68">{text}</p>
-        </div>
+        <h3 className="min-w-0 text-base leading-6 font-extrabold break-words text-brand-dark">
+          {title}
+        </h3>
       </div>
+      <p className="mt-4 text-sm leading-6 text-brand-dark/68">{text}</p>
     </article>
   )
 }
@@ -464,7 +459,7 @@ function MobilePhoneMockup({ className = '' }: { className?: string }) {
                   className="mx-auto size-4 text-brand-blue"
                   aria-hidden="true"
                 />
-                <p className="mt-1 text-[0.52rem] font-bold text-brand-dark">
+                <p className="mt-1 text-[0.46rem] font-bold text-brand-dark">
                   {label as string}
                 </p>
               </div>
@@ -768,7 +763,7 @@ function MobileAppShowcase() {
 function PhoneShell({ children }: { children: ReactNode }) {
   return (
     <div className="mx-auto w-full max-w-[245px] rounded-[1.8rem] border-[6px] border-brand-dark bg-brand-dark shadow-[0_24px_52px_rgb(0_14_53/0.2)] sm:max-w-[198px] lg:max-w-[205px] xl:max-w-[215px]">
-      <div className="relative min-h-[470px] overflow-hidden rounded-[1.35rem] bg-white sm:min-h-[432px] lg:min-h-[448px] xl:min-h-[468px]">
+      <div className="relative h-[470px] overflow-hidden rounded-[1.35rem] bg-white sm:h-[432px] lg:h-[448px] xl:h-[468px]">
         <span className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-full bg-brand-dark" />
         {children}
       </div>
@@ -1152,15 +1147,15 @@ function WorkflowStep({
   children: ReactNode
 }) {
   return (
-    <article className="relative rounded-lg border border-brand-blue/10 bg-white/88 p-6 text-center shadow-[0_18px_44px_rgb(0_14_53/0.08)]">
-      <span className="absolute left-1/2 top-0 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brand-blue/15 bg-white text-lg font-extrabold text-brand-blue shadow-lg">
+    <article className="home-motion-item relative rounded-lg border border-brand-blue/10 bg-white/88 p-5 text-center shadow-[0_18px_44px_rgb(0_14_53/0.08)]">
+      <span className="absolute left-1/2 top-0 grid size-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brand-blue/15 bg-white text-base font-extrabold text-brand-blue shadow-lg">
         {number}
       </span>
-      <h3 className="mt-5 text-xl font-extrabold text-brand-dark">{title}</h3>
-      <p className="mx-auto mt-3 min-h-16 max-w-[220px] text-sm leading-6 text-brand-dark/66 lg:min-h-24">
+      <h3 className="mt-4 text-lg font-extrabold text-brand-dark">{title}</h3>
+      <p className="mx-auto mt-2 max-w-[220px] text-sm leading-6 text-brand-dark/66">
         {text}
       </p>
-      <div className="mt-6">{children}</div>
+      <div className="mt-4">{children}</div>
     </article>
   )
 }
@@ -1378,7 +1373,7 @@ function SecurityMockup() {
             </span>
           </div>
           <div className="grid gap-4 lg:grid-cols-2">
-            <div className="rounded-lg border border-brand-blue/10 p-5">
+            <div className="rounded-lg border border-brand-blue/10 p-4 sm:p-5">
               <h4 className="mb-4 text-sm font-extrabold text-brand-dark">
                 Access & Permissions
               </h4>
@@ -1389,15 +1384,14 @@ function SecurityMockup() {
                 'Volunteers',
                 'Members',
               ].map((item, index) => (
-                <div key={item} className="mb-3 flex items-center gap-3">
-                  <Users
-                    className="size-4 text-brand-blue"
-                    aria-hidden="true"
-                  />
-                  <span className="flex-1 text-sm font-bold text-brand-dark/70">
+                <div
+                  key={item}
+                  className="mb-2 grid min-h-9 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 last:mb-0"
+                >
+                  <span className="min-w-0 text-sm leading-5 font-bold break-words text-brand-dark/70">
                     {item}
                   </span>
-                  <span className="rounded bg-brand-blue/8 px-2 py-1 text-[0.62rem] font-bold text-brand-blue">
+                  <span className="inline-flex min-h-7 min-w-[4.25rem] items-center justify-center rounded-md bg-brand-blue/8 px-2.5 py-1.5 text-center text-[0.62rem] leading-tight font-extrabold whitespace-nowrap text-brand-blue">
                     {index < 2
                       ? 'Full access'
                       : index < 4
@@ -1477,11 +1471,16 @@ function SecurityMockup() {
 }
 
 export function HomePage() {
+  const motionRef = useHomeMotion<HTMLElement>()
+
   return (
-    <main className="overflow-hidden bg-white text-brand-dark">
-      <section className="relative overflow-hidden border-b border-brand-blue/10 px-4 pt-28 pb-10 sm:px-6 lg:px-8 lg:pt-32">
+    <main ref={motionRef} className="overflow-hidden bg-white text-brand-dark">
+      <section className="relative overflow-hidden border-b border-brand-blue/10 pt-28 pb-10 lg:pt-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_4%,rgb(0_64_205/0.12),transparent_28%),radial-gradient(circle_at_8%_24%,rgb(0_64_205/0.09),transparent_26%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+        <div
+          className="page-shell relative grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]"
+          data-home-reveal="split"
+        >
           <div className="min-w-0">
             <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.02] tracking-normal text-brand-dark sm:text-4xl lg:text-5xl">
               All-in-one church management for{' '}
@@ -1510,26 +1509,10 @@ export function HomePage() {
                 Request Demo
               </a>
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {heroStats.map(({ icon, value, label }) => (
-                <div
-                  key={label}
-                  className="rounded-lg border border-brand-blue/10 bg-white/90 p-4 shadow-[0_12px_26px_rgb(0_14_53/0.08)]"
-                >
-                  <FlatIconImage icon={icon} className="mb-2 size-6" />
-                  <p className="text-xl font-extrabold text-brand-dark">
-                    {value}
-                  </p>
-                  <p className="text-xs font-bold text-brand-dark/58">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
           <HeroDashboard />
         </div>
-        <div className="relative mx-auto mt-32 max-w-7xl">
+        <div className="page-shell relative mt-32" data-home-reveal="up">
           <p className="text-center text-xl font-extrabold text-brand-dark">
             Trusted by churches of all sizes
           </p>
@@ -1551,8 +1534,11 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="relative px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <section className="relative py-20">
+        <div
+          className="page-shell grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]"
+          data-home-reveal="split"
+        >
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               One platform. Every church account{' '}
@@ -1566,7 +1552,10 @@ export function HomePage() {
           </div>
           <OrganizationMockup />
         </div>
-        <div className="mx-auto mt-14 grid max-w-7xl gap-6 lg:grid-cols-3">
+        <div
+          className="page-shell mt-14 grid gap-6 lg:grid-cols-3"
+          data-home-reveal="stagger"
+        >
           <MiniFeatureCard
             icon="church"
             title="Multi-Church SaaS Accounts"
@@ -1585,8 +1574,11 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-blue/[0.035] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
+      <section className="bg-brand-blue/[0.035] py-20">
+        <div
+          className="page-shell grid items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]"
+          data-home-reveal="split"
+        >
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Powerful tools for <BrandWord>church administrators.</BrandWord>
@@ -1605,9 +1597,12 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="relative px-4 py-20 sm:px-6 lg:px-8">
+      <section className="relative py-20">
         <div className="absolute inset-x-0 bottom-0 h-24 bg-brand-blue/[0.055] [clip-path:ellipse(70%_45%_at_50%_100%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 xl:grid-cols-2">
+        <div
+          className="page-shell relative grid items-center gap-12 xl:grid-cols-2"
+          data-home-reveal="split"
+        >
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               A connected church experience in{' '}
@@ -1626,7 +1621,10 @@ export function HomePage() {
           </div>
           <MobileAppShowcase />
         </div>
-        <div className="relative mx-auto mt-22 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          className="page-shell relative mt-22 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          data-home-reveal="up"
+        >
           {(
             [
               ['shield', 'Secure & private', 'Your data is always protected.'],
@@ -1658,43 +1656,42 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-blue/[0.035] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl text-center">
+      <section className="bg-brand-blue/[0.035] py-16">
+        <div className="page-shell text-center" data-home-reveal="up">
           <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
             From first visit to <BrandWord>full engagement.</BrandWord>
           </h2>
           <p className="mt-4 text-lg text-brand-dark/66">
             FaithConnect supports the complete journey of church engagement.
           </p>
-          <div className="relative mt-16 grid gap-8 lg:grid-cols-4">
+          <div
+            className="relative mt-14 grid gap-6 lg:grid-cols-4"
+            data-home-reveal="stagger"
+          >
             <div className="absolute -top-4 left-[12%] right-[12%] hidden border-t-2 border-brand-blue/35 lg:block" />
             <WorkflowStep
               number="01"
               title="Guest connects"
-              text="Guests scan a QR code, complete a simple form, and indicate whether they want to become members."
+              text="Guests connect through a simple QR form."
             >
-              <div className="rounded-lg border border-brand-blue/10 bg-white p-4 shadow-sm">
+              <div className="rounded-lg border border-brand-blue/10 bg-white p-3 shadow-sm">
                 <QrCode
-                  className="mx-auto size-20 text-brand-dark"
+                  className="mx-auto size-14 text-brand-dark"
                   aria-hidden="true"
                 />
-                <div className="mt-3 space-y-2">
-                  <span className="block h-8 rounded-md bg-brand-blue/8" />
-                  <span className="block h-8 rounded-md bg-brand-blue/8" />
-                  <button className="min-h-10 w-full rounded-md bg-brand-blue text-xs font-extrabold text-white">
-                    I&apos;m interested
-                  </button>
-                </div>
+                <p className="mt-2 text-xs font-extrabold text-brand-blue">
+                  Scan to connect
+                </p>
               </div>
             </WorkflowStep>
             <WorkflowStep
               number="02"
               title="Church follows up"
-              text="Administrators receive guest information, assign follow-up actions, and send personalized messages."
+              text="Teams receive details and assign a follow-up."
             >
-              <div className="rounded-lg border border-brand-blue/10 bg-white p-4 text-left shadow-sm">
+              <div className="rounded-lg border border-brand-blue/10 bg-white p-3 text-left shadow-sm">
                 <div className="flex gap-3">
-                  <span className="size-12 rounded-full bg-brand-blue/20" />
+                  <span className="size-10 rounded-full bg-brand-blue/20" />
                   <div>
                     <p className="text-sm font-extrabold text-brand-dark">
                       John Anderson
@@ -1702,44 +1699,35 @@ export function HomePage() {
                     <p className="text-xs text-brand-dark/56">New Guest</p>
                   </div>
                 </div>
-                <p className="mt-4 rounded-md bg-brand-blue/6 p-3 text-xs text-brand-dark/70">
-                  Follow-up task: Contact John and welcome him to Hope
-                  Community.
-                </p>
-                <p className="mt-3 rounded-md bg-brand-blue/6 p-3 text-xs text-brand-dark/70">
-                  Message sent at 10:32 AM
+                <p className="mt-3 rounded-md bg-brand-blue/6 p-2.5 text-xs text-brand-dark/70">
+                  Welcome message assigned
                 </p>
               </div>
             </WorkflowStep>
             <WorkflowStep
               number="03"
               title="Member joins"
-              text="New members create profiles, join groups, register for events, and begin receiving communication."
+              text="Members complete profiles and join church life."
             >
-              <div className="rounded-lg border border-brand-blue/10 bg-white p-4 text-left shadow-sm">
+              <div className="rounded-lg border border-brand-blue/10 bg-white p-3 text-left shadow-sm">
                 <p className="text-sm font-extrabold text-brand-dark">
                   Complete your profile
                 </p>
                 <div className="mt-3 h-2 overflow-hidden rounded-full bg-brand-blue/10">
                   <span className="block h-full w-3/5 rounded-full bg-brand-blue" />
                 </div>
-                <p className="mt-4 rounded-md bg-brand-blue/6 p-3 text-xs">
+                <p className="mt-3 rounded-md bg-brand-blue/6 p-2.5 text-xs">
                   Join a group
-                </p>
-                <p className="mt-2 rounded-md bg-brand-blue/6 p-3 text-xs">
-                  Register for an event
                 </p>
               </div>
             </WorkflowStep>
             <WorkflowStep
               number="04"
               title="Engagement grows"
-              text="Members donate, volunteer, attend events, and remain connected through the mobile app."
+              text="Giving, serving, and participation grow."
             >
-              <div className="rounded-lg border border-brand-blue/10 bg-white p-4 text-left shadow-sm">
-                <p className="text-xs text-brand-dark/56">Good morning,</p>
-                <p className="text-sm font-extrabold text-brand-dark">Grace</p>
-                <div className="mt-4 grid grid-cols-3 gap-2">
+              <div className="rounded-lg border border-brand-blue/10 bg-white p-3 shadow-sm">
+                <div className="grid grid-cols-3 gap-2">
                   {[
                     [Heart, 'Give'],
                     [Users, 'Volunteer'],
@@ -1759,21 +1747,19 @@ export function HomePage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 grid grid-cols-3 gap-2 rounded-lg bg-brand-blue/6 p-3 text-center text-xs font-extrabold">
-                  <span>1,248</span>
-                  <span>$24,680</span>
-                  <span>32</span>
-                </div>
               </div>
             </WorkflowStep>
           </div>
         </div>
       </section>
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]">
+      <section className="py-20">
+        <div
+          className="page-shell grid items-center gap-12 lg:grid-cols-[0.55fr_1.45fr]"
+          data-home-reveal="split"
+        >
           <div>
-            <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-tight text-brand-dark sm:text-3xl">
               Clear insights for better ministry{' '}
               <BrandWord>decisions.</BrandWord>
             </h2>
@@ -1798,8 +1784,11 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-blue/[0.035] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+      <section className="bg-brand-blue/[0.035] py-20">
+        <div
+          className="page-shell grid items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]"
+          data-home-reveal="split"
+        >
           <div>
             <h2 className="text-4xl font-extrabold leading-tight text-brand-dark sm:text-5xl">
               Secure, private, and organized by <BrandWord>design.</BrandWord>
