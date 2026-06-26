@@ -17,19 +17,19 @@ export function ContactHero() {
             <span className="text-brand-blue">move forward.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-brand-dark/66">
-            Connect with the FaithConnect company team about product questions,
+            Connect with the GraceNexa company team about product questions,
             sales, support, or partnership opportunities.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="mailto:sales@faithconnect.com"
+              href="mailto:sales@gracenexa.com"
               className="inline-flex min-h-12 touch-manipulation items-center justify-center gap-2 rounded-md bg-brand-blue px-7 text-sm font-extrabold !text-white no-underline shadow-[0_14px_28px_rgb(0_64_205/0.20)] transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/25"
             >
               Talk to sales
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>
             <a
-              href="mailto:support@faithconnect.com"
+              href="mailto:support@gracenexa.com"
               className="inline-flex min-h-12 touch-manipulation items-center justify-center rounded-md border border-brand-blue px-7 text-sm font-extrabold text-brand-blue no-underline transition-colors hover:bg-brand-blue hover:!text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/20"
             >
               Get product support
@@ -55,7 +55,7 @@ export function ContactHero() {
           <div className="relative overflow-hidden rounded-2xl border border-brand-blue/10 bg-white p-3 shadow-[0_28px_70px_rgb(0_14_53/0.13)] sm:p-4">
             <img
               src="/images/contact/contact-hero-support.webp"
-              alt="FaithConnect dashboard shown on a laptop with support tools for church leaders"
+              alt="GraceNexa dashboard shown on a laptop with support tools for church leaders"
               width={1536}
               height={1024}
               loading="eager"

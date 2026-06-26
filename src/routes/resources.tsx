@@ -20,11 +20,11 @@ export const Route = createFileRoute('/resources')({
   component: ResourcesPage,
   head: () => ({
     meta: [
-      { title: 'Resources | FaithConnect' },
+      { title: 'Resources | GraceNexa' },
       {
         name: 'description',
         content:
-          'Explore practical church leadership guides, webinars, templates, and ministry insights from FaithConnect.',
+          'Explore practical church leadership guides, webinars, templates, and ministry insights from GraceNexa.',
       },
     ],
   }),

@@ -8,7 +8,7 @@ export function BottomPrompt() {
           Bring your church manangement and your member engagement together.
         </p>
         <p className="text-sm text-gray-300 mt-2 hidden md:block">
-          Join thousands of churches using FaithConnect to save time, increase
+          Join thousands of churches using GraceNexa to save time, increase
           engagement, and advance their mission.
         </p>
 

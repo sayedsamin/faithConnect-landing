@@ -25,9 +25,9 @@ export function TermsHero() {
             Terms built for a church management platform.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 font-medium text-brand-dark/68 sm:text-lg sm:leading-8">
-            These terms explain how FaithConnect works with churches,
-            ministries, and authorized users across our website, demos,
-            subscriptions, onboarding, support, and platform services.
+            These terms explain how GraceNexa works with churches, ministries,
+            and authorized users across our website, demos, subscriptions,
+            onboarding, support, and platform services.
           </p>
         </div>
 

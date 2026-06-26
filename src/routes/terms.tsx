@@ -10,11 +10,11 @@ export const Route = createFileRoute('/terms')({
   component: TermsPage,
   head: () => ({
     meta: [
-      { title: 'Terms of Service | FaithConnect' },
+      { title: 'Terms of Service | GraceNexa' },
       {
         name: 'description',
         content:
-          'Review the FaithConnect terms for church management software, demos, accounts, subscriptions, communications, and acceptable platform use.',
+          'Review the GraceNexa terms for church management software, demos, accounts, subscriptions, communications, and acceptable platform use.',
       },
     ],
   }),

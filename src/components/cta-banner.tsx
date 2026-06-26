@@ -27,7 +27,7 @@ const defaultFeatures = [
 
 export function CtaBanner({
   title = 'Bring your church operations and member engagement together',
-  description = 'Join thousands of churches using FaithConnect to save time, increase engagement, and advance their mission.',
+  description = 'Join thousands of churches using GraceNexa to save time, increase engagement, and advance their mission.',
   primaryAction = { label: 'Get Started', href: '/contact' },
   secondaryAction = { label: 'Schedule a Demo', href: '/contact' },
   features = defaultFeatures,

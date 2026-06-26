@@ -15,7 +15,7 @@ export function AboutTrust() {
           Built on trust, security, and stability
         </h2>
         <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 font-semibold text-brand-dark/60">
-          FaithConnect is designed to help churches manage people, giving, and
+          GraceNexa is designed to help churches manage people, giving, and
           communication with responsible access, dependable workflows, and
           privacy-aware defaults.
         </p>

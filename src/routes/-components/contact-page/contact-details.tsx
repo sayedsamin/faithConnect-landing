@@ -4,8 +4,8 @@ const companyDetails = [
   {
     icon: Mail,
     label: 'General inquiries',
-    value: 'hello@faithconnect.com',
-    href: 'mailto:hello@faithconnect.com',
+    value: 'hello@gracenexa.com',
+    href: 'mailto:hello@gracenexa.com',
   },
   {
     icon: Phone,
@@ -36,7 +36,7 @@ export function ContactDetails() {
           <div className="absolute -right-12 -bottom-12 size-48 rounded-full bg-brand-blue/8 blur-2xl" />
           <img
             src="/images/about/platform.webp"
-            alt="FaithConnect available across web, tablet, and mobile"
+            alt="GraceNexa available across web, tablet, and mobile"
             width={512}
             height={512}
             loading="lazy"
@@ -47,7 +47,7 @@ export function ContactDetails() {
 
         <div className="min-w-0">
           <h2 className="text-3xl leading-tight font-extrabold text-brand-dark sm:text-4xl">
-            Reach the FaithConnect company team
+            Reach the GraceNexa company team
           </h2>
           <p className="mt-4 text-base leading-7 text-brand-dark/62">
             These details are temporary placeholders for the company&apos;s

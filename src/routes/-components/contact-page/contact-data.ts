@@ -12,15 +12,15 @@ export const contactOptions: ContactOption[] = [
     description:
       'Explore plans, rollout options, and the right setup for your church.',
     action: 'Contact sales',
-    email: 'sales@faithconnect.com',
+    email: 'sales@gracenexa.com',
     iconSrc: '/images/home/reports.webp',
   },
   {
     title: 'Product support',
     description:
-      'Get help with your FaithConnect workspace, access, or product questions.',
+      'Get help with your GraceNexa workspace, access, or product questions.',
     action: 'Get support',
-    email: 'support@faithconnect.com',
+    email: 'support@gracenexa.com',
     iconSrc: '/images/home/message.webp',
   },
   {
@@ -28,7 +28,7 @@ export const contactOptions: ContactOption[] = [
     description:
       'Connect with us about networks, integrations, and ministry partnerships.',
     action: 'Discuss a partnership',
-    email: 'partners@faithconnect.com',
+    email: 'partners@gracenexa.com',
     iconSrc: '/images/home/members.webp',
   },
 ]
@@ -37,7 +37,7 @@ export const contactFaqs = [
   {
     question: 'Can I request a product demonstration?',
     answer:
-      'Yes. Our sales team can walk you through the platform and discuss how FaithConnect could support your church structure and ministry workflows.',
+      'Yes. Our sales team can walk you through the platform and discuss how GraceNexa could support your church structure and ministry workflows.',
   },
   {
     question: 'Where should existing customers ask for help?',
@@ -45,9 +45,9 @@ export const contactFaqs = [
       'Existing customers should contact product support for account access, setup guidance, troubleshooting, and general product questions.',
   },
   {
-    question: 'Does FaithConnect work with multi-site churches?',
+    question: 'Does GraceNexa work with multi-site churches?',
     answer:
-      'FaithConnect is designed to support independent churches as well as growing and multi-site organizations. Contact sales to discuss a suitable configuration.',
+      'GraceNexa is designed to support independent churches as well as growing and multi-site organizations. Contact sales to discuss a suitable configuration.',
   },
   {
     question: 'Can organizations discuss integrations or partnerships?',

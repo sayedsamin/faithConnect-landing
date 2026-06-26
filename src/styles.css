@@ -611,7 +611,7 @@ a {
     animation: none;
   }
 }
-@keyframes faithconnect-marquee {
+@keyframes gracenexa-marquee {
   from {
     transform: translateX(0);
   }
@@ -620,11 +620,11 @@ a {
   }
 }
 
-.faithconnect-marquee {
-  animation: faithconnect-marquee 24s linear infinite;
+.gracenexa-marquee {
+  animation: gracenexa-marquee 24s linear infinite;
 }
 
-.faithconnect-marquee:hover {
+.gracenexa-marquee:hover {
   animation-play-state: paused;
 }
 

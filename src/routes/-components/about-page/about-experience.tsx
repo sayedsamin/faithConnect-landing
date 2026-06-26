@@ -12,7 +12,7 @@ export function AboutExperience() {
           id="experience-title"
           className="text-xl font-extrabold text-brand-dark"
         >
-          What FaithConnect helps churches do
+          What GraceNexa helps churches do
         </h2>
         <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 font-semibold text-brand-dark/60">
           Built around how churches actually work across admin, cloud, and

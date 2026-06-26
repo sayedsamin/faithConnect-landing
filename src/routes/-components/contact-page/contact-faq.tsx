@@ -21,7 +21,7 @@ export function ContactFaq() {
           </h2>
           <p className="mt-4 text-base leading-7 text-brand-dark/62">
             A few quick answers can help direct your inquiry to the right
-            FaithConnect team.
+            GraceNexa team.
           </p>
         </div>
 

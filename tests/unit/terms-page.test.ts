@@ -7,12 +7,12 @@ import {
 } from '../../src/routes/-components/terms-page/terms-data'
 
 describe('terms page content', () => {
-  it('uses FaithConnect-specific terms content', () => {
+  it('uses GraceNexa-specific terms content', () => {
     const combinedTerms = termsSections
       .flatMap((section) => [section.title, ...section.body])
       .join(' ')
 
-    expect(combinedTerms).toContain('FaithConnect')
+    expect(combinedTerms).toContain('GraceNexa')
     expect(combinedTerms).toContain('church management platform')
     expect(combinedTerms).not.toContain('Questura')
   })

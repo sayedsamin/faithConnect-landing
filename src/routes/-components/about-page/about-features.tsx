@@ -40,9 +40,8 @@ export function AboutFeatures() {
             className={`${getFeatureRevealClass(3, visibleStep)} mt-4 max-w-lg text-sm leading-6 font-semibold text-brand-dark/62`}
           >
             Churches need better tools to manage ministry operations without the
-            complexity. FaithConnect was created to simplify administration,
-            unify communication, and help leaders focus on what matters most:
-            people.
+            complexity. GraceNexa was created to simplify administration, unify
+            communication, and help leaders focus on what matters most: people.
           </p>
           <p
             className={`${getFeatureRevealClass(4, visibleStep)} mt-3 max-w-lg text-sm leading-6 font-semibold text-brand-dark/62`}
@@ -57,7 +56,7 @@ export function AboutFeatures() {
         >
           <img
             src="/images/about/member-overview.webp"
-            alt="FaithConnect member overview and recent activity dashboard preview"
+            alt="GraceNexa member overview and recent activity dashboard preview"
             width={1920}
             height={802}
             loading="lazy"

@@ -228,7 +228,7 @@ function HeroDashboard() {
         <div className="overflow-hidden rounded-xl bg-white">
           <div className="grid min-h-[330px] grid-cols-[118px_1fr] sm:min-h-[410px]">
             <aside className="bg-brand-dark p-4 text-white">
-              <div className="mb-7 text-xs font-extrabold">FaithConnect</div>
+              <div className="mb-7 text-xs font-extrabold">GraceNexa</div>
               {[
                 'Dashboard',
                 'Members',
@@ -489,7 +489,7 @@ function WebAppMockup() {
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-blue/10 pb-5">
         <div>
           <span className="text-base font-extrabold text-brand-dark">
-            FaithConnect
+            GraceNexa
           </span>
         </div>
         <div className="flex items-center gap-3">
@@ -563,8 +563,7 @@ function WebAppMockup() {
                 Welcome New Members!
               </h3>
               <p className="mt-2 text-xs leading-5 text-brand-dark/62">
-                Join us in welcoming our newest members to the FaithConnect
-                family.
+                Join us in welcoming our newest members to the GraceNexa family.
               </p>
             </div>
           </div>
@@ -662,7 +661,7 @@ function OrganizationMockup() {
         <div className="grid overflow-hidden rounded-xl border border-brand-blue/10 sm:grid-cols-[150px_1fr]">
           <aside className="hidden bg-brand-blue/5 p-5 sm:block">
             <div className="mb-6 text-sm font-extrabold text-brand-dark">
-              FaithConnect
+              GraceNexa
             </div>
             {[
               'Overview',
@@ -830,7 +829,7 @@ function AnnouncementsPhone() {
         <div className="flex items-center justify-between gap-3">
           <div>
             <span className="text-sm font-extrabold text-brand-dark">
-              FaithConnect
+              GraceNexa
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -927,7 +926,7 @@ function GivePhone() {
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-[0.62rem] font-bold text-brand-dark/52">
-              FaithConnect
+              GraceNexa
             </p>
             <h3 className="text-lg leading-tight font-extrabold text-brand-dark">
               Give
@@ -1051,7 +1050,7 @@ function EventsPhone() {
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-[0.62rem] font-bold text-brand-dark/52">
-              FaithConnect
+              GraceNexa
             </p>
             <h3 className="text-lg leading-tight font-extrabold text-brand-dark">
               Events
@@ -1327,7 +1326,7 @@ function SecurityMockup() {
       <div className="grid overflow-hidden rounded-[1.25rem] lg:grid-cols-[170px_1fr]">
         <aside className="hidden border-r border-brand-blue/10 bg-brand-blue/5 p-5 lg:block">
           <div className="mb-7 text-sm font-extrabold text-brand-dark">
-            FaithConnect
+            GraceNexa
           </div>
           {[
             'Overview',
@@ -1487,7 +1486,7 @@ export function HomePage() {
               <BrandWord>modern ministries</BrandWord>
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-brand-dark/70">
-              FaithConnect helps churches manage members, giving, events,
+              GraceNexa helps churches manage members, giving, events,
               communication, and engagement in one secure platform with a
               powerful web dashboard and mobile app.
             </p>
@@ -1517,7 +1516,7 @@ export function HomePage() {
             Trusted by churches of all sizes
           </p>
           <div className="mt-6 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-            <div className="faithconnect-marquee flex w-max items-center gap-12 py-2">
+            <div className="gracenexa-marquee flex w-max items-center gap-12 py-2">
               {[...trustedChurches, ...trustedChurches].map((name, index) => (
                 <div
                   key={`${name}-${index}`}
@@ -1545,7 +1544,7 @@ export function HomePage() {
               <BrandWord>fully organized.</BrandWord>
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-brand-dark/66">
-              FaithConnect allows multiple church organizations to subscribe,
+              GraceNexa allows multiple church organizations to subscribe,
               create their own secure organizational accounts, and manage their
               ministry operations independently.
             </p>
@@ -1584,7 +1583,7 @@ export function HomePage() {
               Powerful tools for <BrandWord>church administrators.</BrandWord>
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-dark/66">
-              The FaithConnect web app gives church leaders and administrators a
+              The GraceNexa web app gives church leaders and administrators a
               clear operational view of the entire church community.
             </p>
             <div className="mt-8 space-y-4">
@@ -1609,8 +1608,8 @@ export function HomePage() {
               <BrandWord>every member&apos;s pocket.</BrandWord>
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-dark/66">
-              The FaithConnect mobile app gives users convenient access to
-              church life, donations, events, communication, and volunteer
+              The GraceNexa mobile app gives users convenient access to church
+              life, donations, events, communication, and volunteer
               opportunities.
             </p>
             <div className="mt-8 space-y-4">
@@ -1662,7 +1661,7 @@ export function HomePage() {
             From first visit to <BrandWord>full engagement.</BrandWord>
           </h2>
           <p className="mt-4 text-lg text-brand-dark/66">
-            FaithConnect supports the complete journey of church engagement.
+            GraceNexa supports the complete journey of church engagement.
           </p>
           <div
             className="relative mt-14 grid gap-6 lg:grid-cols-4"
@@ -1764,7 +1763,7 @@ export function HomePage() {
               <BrandWord>decisions.</BrandWord>
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-dark/66">
-              FaithConnect converts church activity into simple, useful reports.
+              GraceNexa converts church activity into simple, useful reports.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
               {reportingTopics.map(([label, icon]) => (
@@ -1794,8 +1793,8 @@ export function HomePage() {
               Secure, private, and organized by <BrandWord>design.</BrandWord>
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-dark/66">
-              FaithConnect is designed to protect sensitive church, member,
-              donor, and financial information.
+              GraceNexa is designed to protect sensitive church, member, donor,
+              and financial information.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {securityFeatures.map(([label, Icon]) => (

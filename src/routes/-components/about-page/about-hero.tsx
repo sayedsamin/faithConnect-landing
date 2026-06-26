@@ -14,7 +14,7 @@ export function AboutHero() {
             Helping churches organize, connect, and grow.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 font-medium text-brand-dark/68 sm:text-lg sm:leading-8">
-            FaithConnect is a secure church management SaaS platform that helps
+            GraceNexa is a secure church management SaaS platform that helps
             churches and faith-based organizations manage members, giving
             events, communication, and engagement.
           </p>
@@ -42,8 +42,8 @@ export function AboutHero() {
             className="absolute inset-8 rounded-full bg-brand-blue/10 blur-3xl"
           />
           <img
-            src="/images/about/faithconnect-about-hero.webp"
-            alt="FaithConnect dashboard and mobile app interface preview"
+            src="/images/about/gracenexa-about-hero.webp"
+            alt="GraceNexa dashboard and mobile app interface preview"
             width={1536}
             height={1024}
             loading="eager"
