@@ -1482,7 +1482,7 @@ export function HomePage() {
         >
           <div className="min-w-0">
             <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.02] tracking-normal text-brand-dark sm:text-4xl lg:text-5xl">
-              All-in-one church management for{' '}
+              TESTAll-in-one church management for{' '}
               <BrandWord>modern ministries</BrandWord>
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-brand-dark/70">
