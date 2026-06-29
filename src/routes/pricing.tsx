@@ -4,6 +4,6 @@ import { PricingPage } from '#/routes/-components/pricing-page'
 export const Route = createFileRoute('/pricing')({
   component: PricingPage,
   head: () => ({
-    meta: [{ title: 'Pricing | FaithConnect' }],
+    meta: [{ title: 'Pricing | GraceNexa' }],
   }),
 })

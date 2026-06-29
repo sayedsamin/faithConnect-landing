@@ -12,11 +12,11 @@ export const Route = createFileRoute('/contact')({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: 'Contact | FaithConnect' },
+      { title: 'Contact | GraceNexa' },
       {
         name: 'description',
         content:
-          'Contact the FaithConnect team about church management software, support, partnerships, and general company inquiries.',
+          'Contact the GraceNexa team about church management software, support, partnerships, and general company inquiries.',
       },
     ],
     links: [

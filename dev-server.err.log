@@ -11,12 +11,12 @@ VITE_SENTRY_DSN is not defined. Sentry is not running.
 [38;5;246m─────╯[0m
 [39m
   Plugin: [35mvite:oxc[39m
-  File: [36mC:/Users/Owner/Documents/GitHub/faithConnect-landing/src/routes/-components/about-page.tsx[39m
-      at transformWithOxc (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:3742:19)
-      at TransformPluginContext.transform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:3810:26)
-      at EnvironmentPluginContainer.transform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:30141:51)
-      at async loadAndTransform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:24489:26)
-      at async viteTransformMiddleware (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:24283:20)
+  File: [36mC:/Users/Owner/Documents/GitHub/graceNexa-landing/src/routes/-components/about-page.tsx[39m
+      at transformWithOxc (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:3742:19)
+      at TransformPluginContext.transform (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:3810:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:30141:51)
+      at async loadAndTransform (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:24489:26)
+      at async viteTransformMiddleware (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:24283:20)
 [2m2:02:38 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/routes/-components/about-page.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
 [2m2:02:38 p.m.[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
 
@@ -29,12 +29,12 @@ VITE_SENTRY_DSN is not defined. Sentry is not running.
 [38;5;246m─────╯[0m
 [39m
   Plugin: [35mvite:oxc[39m
-  File: [36mC:/Users/Owner/Documents/GitHub/faithConnect-landing/src/routes/-components/about-page.tsx[39m
-      at transformWithOxc (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:3742:19)
-      at TransformPluginContext.transform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:3810:26)
-      at EnvironmentPluginContainer.transform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:30141:51)
-      at async loadAndTransform (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:24489:26)
-      at async viteTransformMiddleware (file:///C:/Users/Owner/Documents/GitHub/faithConnect-landing/node_modules/vite/dist/node/chunks/node.js:24283:20)
+  File: [36mC:/Users/Owner/Documents/GitHub/graceNexa-landing/src/routes/-components/about-page.tsx[39m
+      at transformWithOxc (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:3742:19)
+      at TransformPluginContext.transform (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:3810:26)
+      at EnvironmentPluginContainer.transform (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:30141:51)
+      at async loadAndTransform (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:24489:26)
+      at async viteTransformMiddleware (file:///C:/Users/Owner/Documents/GitHub/graceNexa-landing/node_modules/vite/dist/node/chunks/node.js:24283:20)
 [2m2:02:38 p.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/routes/-components/about-page.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
 [Client] [vite] Failed to reload /src/routes/-components/about-page.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
 [Client] [vite] Failed to reload /src/routes/-components/about-page.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)

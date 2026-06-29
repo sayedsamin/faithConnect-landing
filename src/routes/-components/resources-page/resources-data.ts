@@ -44,12 +44,12 @@ export const resourceTypes: ResourceType[] = [
 
 export const popularResources: PopularResource[] = [
   {
-    title: 'Getting Started with FaithConnect',
+    title: 'Getting Started with GraceNexa',
     description:
       'A practical guide to setting up your church and bringing your team onto one connected platform.',
     type: 'Guide',
-    imageSrc: '/images/about/faithconnect-about-hero.webp',
-    imageAlt: 'Church leaders collaborating with FaithConnect',
+    imageSrc: '/images/about/gracenexa-about-hero.webp',
+    imageAlt: 'Church leaders collaborating with GraceNexa',
   },
   {
     title: 'Five Ways to Strengthen Church Communication',
@@ -65,7 +65,7 @@ export const popularResources: PopularResource[] = [
       'See how a shared dashboard can streamline everyday ministry tasks and save your team time.',
     type: 'Video',
     imageSrc: '/images/about/member-overview.webp',
-    imageAlt: 'FaithConnect member overview and recent activity dashboard',
+    imageAlt: 'GraceNexa member overview and recent activity dashboard',
   },
   {
     title: 'Church Event Planning Template',

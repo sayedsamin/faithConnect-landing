@@ -8,7 +8,7 @@ export default function AboutSection() {
       <div className="grid items-stretch gap-4 lg:grid-cols-[1.7fr_repeat(4,1fr)]">
         <div className="flex h-full flex-col justify-center rounded-lg bg-white p-4">
           <h2 className="text-xl font-bold text-slate-900">
-            Why FaithConnect was created
+            Why GraceNexa was created
           </h2>
           <p className="mt-3 text-sm leading-6 text-slate-600">
             Churches today juggle multiple tools, spreadsheets, and manual
@@ -17,7 +17,7 @@ export default function AboutSection() {
             administration than people.
           </p>
           <p className="mt-3 text-sm leading-6 text-slate-600">
-            We built FaithConnect to change that-bringing everything your church
+            We built GraceNexa to change that-bringing everything your church
             needs into one secure, easy-to-use platform that works across web
             and mobile.
           </p>

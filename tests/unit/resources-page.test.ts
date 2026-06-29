@@ -13,10 +13,10 @@ describe('resource search', () => {
   })
 
   it('matches titles without case sensitivity', () => {
-    const matches = filterPopularResources(popularResources, 'FAITHCONNECT')
+    const matches = filterPopularResources(popularResources, 'GRACENEXA')
 
     expect(matches.map((resource) => resource.title)).toEqual([
-      'Getting Started with FaithConnect',
+      'Getting Started with GraceNexa',
     ])
   })
 

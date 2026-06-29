@@ -17,7 +17,7 @@ export function ContactOptions() {
         </h2>
         <p className="mt-4 text-base leading-7 text-brand-dark/62">
           Choose the conversation that best matches what you need from
-          FaithConnect.
+          GraceNexa.
         </p>
       </div>
 

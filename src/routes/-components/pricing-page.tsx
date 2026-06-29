@@ -154,7 +154,7 @@ const faqItems = [
   {
     question: 'Can I request a demo before subscribing?',
     answer:
-      'Yes. You can schedule a demo with our team to see how FaithConnect fits your church workflows.',
+      'Yes. You can schedule a demo with our team to see how GraceNexa fits your church workflows.',
   },
 ]
 
@@ -173,7 +173,7 @@ export function PricingPage() {
                 </h1>
                 <p className="mt-5 max-w-xl text-base font-semibold leading-7 text-brand-dark/65">
                   Whether your church is small, growing, or multi-branch,
-                  FaithConnect provides flexible subscription access for each
+                  GraceNexa provides flexible subscription access for each
                   organization.
                 </p>
               </div>
@@ -225,7 +225,7 @@ function PricingHeroImage() {
     <div className="relative z-10 flex self-stretch lg:h-full lg:items-stretch">
       <img
         src="/images/pricing/pricing-hero.webp"
-        alt="FaithConnect dashboard preview with church management metrics"
+        alt="GraceNexa dashboard preview with church management metrics"
         width={860}
         height={560}
         loading="eager"
@@ -240,7 +240,7 @@ function PricingPlans() {
   return (
     <section className="pt-12 sm:pt-14 lg:pt-16" aria-labelledby="plans-title">
       <h2 id="plans-title" className="sr-only">
-        FaithConnect pricing plans
+        GraceNexa pricing plans
       </h2>
       <div className="grid gap-6 lg:grid-cols-3">
         {pricingPlans.map((plan, index) => (

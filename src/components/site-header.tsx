@@ -51,12 +51,12 @@ export function SiteHeader() {
       <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-4">
         <Link
           to="/"
-          aria-label="FaithConnect home"
+          aria-label="GraceNexa home"
           className="inline-flex shrink-0 items-center gap-2 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded-lg"
         >
           <img
-            src="/images/home/FaithConnect%20Icon%20V3.webp"
-            alt="FaithConnect"
+            src="/images/home/GraceNexa%20Icon%20V3.webp"
+            alt="GraceNexa"
             width={40}
             height={40}
             loading="eager"
@@ -64,7 +64,7 @@ export function SiteHeader() {
             className="h-10 w-10 object-contain"
           />
           <span className="hidden sm:inline font-bold text-lg text-brand-dark">
-            FaithConnect
+            GraceNexa
           </span>
         </Link>
 

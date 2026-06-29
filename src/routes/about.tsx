@@ -11,11 +11,11 @@ import { AboutValues } from './-components/about-page/about-values'
 export const Route = createFileRoute('/about')({
   component: AboutPage,
   head: () => ({
-    meta: [{ title: 'About | FaithConnect' }],
+    meta: [{ title: 'About | GraceNexa' }],
     links: [
       {
         rel: 'preload',
-        href: '/images/about/faithconnect-about-hero.webp',
+        href: '/images/about/gracenexa-about-hero.webp',
         as: 'image',
       },
     ],

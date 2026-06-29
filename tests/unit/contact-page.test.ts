@@ -17,9 +17,9 @@ describe('contact page company information', () => {
     )
   })
 
-  it('uses FaithConnect company email addresses', () => {
+  it('uses GraceNexa company email addresses', () => {
     contactOptions.forEach((option) => {
-      expect(option.email).toMatch(/@faithconnect\.com$/)
+      expect(option.email).toMatch(/@gracenexa\.com$/)
     })
   })
 
